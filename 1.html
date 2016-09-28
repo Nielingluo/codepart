@@ -162,5 +162,48 @@
         } 
     </script> 
  <!--  交替显示图片 end -->
+
+<hr>
+<style type="text/css">
+	.t_pic{ margin-top: 30px;}
+	.t_pic li{ float: left; margin-right: 10px;position: relative; }
+	.sc_pic{position: absolute;  top: 10px; left: 10px; display: none;}
+</style>
+<div class="t_pic">
+	<ul>
+		<li>
+			<img src="images/part05_20.png" alt="">
+			<div class="sc_pic"><img src="images/part05_25.png" alt=""></div>
+		</li>
+		<li>
+			<img src="images/part05_22.png" alt="">
+			<div class="sc_pic"><img src="images/part05_25.png" alt=""></div>
+		</li>
+		<li>
+			<img src="images/part05_20.png" alt="">
+			<div class="sc_pic"><img src="images/part05_25.png" alt=""></div>
+		</li>
+	</ul>
+</div>
+<script type="text/javascript">
+
+	$(function(){ 
+		var  flag=true;
+			 setInterval(showTime, 1200);
+			 function showTime()
+			 {
+				if(flag){
+					$(".sc_pic").hide();
+					flag=false;
+				}else{
+					$(".sc_pic").show();
+					flag=true;
+				}
+				
+			 }			
+		})
+
+	
+</script>
 </body>
 </html>
