@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS渐变</title>
+	<style type="text/css">
+		ul li{ list-style: none; }
+		#oop {
+		  width: 100px; 
+		  height: 30px;
+		  background: -webkit-linear-gradient(red, blue); /* Safari 5.1 - 6.0 */
+		  background: -o-linear-gradient(red, blue); /* Opera 11.1 - 12.0 */
+		  background: -moz-linear-gradient(red, blue); /* Firefox 3.6 - 15 */
+		  background: linear-gradient(red, blue); /* 标准的语法 */
+		}
+		#uup {
+		  width: 300px; 
+		  height: 100px;
+		  opacity: 0.6; 
+		  transition: width 2s;   /* css过渡 transition */
+		  -webkit-transition:width 2s; /* css过渡 transition */
+		  background: -webkit-linear-gradient(left, red , blue); /* Safari 5.1 - 6.0 */
+		  background: -o-linear-gradient(right, red, blue); /* Opera 11.1 - 12.0 */
+		  background: -moz-linear-gradient(right, red, blue); /* Firefox 3.6 - 15 */
+		  background: linear-gradient(to right, red , blue); /*  标准的语法（必须放在最后） */
+		}
+		#uup:hover{ width: 600px; }  /* css过渡 transition */
+
+		/* 缩略图 */
+		#ST img{
+		 width: 200px;
+		 height: 200px;
+		 border: 1px solid #ddd; 
+		 border-radius: 4px;
+		 padding: 4px;
+		}
+		/* 圆角 */
+		.rad img{ 
+			width: 90px;
+			height: 90px;
+			border-radius: 50%; 
+		}
+		.zsy img{
+			max-width: 100%;
+			height: auto;
+			/* 修改所有图片的颜色为黑白 (100% 灰度)*/
+			-webkit-filter:grayscale(100%);  /* Chrome, Safari, Opera */
+			filter: grayscale(100%);
+		}
+		/* 选择父级下第一个元素和最后一个元素 */
+		.ulist li:first-child{ color:red; }
+		.ulist li:last-child{ color:blue; }
+
+		/* :nth-child(n)  来自动判断第4个 */
+		.dad{ width: 140px; }
+		.dad li:nth-child(4n){ border-bottom: 1px dashed #ff0000; }    /* 4n就是4的倍数都加这个样式 http://www.16css.com/divcss/css3/996.html*/
+
+
+
+		.button{
+			background-color: #4CAF50; /* Green */
+		    border: none;
+		    color: white;
+		    padding: 15px 32px;
+		    text-align: center;
+		    text-decoration: none;
+		    display: inline-block;
+		    font-size: 16px;
+		    margin: 4px 2px;
+		    cursor: pointer;
+		}
+		.button2 {background-color: #008CBA;} /* Blue */
+		.button3 {background-color: #f44336;} /* Red */ 
+		.button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+		.button5 {background-color: #555555;} /* Black */
+	</style>
+	<script src="js/html5media.min.js"></script>
+</head>
+<body>
+	<div id="oop"></div><br/>
+	<div id="uup"></div><br>
+	<div id="ST"><img src="./images/112.jpg" alt="缩略图"></div>
+	<p class="rad"><img src="./images/112.jpg" alt="radius"></p>
+	<p class="zsy"><img src="./images/51.jpg" alt="自适应图片"></p>
+	<ul class="ulist">
+		<li>aaa</li>
+		<li>bbb</li>
+		<li>ccc</li>
+	</ul>
+	<ul class="dad">
+		<li>uosdf  dfsf asa d</li>
+		<li>uosdf  dfsf asa d</li>
+		<li>uosdf  dfsf asa d</li>
+		<li>uosdf  dfsf asa d</li>
+		<li>uosdf  dfsf asa d</li>
+		<li>uosdf  dfsf asa d</li>
+		<li>uosdf  dfsf asa d</li>
+		<li>uosdf  dfsf asa d</li>
+		<li>uosdf  dfsf asa d</li>
+	</ul><br/>
+	<button class="button">Green</button>
+	<button class="button button2">Blue</button>
+	<button class="button button3">Red</button>
+	<button class="button button4">Gray</button>
+	<button class="button button5">Black</button>
+	<div class="vedio">
+		<p>HTML视频播放</p>
+		<video width="100%" controls autobuffer>
+		    	<source src="images/principle1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+		</video>
+	</div>
+</body>
+</html>

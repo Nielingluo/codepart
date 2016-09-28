@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<style type="text/css">
+		*{ margin: 0; padding: 0; }
+		ul li{ list-style: none; }
+		.oop{ width: 440px; height: 150px; border:  1px solid #ff0000;  position: relative; margin: 0 auto;}
+		.oop li{  width: 120px;  float: left; text-align: center;  margin-top: 10px;}
+		.chage a{ display: block; width: 120px; height: 30px;  background: #ccc;  text-decoration: none; margin: 0 auto; text-align: center; line-height: 30px;}
+	</style>
+</head>
+<body>
+	<div class="subcamra">
+		<div class="oop">
+			<ul>
+				<li>索尼</li>
+				<li>三星</li>
+				<li>松下</li>
+				<li>宏康</li>
+				<li>富士</li>
+				<li>宾达</li>
+				<li>佳能</li>
+				<li>柯达</li>
+				<li>理光</li>
+				<li>爱国者</li>
+				<li>铭记</li>
+				<li>奥林巴斯</li>
+				<li>卡西欧</li>
+				<li>其他品牌</li>
+			</ul>
+		</div>
+		<div class="chage">
+			<a href="javascript:;"><span>显示全部品牌</span></a>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			
+		/*	$(".chage").click(function(){
+				$(".oop li:gt(5):not(:last)").hide();      //查找li索引值大于5不包括最后一个li的元素并隐藏
+				$(".chage span").text("精简显示品牌");
+				$(".oop li").filter(":contains('三星'),:contains('宾达')").css("color",'#ff0000');   //过滤元素并给元素添加样式
+			})*/
+
+
+			/*var $camcatory = $(".oop li:gt(5):not(:last)");
+				$camcatory.hide();
+			var $btn = $(".chage span");
+				$btn.show();
+			$btn.click(function(){
+				$btn.text("精简显示品牌");
+				$camcatory.show();
+				$(".oop li").filter(":contains('三星'),:contains('柯达'),:contains('卡西欧')").css("color","red");
+				return false;
+			})
+			*/
+
+
+			/*if($camcatory.is(':visible')){
+				$camcatory.hide();
+				$btn.text("显示全部品牌");
+				$(".oop li").filter(":contains('三星'),:contains('柯达'),:contains('卡西欧')").css("color","#000");
+			}else{
+				$camcatory.show();
+				$btn.text("精简显示品牌");
+				$(".oop li").filter(":contains('三星'),:contains('柯达'),:contains('卡西欧')").css("color","red");
+			}*/
+
+
+			/*上面三段代码合成*/
+			var $camcatory = $(".oop li:gt(5):not(:last)");
+				$camcatory.hide();
+			var $btn = $(".chage span");
+				$btn.show();
+			$btn.click(function(){
+				if($camcatory.is(":visible")){
+					$camcatory.hide();
+					$btn.text("显示全部品牌");
+					$(".oop li").filter(":contains('三星'),:contains('柯达'),:contains('卡西欧')").css("color","#000");
+				}else{
+					$btn.text("精简显示品牌");
+					$camcatory.show();
+					$(".oop li").filter(":contains('三星'),:contains('柯达'),:contains('卡西欧')").css("color","red");
+					return false;
+				}
+
+			})
+
+
+
+				//PAGE-59 未成功~  1.9不支持toggle() 方法
+				/*var $camcatory = $(".oop li:gt(5):not(:last)");
+					$camcatory.hide();
+				var $btn = $(".chage span");
+					$btn.show();
+				$btn.click(function(){
+					$camcatory.toggle(function(){
+						$camcatory.hide();
+						$btn.text("显示全部品牌");
+						$(".oop li").filter(":contains('三星'),:contains('柯达'),:contains('卡西欧')").css("color","#000");
+					},function(){
+						$btn.text("精简显示品牌");
+						$camcatory.show();
+						$(".oop li").filter(":contains('三星'),:contains('柯达'),:contains('卡西欧')").css("color","red");
+						return false;
+					})
+
+				})*/
+		
+		})
+	</script>
+</body>
+</html>

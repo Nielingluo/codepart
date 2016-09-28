@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动态框</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<style type="text/css">
+		#list{ width: 1000px; height: auto; }
+		#list li{ float: left;  margin-left: 30px; margin-top: 30px;}
+		#list li img{ width: 300px; height: 180px; }
+		
+		#Bigpic{ position: fixed; top: 0; left: 0; z-index: 1; width: 100%; height: 100%; overflow:hidden; background: #000; padding-top: 100px; opacity: 0.8; display: none;}
+		#Big_con img{display: block; width: 800px; height: 600px; margin: 0 auto; z-index: 2;}
+		#close{ display: block; position: absolute; top: 30px; right: 50px; font-size: 30px; color: #fff; cursor: pointer;}
+		#txt{width: 800px; height: 600px; margin: 0 auto; margin-top: 10px; font-size: 20px; max-width: 800px; color: #fff; }
+
+		/* Add Animation */
+		#Bpic,#txt{-webkit-animation-name: zoom; -webkit-animation-duration: 0.6s; animation-name: zoom; animation-duration: 0.6s; }
+		@-webkit-keyframes zoom {
+		    from {-webkit-transform: scale(0)} 
+		    to {-webkit-transform: scale(1)}
+		}
+
+		@keyframes zoom {
+		    from {transform: scale(0.1)} 
+		    to {transform: scale(1)}
+		}
+	</style>
+</head>
+<body>
+	<div id="list">
+		<!-- <img src="images/img2.jpg" alt="爆炸" id="list1"> -->
+		<ul id="listPic">
+			<li><img src="images/img1.jpg" alt="地图"></li>
+			<li><img src="images/img2.jpg" alt="爆炸"></li>
+			<li><img src="images/img3.jpg" alt="梦想"></li>
+			<li><img src="images/img1.jpg" alt="地图"></li>
+			<li><img src="images/img2.jpg" alt="爆炸"></li>
+			<li><img src="images/img3.jpg" alt="梦想"></li>
+		</ul> 
+	</div>
+	<div class="Bigpic" id="Bigpic">
+		<div class="Big_con" id="Big_con">
+			<span id="close">X</span>
+			<img src="images/0.gif" alt="加载" id="Bpic">
+			<p id="txt">文字撰写中……</p>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+
+	window.onload=function(){
+		
+
+		var OUL = document.getElementById('listPic');
+		var OLI = OUL.getElementsByTagName('li');
+
+		var OL1 = document.getElementById('list1')
+		var Bpic = document.getElementById('Bpic');
+		var Otxt = document.getElementById('txt');
+		var Bigpic = document.getElementById('Bigpic');
+		var Oclose = document.getElementById('close');
+
+
+		function BP(){
+			Bpic.src=OL1.src;
+			Otxt.innerHTML=OL1.alt;
+		}
+		//BP();
+		
+
+
+		/*OLI[1].onclick=function(){
+			Bigpic.style.display='block';
+				Bpic.src=OL1[1].src;
+		}*/
+
+
+		for(var i=0; i<OLI.length;i++){
+			OLI[i].onclick=function(){
+				/*Bigpic.style.display='block';
+				Bpic.src=this.src;*/
+				//this.getElementsByTagName('img')[0];  //找到li中的img
+				Bigpic.style.display='block';
+				Bpic.src=this.getElementsByTagName('img')[0].src;
+			}
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// http://zhidao.baidu.com/question/579314298.html
+
+
+
+
+
+
+
+
+
+
+
+		/*OL1.onclick=function(){
+			Bigpic.style.display='block';
+			BP();
+		}
+*/
+
+
+
+
+
+		//关闭弹窗
+		Oclose.onclick=function(){
+			Bigpic.style.display='none';
+		}
+	}
+	</script>
+</body>
+</html>

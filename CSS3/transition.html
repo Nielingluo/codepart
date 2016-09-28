@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>transition动画可以控制HTML组件的某个属性发生改变时会经历一段时间、以平滑简便的方式发生改变，这就产生了动画效果</title>
+	<style type="text/css">
+		div{ 
+			width: 400px;
+			height: 50px; 
+			color: #fff;
+			border: 1px solid #000;
+			background: #ff0000;
+			padding: 10px;
+			-webkit-transition: background 4s linear;
+			-o-transition: background 4s linear;
+			transition: background 4s linear;
+		}
+		div:hover{ 
+			background: blue;
+			color: #fff;
+		}
+
+		/* 气球特效 */
+		img#target{
+			position: absolute;
+			width: 300px;
+			height: 300px;
+			/*指定气球图片的left、top属性会采用平滑渐变的方式来改变*/
+			-webkit-transition: left 5s linear,top 5s linear;
+			-o-transition: left 5s linear,top 5s linear;
+			transition: left 5s linear,top 5s linear;
+		}
+	</style>
+</head>
+<body>
+	<div>鼠标滑过颜色渐变</div>
+	<img src="http://hbimg.b0.upaiyun.com/8e09a98c127e1e9bfce9c43ac0c4de184c9796295f175-H7GWk6_fw658" alt="" id="target">
+	<script type="text/javascript">
+		var target = document.getElementById("target");
+		target.style.left="0px";
+		target.style.top="0px";
+		// 为鼠标按下事件绑定监听器
+		document.onmousedown = function (evt) {
+			//将鼠标事件的X\Y坐标赋给气球图片的left\top
+			target.style.left = evt.pageX + "px";
+			target.style.top  = evt.pageY + "px";
+		}
+	</script>
+</body>
+</html>

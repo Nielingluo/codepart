@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>news</title>
+	<style type="text/css">
+		#list_new li{list-style: none; width: 600px; height: 30px; line-height: 30px; font-size: 18px; }
+	</style>
+</head>
+<body>
+	<input type="button" value="生成新闻" id="CreatN">
+	<ul id="list_new"></ul>
+	<script type="text/javascript">
+		var CreatN = document.getElementById('CreatN');
+		var oUl = document.getElementById('list_new');
+		var arr=[
+			['四川达州连发两次橙色高温预警 三万斤鱼被热死'],
+			['中国航空公司否认“飞越俄禁飞区”：没有偏离航线'],
+			['人民日报评老虎袭人：舆论别成另一只伤人“老虎”'],
+			['中国男性平均身高排世界第93名 比日本高1公分'],
+			['江苏徐州规划局被曝集体提前下班 16:40开始离岗']
+		];
+		var Onoff = true;
+
+		CreatN.onclick=function(){
+			if(Onoff){
+				for(var i=0;i<5;i++){
+					oUl.innerHTML += '<li>' + arr[i] + '</li>';
+				}
+			}
+			Onoff = false;
+			
+		}
+		
+		
+
+
+	</script>
+</body>
+</html>
+
+

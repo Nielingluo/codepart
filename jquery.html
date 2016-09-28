@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<style type="text/css">
+		.succimg{width: 427px; height: 209px;position: absolute; top: 20%;left: 30%; z-index: 9999; }
+	</style>
+</head>
+<body>
+<button id="sub2">提交</button>
+<div class="succ"></div>
+	<script type="text/javascript">
+		$(function(){
+			$("#sub2").click(function(){
+				//$(".succ").text("OOOOOOOOOOOO");
+				$(".succ").append("<img src='http://m1.bjyestar.com/zt/lyb/images/03.png' class='succimg'/>").addClass("succimg");
+			})
+
+		})
+	</script>
+</body>
+</html>

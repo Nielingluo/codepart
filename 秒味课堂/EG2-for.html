@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<style type="text/css">
+		#wrapper{ width: 517px; height: 600px; position: relative; overflow: hidden;}
+		#mask{ width: 517px; height: 600px; position: absolute; top: 0px; left: 0px; background: #ccc; z-index: 2;}
+		#mask li{ width: 50px; height: 50px; border: 1px solid #fff; float: left;}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="mask"></div>
+	</div>
+	<script type="text/javascript">
+		var omask = document.getElementById('mask');
+
+		for(var i=0; i<100; i++){
+			omask.innerHTML += '<li></li>';
+		}
+		
+
+	</script>
+</body>
+</html>

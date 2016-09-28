@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>秒味课堂js热身运动课后作业</title>
+	<style type="text/css">
+		*{ padding: 0px; margin: 0px;}
+		ul li{ list-style: none;}
+		.clear{ clear: both;}
+		#wrap{ width: 100%; height: auto; position: relative; top: 10px; left: 20px;}
+		button{ display: inline-block; width: 90px; height: 30px; background: #ff0000; color: #fff; font-size: 18px; line-height: 30px; border: none; outline: none;}
+		#control{ width: 60px; height: 60px; border: 2px solid #000;}
+		.model{ display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: #000; opacity: 0.6; z-index: 1;}
+
+
+
+/*  	position: fixed; Stay in place
+    z-index: 1; Sit on top
+    padding-top: 100px; Location of the box
+    left: 0;
+    top: 0;
+    width: 100%; Full width
+    height: 100%; Full height
+    overflow: auto; Enable scroll if needed
+    background-color: rgb(0,0,0); Fallback color
+    background-color: rgba(0,0,0,0.9); Black w/ opacity
+ */
+
+
+
+
+
+
+
+
+		#Mulset{ position: absolute; top: 200px; left: 400px; width: 300px; height: 200px; border: 3px solid #ccc; display: none; z-index: 2;}
+		#bg{ width: 240px; height: 200px; margin: 0 auto; margin-top: 20px;}
+		#bg ul{ height: 50px;}
+		#bg li{ float: left; text-align: center; height: 30px; line-height: 30px;}
+		#choose{ width: 110px; height: 30px; float: right;}
+		.color{ width: 30px; height: 30px; margin-left: 6px; color: #fff; line-height: 20px; cursor: pointer;}
+		.wh{ width: 30px; height: 30px; margin-left: 6px; color: #000; line-height: 20px; cursor: pointer; border: 1px solid #dedede;}
+		#red{ background: red;}
+		#yellow{ background: yellow;}
+		#blue{ background: blue;}
+		#btn{ width: 140px; margin: 0 auto;}
+		#btn input{ width: 60px; height: 20px; font-size: 16px; background: blue; color: #fff; line-height: 20px;}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="maindiv">
+			请为下面的DIV设置样式:
+			<button id="set">点我设置</button>
+		</div>
+		<div id="control"></div>
+		<div class="model" id="model">
+			<div id="Mulset">
+				<div id="bg">
+					<ul>
+						<li id="choose">请选择背景色:</li>
+						<li id="red" class="color">红</li>
+						<li id="yellow" class="color">黄</li>
+						<li id="blue" class="color">蓝</li>
+					</ul>
+					<div class="clear"></div>
+					<ul>
+						<li id="choose">请选择宽:</li>
+						<li id="w2" class="wh">200</li>
+						<li id="w3" class="wh">300</li>
+						<li id="w4" class="wh">400</li>
+					</ul>
+					<div class="clear"></div>
+					<ul>
+						<li id="choose">请选择高:</li>
+						<li id="h2" class="wh">200</li>
+						<li id="h3" class="wh">300</li>
+						<li id="h4" class="wh">400</li>
+					</ul>
+					<div id="btn">
+						<input type="submit" value="确认" id="qr">
+						<input type="reset" value="取消" id="qx">
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+<script type="text/javascript">
+	window.onload= function(){
+		var Oset = document.getElementById('set');
+		var Osetdiv = document.getElementById('Mulset');
+		var Ored = document.getElementById('red');
+		var Oyellow = document.getElementById('yellow');
+		var Oblue = document.getElementById('blue');
+		var Omodel = document.getElementById('model');
+		// 宽度变化
+		var Ow2 = document.getElementById('w2');
+		var Ow3 = document.getElementById('w3');
+		var Ow4 = document.getElementById('w4');
+
+		// 高度变化
+		var Oh2 = document.getElementById('h2');
+		var Oh3 = document.getElementById('h3');
+		var Oh4 = document.getElementById('h4');
+		var Ocontrol = document.getElementById('control');
+
+		//按钮
+		var Oqr = document.getElementById('qr');
+		var Oqx = document.getElementById('qx');
+
+
+		Oset.onclick = function(){
+			Omodel.style.display= 'block';
+			Osetdiv.style.display= 'block';
+		}
+		//颜色变化
+		Ored.onclick = function(){
+			Ocontrol.style.background='red';
+		}
+		Oyellow.onclick = function(){
+			Ocontrol.style.background='yellow';
+		}
+		Oblue.onclick = function(){
+			Ocontrol.style.background='blue';
+		}
+
+		//宽度变化
+		Ow2.onclick = function(){
+			Ocontrol.style.width='200px';
+		}
+		Ow3.onclick = function(){
+			Ocontrol.style.width='300px';
+		}
+		Ow4.onclick = function(){
+			Ocontrol.style.width='400px';
+		}
+
+		//高度变化
+		Oh2.onclick = function(){
+			Ocontrol.style.height='200px';
+		}
+		Oh3.onclick = function(){
+			Ocontrol.style.height='300px';
+		}
+		Oh4.onclick = function(){
+			Ocontrol.style.height='400px';
+		}
+
+		//按钮
+		Oqr.onclick = function(){
+			Omodel.style.display='none';
+			Osetdiv.style.display= 'none';
+		}
+		Oqx.onclick = function(){
+			Ocontrol.style.width='60px';
+			Ocontrol.style.height='60px';
+			Ocontrol.style.border='2px solid #000';
+		}
+	}
+</script>
+</body>
+</html>

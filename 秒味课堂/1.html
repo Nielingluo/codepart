@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>属性操作</title>
+</head>
+<body>
+	<input type="text" id="sr">
+	<select id="select1">
+		<option>北京</option>
+		<option>上海</option>
+		<option>杭州</option>
+	</select>
+	<input type="button" value="按钮" id="an">
+	<br>
+	<img src="https://www.baidu.com/img/baidu_jgylogo3.gif" id="img">
+	<p id="txt">this is a txt</p>
+	<script type="text/javascript">
+		window.onload=function(){
+			var an = document.getElementById('an');
+			var sr = document.getElementById('sr');
+			var select1 = document.getElementById('select1');
+			var Img = document.getElementById('img');
+			var Otxt = document.getElementById('txt');
+			an.onclick=function(){
+				//alert(5);
+				//alert(sr.id);
+				//alert(sr.value);
+				//alert(select1.value);
+				//alert(sr.value + '在' + select1.value);
+
+				// 属性写操作
+				// 元素.属性名=新的值
+				/*an.value='button';
+				sr.value= select1.value;*/
+
+				//读写操作实例
+				//Img.src=sr.value;
+
+				//innerHTML 读取元素内的所有代码
+				//innerHTML = 新的值
+				//alert(Otxt.innerHTML);
+				//Otxt.innerHTML = 'HElo wodl';
+				Otxt.innerHTML = sr.value;
+				sr.value ='';
+
+			}
+			
+		}
+	</script>
+</body>
+</html>

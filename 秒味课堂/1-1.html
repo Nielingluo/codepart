@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>属性操作实例1</title>
+	<style type="text/css">
+		#tips{ width: 300px; height: 300px; background: #ccc;border: 1px solid #ddd; color: #000;}
+		#tx img{ width: 40px; height: 40px; border-radius: 50%; display: inline-block;}
+		.red{ width: 300px; background: red; color: yellow;}
+	</style>
+</head>
+<body>
+	<div id="tips"></div>
+	<span id="tx"><img src="https://sfault-avatar.b0.upaiyun.com/317/056/3170566414-5720a99d7323d_big64" id="txpic"></span>
+	<input type="text" id="sr">
+	<input type="button" id="tj" value="提交">
+	<br><hr><p>我是邪恶的分割线</p><br>
+	<input type="button" value="+" id="plus">
+	<input type="button" value="-" id="down">
+	<input type="button" value="红" id="red">
+	<p id="ptxt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<script type="text/javascript">
+		window.onload=function(){
+			var Otj = document.getElementById('tj');
+			var Osr = document.getElementById('sr');
+			var Otx = document.getElementById('tx');
+			var Otips = document.getElementById('tips');
+			//为上面图片添加点击切换事件
+			var Otxpic = document.getElementById('txpic');
+			var Ooff = true;  //创造一个开关  布尔值 true真1 false假0
+
+		/*	Otj.onclick=function(){
+				//a = a+b 可以理解为 a += b
+				//添加
+				//Otips.innerHTML=Otips.innerHTML + Otx.innerHTML + Osr.value + '<br/>';
+				Otips.innerHTML += Otx.innerHTML + Osr.value + '<br/>';
+				Osr.value='';
+			}*/
+
+			//上例子添加if判断
+			Otj.onclick=function(){
+				if(Osr.value!=''){
+					Otips.innerHTML += Otx.innerHTML + Osr.value + '<br/>';
+					Osr.value='';
+				}else{
+					alert('请输入至少一个字符串');
+				}
+				
+			}
+
+			//为上面图片添加点击切换事件 在js中if判断不能为图片相对路径详细见 【5-JS基础-属性操作注意事项】 之秒味视频
+			Otxpic.onclick=function(){
+				if(Ooff){
+					Otxpic.src="http://img.mukewang.com/5700f5770001cc4901800180-200-200.jpg";
+					Ooff = false;
+				}else{
+					Otxpic.src="https://sfault-avatar.b0.upaiyun.com/317/056/3170566414-5720a99d7323d_big64";
+					Ooff = true;
+				}
+			}
+
+			//实例二 字体大小变化
+			var Oplus = document.getElementById('plus');
+			var Odown = document.getElementById('down');
+			var Op    = document.getElementById('ptxt');
+			var Ored  = document.getElementById('red');
+			var num   = 15;
+				Oplus.onclick=function(){
+					//num = num +2;
+					//num +=2;
+					//alert(num);
+					num ++;  // 每次递增一个数
+					// js中不允许出现'-'
+					// So:
+					// font-size  fontSize
+					// margin-top    marginTop
+					// padding-left    paddingLeft
+					Op.style.fontSize=num +'px';
+
+				}
+
+				Odown.onclick=function(){
+					num --;
+					Op.style.fontSize=num +'px';
+				}
+
+				//上面代码加入if判断语句
+				/*Odown.onclick=function(){
+					if(num>12){
+						num --;
+						Op.style.fontSize=num +'px';
+						alert(num);
+					}
+					
+				}
+*/
+				Ored.onclick=function(){
+					/*Op.style.width='300px';
+					Op.style.background='red';
+					Op.style.color='yellow';*/
+
+					// class 保留字  关键字:var function
+					// class=>className
+					Op.className='red';
+				}
+
+
+
+				//数组
+				var arr =['Num1','NUm2','Num3','LastNum'];
+				//alert(arr[0]); 
+				//alert(arr[arr.length-1]); //访问数组中最后一个值
+				arr.push('我是新来的额~') //往数组最后一位添加数据
+				//alert(arr[arr.length-1]);
+				//alert(arr);
+
+
+		}
+	</script>
+</body>
+</html>

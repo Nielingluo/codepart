@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>课程详细大纲－妙味课堂www.miaov.com</title>
+    <meta name="description" content="妙味课堂是北京最资深的前端开发培训机构，妙味课堂拥有系统的JavaScript、HTML5、CSS3、移动开发、远程培训等课程，并录制成最系统的前端开发视频教程，妙味课堂推出的VIP前端学习平台已经成为学习氛围最浓郁的前端学习圈">
+    <meta name="keywords" content="JavaScript远程培训,JS远程培训,JavaScript培训,JS培训,JavaScript教程,HTML5培训,CSS3培训,北京前端培训,移动端培训,北京移动端培训,北京JS培训,北京JavaScript培训,北京HTML5培训">
+    <link href="/static/common/images/favicon.ico" rel="icon">
+    <style>
+        @charset "utf-8";
+        /* CSS Document */
+        /*html,body { user-select: none; -moz-user-select: none; -webkit-user-select: none; }*/
+        body,
+        ul,
+        ol,
+        dl,
+        dd,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        input,
+        select,
+        textarea,
+        form {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, 'Microsoft YaHei';
+            color: #666;
+            font-size: 14px;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-width: 700px;
+        }
+        li {
+            list-style: none;
+        }
+        img {
+            border: none;
+            display: block;
+        }
+        input,
+        select,
+        textarea,
+        button {
+            outline: none;
+            border: none;
+            background-color: transparent;
+        }
+        em,
+        i,
+        dfn {
+            font-style: normal;
+        }
+        textarea {
+            resize: none;
+        }
+        a {
+            text-decoration: none;
+            color: #666;
+        }
+        button {
+            cursor: pointer;
+        }
+        button:focus {
+            border: none;
+            outline: none;
+            opacity: 0.6;
+            filter: alpha(opacity=60);
+        }
+        /*浮动*/
+        .fl {
+            float: left;
+        }
+        .fr {
+            float: right;
+        }
+        .clear:after,
+        .clear:before {
+            content: "";
+            display: table;
+        }
+        .clear:after {
+            clear: both;
+        }
+        .clear {
+            *zoom: 1;
+        }
+        body { background-color: #bcb3b3; }
+        .head { width: 100%; margin: 0 auto; height: 550px; background: url("images/bg.png") no-repeat center top; position: fixed; top: 0;
+            left: 0; }
+        .head_content { width: 80%; min-width: 700px; margin: 0 auto; height: 430px; overflow: hidden; }
+        .head_titie { margin-left: 10%; padding-top: 218px; background: url("images/miaov.png") no-repeat center 97px; float: left;
+            text-align:
+            center; }
+        .head_titie h3 { font-size: 60px; font-weight: normal; color: #e15671; }
+        .head_titie p { font-size: 20px; color: #4f4e49; }
+        .content { width: 100%; margin-top: 430px; position: relative; z-index: 2; background-color: #fff; }
+        .demand { width: 80%; min-width: 700px; margin: 0 auto; height: 180px; }
+        .demand ul { width: 100%; height: 148px; padding-top: 32px; }
+        .demand li { width: 33%; height: 100%; float: left; }
+        .demand .icon { width: 56px; height: 56px; margin: 0 auto 14px; }
+        .demand .text { width: 200px; margin: auto; line-height: 24px; }
+        .knowledge .icon { background: url("images/knowledge.png"); }
+        .knowledge .text { color: #44c8c2; }
+        .qq .icon { background: url("images/qq.png"); }
+        .qq .text { color: #64a611; }
+        .phone .icon { background: url("images/phone.png"); }
+        .phone .text { color: #e15671; }
+        .box { width: 100%; padding-bottom: 20px; background-color: #f1f4f9; }
+        .table { width: 80%; min-width: 700px; margin: auto; }
+        .table_title { width: 100%; height: 40px; padding: 30px 0 20px 0; }
+        .table_title .chapter,.table_title .spread { float: left; width: 72px; padding-left: 38px; height: 36px; line-height: 36px; border: 2px solid #53b5c0; color: #53b5c0; }
+        .table_title .active { color: #fff; }
+        .table_title .chapter { background: url("images/chapter.png") no-repeat 13px center; }
+        .table_title .chapter.active { background: #53b5c0 url("images/chapter_active.png") no-repeat 13px center; }
+        .table_title .spread { background: url("images/spread.png") no-repeat 13px center; }
+        .table_title .spread.active { background: #53b5c0 url("images/spread_active.png") no-repeat 13px center; }
+        .table_title span { float: left; height: 40px; line-height: 40px; margin-left: 20px; }
+        .table_title .details { float: left; width: 72px; height: 38px; padding: 0 38px 0 14px; border:
+        1px solid #e15671; color: #e15671; font-size: 18px; line-height: 38px; background: url("images/details.png") no-repeat 96px center; }
+        .table_title .details:hover { color: #fff; background: #e15671 url("images/details_active.png") no-repeat 96px center; }
+        .curriculum { padding: 0 20px 20px; margin-bottom: 10px; background-color: #fff; }
+        .curriculum h3 { height: 50px; font-size: 16px; font-weight: 500; line-height: 50px; color: #000; }
+        .curriculumRow { height: 44px; overflow: hidden; margin-bottom: 2px; cursor: pointer; position: relative; }
+        .curriculumNum { height: 44px; width: 44px; text-align: center; border-radius: 0; float: left; display: inline; background-color: #e7f0f7; zoom: 1; color: #44bac8; position: relative; }
+        .curriculumNum strong { display: inline-block; vertical-align: middle; }
+        .curriculumNum span { display: inline-block; vertical-align: middle; height: 100%; }
+        .curriculumRow dl { margin-left: 44px; color: #858d9a; }
+        .curriculumRow dt,.curriculumRow dd { height: 44px; line-height: 44px; }
+        .sj { position: absolute; width: 0; height: 0; overflow: hidden; border-width: 7px; border-style: solid
+        dashed dashed dashed; border-color: #93cfd8 transparent transparent transparent; }
+        .curriculumRow dt { padding: 0 20px; background: url("images/open.png") no-repeat 97% center; position: relative; z-index: 2; }
+        .curriculumRow dd { margin-left: 44px; padding-left: 20px; border-left: 1px solid #93cfd8; position: relative; }
+        .curriculumRow dd:hover { background-color: #f8f9fc; }
+        .dot { width: 13px; height: 13px; background: url("images/dot.png"); position: absolute; }
+        .curriculumRow dd .dot { top: 15px; left: -7px; }
+        .curriculumRow dd .sj { top: 0; left: -7px; }
+        .foot { width: 100%; height: 126px; position: relative; z-index: 2; background-color: #fff; }
+        .foot_content { width: 900px; margin: 0 auto; padding-top: 30px; }
+        .foot_text { border-left: 1px solid #999; padding-left: 30px; margin-left: 30px; font-size: 12px;
+            line-height: 24px; }
+        .foot_text li { float: left; height: 24px; }
+        .foot_text span { padding: 0 10px; }
+        .foot_text p { height: 24px; }
+        .backTop { width: 80px; height: 80px; position: fixed; right: 20px; bottom: 60px; z-index: 999; background: url("images/top.png"); display: none; }
+        .backTop:hover { background: url("images/top_active.png"); }
+        .nav { width: 178px; border: 1px solid #5fb4c4; background-color: #fff; position: fixed; right: 20px; z-index:
+        999; top: 100px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; display: none; }
+        .nav dl { height: 24px; overflow: hidden; }
+        .nav dt { height: 24px; background-color: #5fb4c4; line-height: 24px; color: #fff; text-align: center; position: relative; margin-bottom: 6px; cursor: pointer; }
+        .nav dd { height: 24px; line-height: 24px; font-size: 12px; cursor: pointer; color: #8a8e9c; position:
+        relative; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; }
+        .nav dd span { display: inline-block; height: 24px; margin-left: 14px; padding-left: 10px; border-left: 1px solid #dff0f3; }
+        .nav dd:hover,.nav dd.active { background-color: #e7eff8; color: #5fb4c4; }
+        .nav dd:hover span,.nav dd.active span { border-color: #cce3ee; }
+        .nav dd:hover .dot,.nav dd.active .dot { background: url("images/dot3.png"); }
+        .nav .sj { border-top-color: #5fb4c4; top: 24px; left: 8px; }
+        .nav .dot { width: 7px; height: 7px; background: url("images/dot2.png"); position: absolute; left: 11px; top: 8px; }
+    </style>
+</head>
+<body>
+<div class="head">
+    <div class="head_content">
+        <div class="head_titie">
+            <h3 class="">零基础课程</h3>
+            <p>PC\移动端\响应式\bootstrap\less...</p>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="demand">
+        <ul>
+            <li class="knowledge">
+                <div class="icon"></div>
+                <div class="text">学前要求：电脑打字熟练，能独立上网查资料下载并安装软件；年满18周岁、兴趣浓厚肯做练习</div>
+            </li>
+            <li class="qq">
+                <div class="icon"></div>
+                <div class="text">课程咨询QQ：3277256077</div>
+            </li>
+            <li class="phone">
+                <div class="icon"></div>
+                <div class="text">课程咨询手机：18810588941</div>
+            </li>
+        </ul>
+    </div>
+    <div class="box">
+        <div class="table">
+            <div class="table_title">
+                <div class="fl">
+                    <a href="javaScript:;" class="chapter active">查看章节</a>
+                    <a href="javaScript:;" class="spread">全部展开</a>
+                    <span>共0个阶段，15 章节，422 小节知识点。</span>
+                </div>
+                <div class="fr">
+                    <a href="/index.php/course/coursedetail/cid/11" class="details">课程详情</a>
+                </div>
+            </div>
+            <div class="table_list">
+                <!--初级部分-->
+                                                <div class="curriculum" style="padding-top: 20px;">
+                                        <div class="curriculumRow">
+                        <p class="curriculumNum">
+                            <strong>1</strong>
+                            <span></span>
+                        </p>
+                        <dl>
+                            <dt>第一章：前端代码初识</dt>
+                                                        <dd>
+                                                                <i class="sj"></i>
+                                                                                                <i class="dot"></i>
+                                                                1.1 - 前端开发工作流程介绍                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                1.2 - 前端开发所需软件                            </dd>
+                                                        <dd>
+                                                                                                1.2.1 - Photoshop（切图、修图、测量）                            </dd>
+                                                        <dd>
+                                                                                                1.2.2 - 编辑器                            </dd>
+                                                        <dd>
+                                                                                                1.2.3 - 浏览器：标准浏览器、IE浏览器                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                1.3 - 前端开发语言介绍                            </dd>
+                                                        <dd>
+                                                                                                1.3.1 - html（Hypertext Markup Language） 超文本标记语言                            </dd>
+                                                        <dd>
+                                                                                                1.3.2 - css（Cascading Style Sheets） 层叠样式表                            </dd>
+                                                        <dd>
+                                                                                                1.3.3 - js（JavaScript） 脚本语言                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                1.4 - 第一个HTML页面                            </dd>
+                                                        <dd>
+                                                                                                1.4.1 - 标记（标签）                            </dd>
+                                                        <dd>
+                                                                                                1.4.2 - 标签嵌套关系                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                1.5 - 样式表                            </dd>
+                                                        <dd>
+                                                                                                1.5.1 - 行间样式表                            </dd>
+                                                        <dd>
+                                                                                                1.5.2 - 内部样式表                            </dd>
+                                                        <dd>
+                                                                                                1.5.3 - 外部样式表                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                1.6 - 常见样式                            </dd>
+                                                        <dd>
+                                                                                                1.6.1 - 属性：属性值                            </dd>
+                                                        <dd>
+                                                                                                1.6.2 - width/height                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                1.7 - border                            </dd>
+                                                        <dd>
+                                                                                                1.7.1 - border-width                            </dd>
+                                                        <dd>
+                                                                                                1.7.2 - border-style                            </dd>
+                                                        <dd>
+                                                                                                1.7.3 - border-color                            </dd>
+                                                        <dd>
+                                                                                                1.7.3.1 - 常用颜色模式--关键字                            </dd>
+                                                        <dd>
+                                                                                                1.7.3.2 - 常用颜色模式--rgb                            </dd>
+                                                        <dd>
+                                                                                                1.7.3.3 - 常用颜色模式--十六进制                            </dd>
+                                                        <dd>
+                                                                                                1.7.4 - border-top                            </dd>
+                                                        <dd>
+                                                                                                1.7.5 - border-right                            </dd>
+                                                        <dd>
+                                                                                                1.7.6 - border-bottom                            </dd>
+                                                        <dd>
+                                                                                                1.7.7 - border-left                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                1.8 - background                            </dd>
+                                                        <dd>
+                                                                                                1.8.1 - background-color                            </dd>
+                                                        <dd>
+                                                                                                1.8.2 - background-image                            </dd>
+                                                        <dd>
+                                                                                                1.8.3 - background-repeat                            </dd>
+                                                        <dd>
+                                                                                                1.8.4 - background-position                            </dd>
+                                                        <dd>
+                                                                                                1.8.5 - background-attachment                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                1.9 - 文字设置                            </dd>
+                                                        <dd>
+                                                                                                1.9.1 - font-weight                            </dd>
+                                                        <dd>
+                                                                                                1.9.2 - font-style                            </dd>
+                                                        <dd>
+                                                                                                1.9.3 - font-size                            </dd>
+                                                        <dd>
+                                                                                                1.9.4 - line-height                            </dd>
+                                                        <dd>
+                                                                                                1.9.5 - font-family                            </dd>
+                                                        <dd>
+                                                                                                1.9.6 - font复合样式                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                1.10 - 文本设置                            </dd>
+                                                        <dd>
+                                                                                                1.10.1 - color                            </dd>
+                                                        <dd>
+                                                                                                1.10.2 - text-align                            </dd>
+                                                        <dd>
+                                                                                                1.10.3 - text-indent                            </dd>
+                                                        <dd>
+                                                                                                1.10.4 - text-decoration                            </dd>
+                                                        <dd>
+                                                                                                1.10.5 - letter-spacing                            </dd>
+                                                        <dd>
+                                                                                                1.10.6 - word-spacing                            </dd>
+                                                        <dd>
+                                                                                                1.10.7 - white-space                            </dd>
+                                                        <dd>
+                                                                                                1.10.8 - TIPS：一个空格有多大？                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                1.11 - 超链接                            </dd>
+                                                        <dd>
+                                                                                                1.11.1 - href属性                            </dd>
+                                                        <dd>
+                                                                                                1.11.2 - 相对路径、绝对路径                            </dd>
+                                                        <dd>
+                                                                                                1.11.3 - 锚点 (#)                            </dd>
+                                                        <dd>
+                                                                                                1.11.4 - 下载                            </dd>
+                                                        <dd>
+                                                                                                1.11.5 - target属性                            </dd>
+                                                        <dd>
+                                                                                                1.11.6 - base标签                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                1.12 - padding                            </dd>
+                                                        <dd>
+                                                                                                1.12.1 - padding-top                            </dd>
+                                                        <dd>
+                                                                                                1.12.2 - padding-right                            </dd>
+                                                        <dd>
+                                                                                                1.12.3 - padding-bottom                            </dd>
+                                                        <dd>
+                                                                                                1.12.4 - padding-left                            </dd>
+                                                        <dd>
+                                                                                                1.12.5 - padding复合样式                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                1.13 - margin                            </dd>
+                                                        <dd>
+                                                                                                1.13.1 - margin-top                            </dd>
+                                                        <dd>
+                                                                                                1.13.2 - margin-right                            </dd>
+                                                        <dd>
+                                                                                                1.13.3 - margin-bottom                            </dd>
+                                                        <dd>
+                                                                                                1.13.4 - margin-left                            </dd>
+                                                        <dd>
+                                                                                                1.13.5 - margin复合样式                            </dd>
+                                                        <dd>
+                                                                                                1.13.6 - margin的问题                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                1.14 - 盒模型                            </dd>
+                                                        <dd>
+                                                                                                1.14.1 - 盒子大小                            </dd>
+                                                        <dd>
+                                                                                                1.14.2 - 盒子宽度                            </dd>
+                                                        <dd>
+                                                                                                1.14.3 - 盒子高度                            </dd>
+                                                                                    <dd><i class="dot"></i>本章节案例&练习：</dd>
+                                                                                    <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/717457bdc5996b3dc2c929acbc05aa61" target="_blank">>> 1-网易线框练习(一)</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/9a1cff56fdfac9315fffb742a8924aab" target="_blank">>> 3-关键字颜色区分</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/712e01fc726a49b02a5621ed2998956f" target="_blank">>> 4-简洁导航文字设置</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/b6bc48dc758c1ec6f892ae53cfa4b17b" target="_blank">>> 6-网易产品模块</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/8bef7e4ae98af3a056a279e5a940f7da" target="_blank">>> 7-模拟右键系统菜单</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/e4a087ba35bd1632db8c911912755f03" target="_blank">>> 8-模拟系统警告框弹出窗</a>
+                            </dd>
+                                                    </dl>
+                    </div>
+                                                            <div class="curriculumRow">
+                        <p class="curriculumNum">
+                            <strong>2</strong>
+                            <span></span>
+                        </p>
+                        <dl>
+                            <dt>第二章：H5标签与CSS选择器</dt>
+                                                        <dd>
+                                                                <i class="sj"></i>
+                                                                                                <i class="dot"></i>
+                                                                2.1 - a标签/span标签                            </dd>
+                                                        <dd>
+                                                                                                2.1.1 - a标签四个伪类                            </dd>
+                                                        <dd>
+                                                                                                2.1.2 - span标签                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                2.2 - 常用标签                            </dd>
+                                                        <dd>
+                                                                                                2.2.1 - 常用标签：h1-h6、p、strong、em、span、ul、ol、li、dl、dt、dd                            </dd>
+                                                        <dd>
+                                                                                                2.2.2 - HTML5新增标签：header、nav、footer、section、article、aside、time、mark…                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                2.3 - 特殊的img                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                2.4 - 常用选择器                            </dd>
+                                                        <dd>
+                                                                                                2.4.1 - id选择器                            </dd>
+                                                        <dd>
+                                                                                                2.4.2 - 类选择器                            </dd>
+                                                        <dd>
+                                                                                                2.4.3 - 标签选择器                            </dd>
+                                                        <dd>
+                                                                                                2.4.4 - 群组选择、包含选择器                            </dd>
+                                                        <dd>
+                                                                                                2.4.5 - 通配符                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                2.5 - 选择器优先级                            </dd>
+                                                        <dd>
+                                                                                                2.5.1 - 基础选择器优先级                            </dd>
+                                                        <dd>
+                                                                                                2.5.2 - 包含选择器优先级计算                            </dd>
+                                                        <dd>
+                                                                                                2.5.3 - 群组选择器优先级                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                2.6 - css reset                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                2.7 - 块元素及特征                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                2.8 - 内联元素及特征                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                2.9 - 块与内联的转换                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                2.10 - inline-block                            </dd>
+                                                        <dd>
+                                                                                                2.10.1 - inline-block的特性                            </dd>
+                                                        <dd>
+                                                                                                2.10.2 - inline-block的问题                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                2.11 - vertival-align                            </dd>
+                                                                                    <dd><i class="dot"></i>本章节案例&练习：</dd>
+                                                                                    <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/50ba83fb2a0fb2e70e71e71d9228a5ec" target="_blank">>> 1-IT产品有序列表（100%还原设计稿）</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/e575f5a5e20342040494839f4db4a5de" target="_blank">>> 2-热卖单品关键字（100%还原设计稿）</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/a2f7cccc0a82ec3ef8a4d1d74ad7f345" target="_blank">>> 3-商品推荐横排列表（编写H5结构）</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/5eddb133c5dc4b13981c909824c15e7f" target="_blank">>> 4-热卖商品竖排列表（编写H5结构）</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/9f029dd8e099929b41f110433b461574" target="_blank">>> 5-主推商品与关键字组合模块（编写H5结构）</a>
+                            </dd>
+                                                    </dl>
+                    </div>
+                                                            <div class="curriculumRow">
+                        <p class="curriculumNum">
+                            <strong>3</strong>
+                            <span></span>
+                        </p>
+                        <dl>
+                            <dt>第三章：浮动的深度剖析</dt>
+                                                        <dd>
+                                                                <i class="sj"></i>
+                                                                                                <i class="dot"></i>
+                                                                3.1 - float                            </dd>
+                                                        <dd>
+                                                                                                3.1.1 浮动的特性                            </dd>
+                                                        <dd>
+                                                                                                3.1.2 浮动的表现                            </dd>
+                                                        <dd>
+                                                                                                3.1.3 文档流                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                3.2 - clear                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                3.3 - 清浮动方法                            </dd>
+                                                        <dd>
+                                                                                                3.3.1 给容器加高度                            </dd>
+                                                        <dd>
+                                                                                                3.3.2 以浮制浮                            </dd>
+                                                        <dd>
+                                                                                                3.3.3 br清浮动                            </dd>
+                                                        <dd>
+                                                                                                3.3.4 inline-block清浮动                            </dd>
+                                                        <dd>
+                                                                                                3.3.5 after伪类 清浮动方法                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                3.4 - BFC                            </dd>
+                                                        <dd>
+                                                                                                3.4.1 BFC的作用                            </dd>
+                                                        <dd>
+                                                                                                3.4.2 触发BFC的条件                            </dd>
+                                                        <dd>
+                                                                                                3.4.3 overflow                            </dd>
+                                                                                    <dd><i class="dot"></i>本章节案例&练习：</dd>
+                                                                                    <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/f62d8f8f4463414368395d75cfeb8387" target="_blank">>> 1-全球通业务模块</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/86e63f38cfd87dc96e2c784e52a4e632" target="_blank">>> 2-明星荐片模块</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/41956072dc88d207675285da4c9989f3" target="_blank">>> 3-本周主打模块</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/b36319ceb52ed0eec917f1e599f7f358" target="_blank">>> 4-节气列表模块</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/c6e6c7fdbf0abd29acc2fe546ee13294" target="_blank">>> 5-时尚秀模块</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/ca322ba251385d679eb93489b7765eb5" target="_blank">>> 6-电影主打模块</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/5ee26c81c43f7fa3968c44cab120f633" target="_blank">>> 7-综合性复杂模块</a>
+                            </dd>
+                                                    </dl>
+                    </div>
+                                                            <div class="curriculumRow">
+                        <p class="curriculumNum">
+                            <strong>4</strong>
+                            <span></span>
+                        </p>
+                        <dl>
+                            <dt>第四章：定位进阶</dt>
+                                                        <dd>
+                                                                <i class="sj"></i>
+                                                                                                <i class="dot"></i>
+                                                                4.1 相对定位                            </dd>
+                                                        <dd>
+                                                                                                4.1.1 相对定位的表现                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                4.2 绝对定位                            </dd>
+                                                        <dd>
+                                                                                                4.2.1 绝对定位的表现                            </dd>
+                                                        <dd>
+                                                                                                4.2.2 定位层级                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                4.3 透明度/透明滤镜                            </dd>
+                                                        <dd>
+                                                                                                4.3.1 opacity：0~1                            </dd>
+                                                        <dd>
+                                                                                                4.3.2 filter:alpha(opacity=0~100)                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                4.4 固定定位                            </dd>
+                                                        <dd>
+                                                                                                4.4.1 固定定位的表现                            </dd>
+                                                        <dd>
+                                                                                                4.4.2 固定定位的问题                            </dd>
+                                                                                    <dd><i class="dot"></i>本章节案例&练习：</dd>
+                                                                                    <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/8312938c573606a869b707e9d923b36e" target="_blank">>> 1-鼠标移入线框变色</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/05363cbd9da2ca7ad90e32eeff3132b3" target="_blank">>> 2-鼠标移入底红消失</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/404862b74f815598d532b24e6f405e37" target="_blank">>> 3-图片层上方设置半透明层</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/d5663572da89ba634ca7bfb9fffec710" target="_blank">>> 4-综合练习-影片标高清图标层</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/9796633036f112b2d7ce40dc2b70a907" target="_blank">>> 5-大练习-影片标高清图标层</a>
+                            </dd>
+                                                    </dl>
+                    </div>
+                                                            <div class="curriculumRow">
+                        <p class="curriculumNum">
+                            <strong>5</strong>
+                            <span></span>
+                        </p>
+                        <dl>
+                            <dt>第五章：表格详解</dt>
+                                                        <dd>
+                                                                <i class="sj"></i>
+                                                                                                <i class="dot"></i>
+                                                                5.1 - 表格标签                            </dd>
+                                                        <dd>
+                                                                                                5.1.1 - table                            </dd>
+                                                        <dd>
+                                                                                                5.1.2 - thead                            </dd>
+                                                        <dd>
+                                                                                                5.1.3 - tbody                            </dd>
+                                                        <dd>
+                                                                                                5.1.4 - tr                            </dd>
+                                                        <dd>
+                                                                                                5.1.5 - th                            </dd>
+                                                        <dd>
+                                                                                                5.1.6 - td                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                5.2 - 表格样式重置                            </dd>
+                                                        <dd>
+                                                                                                5.2.1 - 单元格间隙合并                            </dd>
+                                                        <dd>
+                                                                                                5.2.2 - 重置单元格默认填充                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                5.3 - colspan                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                5.4 - rowspan                            </dd>
+                                                                                    <dd><i class="dot"></i>本章节案例&练习：</dd>
+                                                                                    <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/9d662708cdb109f2ecb2d347943026a1" target="_blank">>> 1-综合练习-天气预报</a>
+                            </dd>
+                                                    </dl>
+                    </div>
+                                                            <div class="curriculumRow">
+                        <p class="curriculumNum">
+                            <strong>6</strong>
+                            <span></span>
+                        </p>
+                        <dl>
+                            <dt>第六章：表单及相关属性</dt>
+                                                        <dd>
+                                                                <i class="sj"></i>
+                                                                                                <i class="dot"></i>
+                                                                6.1 - 表单form                            </dd>
+                                                        <dd>
+                                                                                                6.1.1 - action                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                6.2 - input类型及属性                            </dd>
+                                                        <dd>
+                                                                                                6.2.1 - 文本框                            </dd>
+                                                        <dd>
+                                                                                                6.2.2 - 密码                            </dd>
+                                                        <dd>
+                                                                                                6.2.3 - 单选                            </dd>
+                                                        <dd>
+                                                                                                6.2.4 - 复选                            </dd>
+                                                        <dd>
+                                                                                                6.2.5 - 提交                            </dd>
+                                                        <dd>
+                                                                                                6.2.6 - 重置                            </dd>
+                                                        <dd>
+                                                                                                6.2.7 - 按钮                            </dd>
+                                                        <dd>
+                                                                                                6.2.8 - 图片                            </dd>
+                                                        <dd>
+                                                                                                6.2.9 - 上传                            </dd>
+                                                        <dd>
+                                                                                                6.2.10 - 隐藏                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                6.3 - label                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                6.4 - select/option 下拉选框                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                6.5 - textarea 文本域                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                6.6 - 表单常用属性                            </dd>
+                                                        <dd>
+                                                                                                6.6.1 - name                            </dd>
+                                                        <dd>
+                                                                                                6.6.2 - disabled与readonly的区别                            </dd>
+                                                        <dd>
+                                                                                                6.6.3 - checked/selected                            </dd>
+                                                        <dd>
+                                                                                                6.6.4 - label的for属性                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                6.7 - 表单的默认样式重置                            </dd>
+                                                        <dd>
+                                                                                                6.7.1 - resize                            </dd>
+                                                        <dd>
+                                                                                                6.7.2 - outline                            </dd>
+                                                                                    <dd><i class="dot"></i>本章节案例&练习：</dd>
+                                                                                    <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/c348b629909708038080468a09e15ade" target="_blank">>> 1-综合表单实例-表格布局</a>
+                            </dd>
+                                                    </dl>
+                    </div>
+                                                            <div class="curriculumRow">
+                        <p class="curriculumNum">
+                            <strong>7</strong>
+                            <span></span>
+                        </p>
+                        <dl>
+                            <dt>第七章：浏览器兼容性</dt>
+                                                        <dd>
+                                                                <i class="sj"></i>
+                                                                                                <i class="dot"></i>
+                                                                7.1 - css兼容性常见问题                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                7.2 - 代码调试                            </dd>
+                                                        <dd>
+                                                                                                7.2.1 - 调试工具                            </dd>
+                                                        <dd>
+                                                                                                7.2.2 - 手动调试                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                7.3 - css hack                            </dd>
+                                                        <dd>
+                                                                                                7.3.1 - 常用hack写法                            </dd>
+                                                        <dd>
+                                                                                                7.3.2 - !important                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                7.4 - html条件注释语句                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                7.5 - PNG24 兼容性问题                            </dd>
+                                                        <dd>
+                                                                                                7.5.1 - IE6固定定位兼容                            </dd>
+                                                                                    <dd><i class="dot"></i>本章节案例&练习：</dd>
+                                                                                    <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/0b4de0a711675579aaaf122fc446f743" target="_blank">>> 手机飞信专题页</a>
+                            </dd>
+                                                    </dl>
+                    </div>
+                                                            <div class="curriculumRow">
+                        <p class="curriculumNum">
+                            <strong>8</strong>
+                            <span></span>
+                        </p>
+                        <dl>
+                            <dt>第八章：PC端整站开发</dt>
+                                                        <dd>
+                                                                <i class="sj"></i>
+                                                                                                <i class="dot"></i>
+                                                                8.1 - 网站目录划分                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                8.2 - 页面结构规划                            </dd>
+                                                        <dd>
+                                                                                                8.2.1 - min-width                            </dd>
+                                                        <dd>
+                                                                                                8.2.3 - max-width                            </dd>
+                                                        <dd>
+                                                                                                8.2.3 - max-width                            </dd>
+                                                        <dd>
+                                                                                                8.2.4 - max-height                            </dd>
+                                                        <dd>
+                                                                                                8.2.5 - text-overflow                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                8.3 - 命名规划                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                8.4 - css sprites                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                8.5 - border-radius                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                8.6 - box-shadow                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                8.7 - css 滑动门                            </dd>
+                                                                                    <dd><i class="dot"></i>本章节案例&练习：</dd>
+                                                                                    <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/9667d82998085b4b8799cbdaf57e718e" target="_blank">>> 整页练习：完成类似大小的单页面一个</a>
+                            </dd>
+                                                    </dl>
+                    </div>
+                                                            <div class="curriculumRow">
+                        <p class="curriculumNum">
+                            <strong>9</strong>
+                            <span></span>
+                        </p>
+                        <dl>
+                            <dt>第九章：Html5表单&amp;属性选择器</dt>
+                                                        <dd>
+                                                                <i class="sj"></i>
+                                                                                                <i class="dot"></i>
+                                                                9.1 - 新特性的浏览器支持情况                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                9.2 - HTML5新增表单类型                            </dd>
+                                                        <dd>
+                                                                                                9.2.1 - email                            </dd>
+                                                        <dd>
+                                                                                                9.2.2 - tel                            </dd>
+                                                        <dd>
+                                                                                                9.2.3 - url                            </dd>
+                                                        <dd>
+                                                                                                9.2.4 - search                            </dd>
+                                                        <dd>
+                                                                                                9.2.5 - range                            </dd>
+                                                        <dd>
+                                                                                                9.2.6 - number                            </dd>
+                                                        <dd>
+                                                                                                9.2.7 - color                            </dd>
+                                                        <dd>
+                                                                                                9.2.8 - datetime-local                            </dd>
+                                                        <dd>
+                                                                                                9.2.9 - time                            </dd>
+                                                        <dd>
+                                                                                                9.2.10 - date                            </dd>
+                                                        <dd>
+                                                                                                9.2.11 - week                            </dd>
+                                                        <dd>
+                                                                                                9.2.12 - month                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                9.3 - HTML5新增表单属性                            </dd>
+                                                        <dd>
+                                                                                                9.3.1 - placeholder                            </dd>
+                                                        <dd>
+                                                                                                9.3.2 - autocomplete                            </dd>
+                                                        <dd>
+                                                                                                9.3.3 - autofocus                            </dd>
+                                                        <dd>
+                                                                                                9.3.4 - required                            </dd>
+                                                        <dd>
+                                                                                                9.3.5 - pattern                            </dd>
+                                                        <dd>
+                                                                                                9.3.6 - formaction                            </dd>
+                                                        <dd>
+                                                                                                9.3.7 - list与datalist                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                9.4 - 属性选择器                            </dd>
+                                                        <dd>
+                                                                                                9.4.1 - E[attr]                            </dd>
+                                                        <dd>
+                                                                                                9.4.2 - E[attr=&quot;value&quot;]                            </dd>
+                                                        <dd>
+                                                                                                9.4.3 - E[attr~=&quot;value&quot;]                            </dd>
+                                                        <dd>
+                                                                                                9.4.4 - E[attr$=&quot;value&quot;]                            </dd>
+                                                        <dd>
+                                                                                                9.4.5 - E[attr*=&quot;value&quot;]                            </dd>
+                                                        <dd>
+                                                                                                9.4.6 - E[attr^=&quot;value&quot;]                            </dd>
+                                                        <dd>
+                                                                                                9.4.7 - E[attr|=&quot;value&quot;]                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                9.5 - 表单相关伪类                            </dd>
+                                                        <dd>
+                                                                                                9.5.1 - :focus                            </dd>
+                                                        <dd>
+                                                                                                9.5.2 - :placeholder                            </dd>
+                                                        <dd>
+                                                                                                9.5.3 - :enabled                            </dd>
+                                                        <dd>
+                                                                                                9.5.4 - :disabled                            </dd>
+                                                        <dd>
+                                                                                                9.5.5 - :checked                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                9.6 - 结构选择器                            </dd>
+                                                        <dd>
+                                                                                                9.6.1 - &quot;&gt;&quot;                            </dd>
+                                                        <dd>
+                                                                                                9.6.2 - &quot;+&quot;                            </dd>
+                                                        <dd>
+                                                                                                9.6.3 - &quot;~&quot;                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                9.7 - 其他伪类                            </dd>
+                                                        <dd>
+                                                                                                9.7.1 - :nth-child                            </dd>
+                                                        <dd>
+                                                                                                9.7.2 - :nth-last-child                            </dd>
+                                                        <dd>
+                                                                                                9.7.3 - :nth-of-type                            </dd>
+                                                        <dd>
+                                                                                                9.7.4 - :nth-last-of-type                            </dd>
+                                                        <dd>
+                                                                                                9.7.5 - :nth-of-type                            </dd>
+                                                        <dd>
+                                                                                                9.7.6 - :empty                            </dd>
+                                                        <dd>
+                                                                                                9.7.7 - :first-child                            </dd>
+                                                        <dd>
+                                                                                                9.7.8 - :last-child                            </dd>
+                                                        <dd>
+                                                                                                9.7.9 - :first-of-type                            </dd>
+                                                        <dd>
+                                                                                                9.7.10 - :last-of-type                            </dd>
+                                                        <dd>
+                                                                                                9.7.11 - :only-child                            </dd>
+                                                        <dd>
+                                                                                                9.7.12 - :only-of-type                            </dd>
+                                                        <dd>
+                                                                                                9.7.13 - :first-line                            </dd>
+                                                        <dd>
+                                                                                                9.7.14 - :first-letter                            </dd>
+                                                        <dd>
+                                                                                                9.7.15 - :target                            </dd>
+                                                        <dd>
+                                                                                                9.7.16 - ::after                            </dd>
+                                                        <dd>
+                                                                                                9.7.17 - ::before                            </dd>
+                                                        <dd>
+                                                                                                9.7.18 - ::selection                            </dd>
+                                                        <dd>
+                                                                                                9.7.19 - :not()                            </dd>
+                                                                                    <dd><i class="dot"></i>本章节案例&练习：</dd>
+                                                                                    <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/0a7a9ca5a4cbd1b29f5988fc92d0b8f1" target="_blank">>> 1-表单美化</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/fbec0b7f08c16b911c4059783cef9638" target="_blank">>> 2-隔行变色</a>
+                            </dd>
+                                                    </dl>
+                    </div>
+                                                            <div class="curriculumRow">
+                        <p class="curriculumNum">
+                            <strong>10</strong>
+                            <span></span>
+                        </p>
+                        <dl>
+                            <dt>第十章：CSS3新增属性</dt>
+                                                        <dd>
+                                                                <i class="sj"></i>
+                                                                                                <i class="dot"></i>
+                                                                10.1 - rgba                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                10.2 - text-shadow                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                10.3 - text-stroke                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                10.4 - direction和unicode-bidi                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                10.5 - font-face和自定义文字图标                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                10.6 - css3边框新增设置                            </dd>
+                                                        <dd>
+                                                                                                10.6.1 - border-image                            </dd>
+                                                        <dd>
+                                                                                                10.6.2 - border-colors                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                10.7 - css3背景新增设置                            </dd>
+                                                        <dd>
+                                                                                                10.7.1 - 多背景                            </dd>
+                                                        <dd>
+                                                                                                10.7.2 - linear-gradient                            </dd>
+                                                        <dd>
+                                                                                                10.7.3 - repeating-linear-gradient                            </dd>
+                                                        <dd>
+                                                                                                10.7.4 - radial-gradient                            </dd>
+                                                        <dd>
+                                                                                                10.7.5 - background-size                            </dd>
+                                                        <dd>
+                                                                                                10.7.6 - background-origin                            </dd>
+                                                        <dd>
+                                                                                                10.7.7 - background-clip                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                10.8 - mask                            </dd>
+                                                        <dd>
+                                                                                                10.8.1 - mask-image                            </dd>
+                                                        <dd>
+                                                                                                10.8.2 - mask-position                            </dd>
+                                                        <dd>
+                                                                                                10.8.3 - mask-repeat                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                10.9 - box-reflect                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                10.10 - box-sizing                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                10.11 - filter                            </dd>
+                                                        <dd>
+                                                                                                10.11.1 - grayscale                            </dd>
+                                                        <dd>
+                                                                                                10.11.2 - sepia                            </dd>
+                                                        <dd>
+                                                                                                10.11.3 - hue-rotate                            </dd>
+                                                        <dd>
+                                                                                                10.11.4 - saturate                            </dd>
+                                                        <dd>
+                                                                                                10.11.5 - invert                            </dd>
+                                                        <dd>
+                                                                                                10.11.6 - opacity                            </dd>
+                                                        <dd>
+                                                                                                10.11.7 - brightness                            </dd>
+                                                        <dd>
+                                                                                                10.11.8 - contrast                            </dd>
+                                                        <dd>
+                                                                                                10.11.9 - blur                            </dd>
+                                                        <dd>
+                                                                                                10.11.10 - drop-shadow                            </dd>
+                                                                                    <dd><i class="dot"></i>本章节案例&练习：</dd>
+                                                                                    <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/bf0441804002b1766dc962c3f403f08b" target="_blank">>> iphone开机动画</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/8cd7774f955e7ae562ef9c62324fd26c" target="_blank">>> mask</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/3b943f2cb0abe1980400cec20cc3f2b7" target="_blank">>> 进度条</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/ce670b8de0b56c78ed0beb100e68c876" target="_blank">>> 移动端的“字体图标”设置</a>
+                            </dd>
+                                                    </dl>
+                    </div>
+                                                            <div class="curriculumRow">
+                        <p class="curriculumNum">
+                            <strong>11</strong>
+                            <span></span>
+                        </p>
+                        <dl>
+                            <dt>第十一章：移动端开发与适配</dt>
+                                                        <dd>
+                                                                <i class="sj"></i>
+                                                                                                <i class="dot"></i>
+                                                                11.1 - 测试环境                            </dd>
+                                                        <dd>
+                                                                                                11.1.1 - Emulation                            </dd>
+                                                        <dd>
+                                                                                                11.1.2 - 本地服务器                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                11.2 - 移动端布局和PC端的区别                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                11.3 - 物理分辨率和显示分辨率                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                11.4 - viewport 视口设置                            </dd>
+                                                        <dd>
+                                                                                                11.4.1 - width                            </dd>
+                                                        <dd>
+                                                                                                11.4.2 - user-scalable                            </dd>
+                                                        <dd>
+                                                                                                11.4.3 - initial-scale                            </dd>
+                                                        <dd>
+                                                                                                11.4.4 - minimum-scale                            </dd>
+                                                        <dd>
+                                                                                                11.4.5 - maximum-scale                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                11.5 - window.devicePixelRatio 像素比                            </dd>
+                                                        <dd>
+                                                                                                11.5.1 1px的边框设置                            </dd>
+                                                        <dd>
+                                                                                                11.5.2 图片发虚问题                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                11.6 - rem布局                            </dd>
+                                                        <dd>
+                                                                                                11.6.1 - 动态设置 html 的font-size                            </dd>
+                                                        <dd>
+                                                                                                11.6.2 - rem中 页面最大宽度设置                            </dd>
+                                                        <dd>
+                                                                                                11.6.3 - 最小字体限制                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                11.7 - 移动端的默认样式处理                            </dd>
+                                                        <dd>
+                                                                                                11.7.1 - 链接和按钮的阴影消除                            </dd>
+                                                        <dd>
+                                                                                                11.7.2 - 清除IOS下按钮的圆角                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                11.8 - 横竖屏检测                            </dd>
+                                                                                    <dd><i class="dot"></i>本章节案例&练习：</dd>
+                                                                                    <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/37ac352f5431729795e10338e63bb5c0" target="_blank">>> 1-移动端价格列表</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/267eab98aed6e322b0dfa97136e3b09f" target="_blank">>> 2-移动端简单页面布局</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/165432d95c76a49a9bf30fdb2e74a218" target="_blank">>> 3-淘宝（taobao）</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/c3ea2fbf94dfdc5f600a1c1e4e9f27e1" target="_blank">>> 4-百度（baidu）</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/ee09e37707bc51f3cbe50125b17a30d2" target="_blank">>> 5-京东（jd）</a>
+                            </dd>
+                                                    </dl>
+                    </div>
+                                                            <div class="curriculumRow">
+                        <p class="curriculumNum">
+                            <strong>12</strong>
+                            <span></span>
+                        </p>
+                        <dl>
+                            <dt>第十二章：弹性盒模型&amp;响应式</dt>
+                                                        <dd>
+                                                                <i class="sj"></i>
+                                                                                                <i class="dot"></i>
+                                                                12.1 - display:flex                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                12.2 - flex-direction 设置主轴方向                            </dd>
+                                                        <dd>
+                                                                                                12.2.1 - row                            </dd>
+                                                        <dd>
+                                                                                                12.2.2 - row-reverse                            </dd>
+                                                        <dd>
+                                                                                                12.2.3 - column                            </dd>
+                                                        <dd>
+                                                                                                12.2.4 - column-reverse                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                12.3 - justify-content                            </dd>
+                                                        <dd>
+                                                                                                12.3.1 - flex-start                            </dd>
+                                                        <dd>
+                                                                                                12.3.2 - flex-end                            </dd>
+                                                        <dd>
+                                                                                                12.3.3 - center                            </dd>
+                                                        <dd>
+                                                                                                12.3.4 - space-between                            </dd>
+                                                        <dd>
+                                                                                                12.3.5 - space-around                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                12.4 - align-items                            </dd>
+                                                        <dd>
+                                                                                                12.4.1 - flex-start                            </dd>
+                                                        <dd>
+                                                                                                12.4.2 - flex-end                            </dd>
+                                                        <dd>
+                                                                                                12.4.3 - center                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                12.5 - flex-wrap                            </dd>
+                                                        <dd>
+                                                                                                12.5.1 - nowrap                            </dd>
+                                                        <dd>
+                                                                                                12.5.2 - wrap                            </dd>
+                                                        <dd>
+                                                                                                12.5.3 - wrap-reverse                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                12.6 - align-content                            </dd>
+                                                        <dd>
+                                                                                                12.6.1 - align-content                            </dd>
+                                                        <dd>
+                                                                                                12.6.2 - flex-start                            </dd>
+                                                        <dd>
+                                                                                                12.6.3 - flex-end                            </dd>
+                                                        <dd>
+                                                                                                12.6.4 - center                            </dd>
+                                                        <dd>
+                                                                                                12.6.5 - space-between                            </dd>
+                                                        <dd>
+                                                                                                12.6.6 - space-around                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                12.7 - flex-flow                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                12.8 - flex子元素相关属性                            </dd>
+                                                        <dd>
+                                                                                                12.8.1 - order                            </dd>
+                                                        <dd>
+                                                                                                12.8.2 - margin:auto;                            </dd>
+                                                        <dd>
+                                                                                                12.8.3 - align-self                            </dd>
+                                                        <dd>
+                                                                                                12.8.4 - flex                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                12.9 - Media Queries 媒体查询                            </dd>
+                                                        <dd>
+                                                                                                12.9.1 - 媒体类型                            </dd>
+                                                        <dd>
+                                                                                                12.9.2 - 关键字                            </dd>
+                                                        <dd>
+                                                                                                12.9.3 - 媒体类型                            </dd>
+                                                        <dd>
+                                                                                                12.9.4 - Media Queries的兼容                            </dd>
+                                                                                    <dd><i class="dot"></i>本章节案例&练习：</dd>
+                                                                                    <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/1d2bf6bcd0810a0a5fdabae149806587" target="_blank">>> 1-jQuery响应式官网</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/aeb99de7ea03461393a7839d6a3c230b" target="_blank">>> 2-UC官网</a>
+                            </dd>
+                                                    </dl>
+                    </div>
+                                                            <div class="curriculumRow">
+                        <p class="curriculumNum">
+                            <strong>13</strong>
+                            <span></span>
+                        </p>
+                        <dl>
+                            <dt>第十三章：CSS3动画与3D变换</dt>
+                                                        <dd>
+                                                                <i class="sj"></i>
+                                                                                                <i class="dot"></i>
+                                                                13.1 - transition                            </dd>
+                                                        <dd>
+                                                                                                13.1.1 - transition-property                            </dd>
+                                                        <dd>
+                                                                                                13.1.2 - transition-duration                            </dd>
+                                                        <dd>
+                                                                                                13.1.3 - transition-delay                            </dd>
+                                                        <dd>
+                                                                                                13.1.4 - transition-timing-function                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                13.2 - transform                            </dd>
+                                                        <dd>
+                                                                                                13.2.1 - rotate()                            </dd>
+                                                        <dd>
+                                                                                                13.2.2 - skew()                            </dd>
+                                                        <dd>
+                                                                                                13.2.3 - scale()                            </dd>
+                                                        <dd>
+                                                                                                13.2.4 - translate()                            </dd>
+                                                        <dd>
+                                                                                                13.2.5 - matrix()                            </dd>
+                                                        <dd>
+                                                                                                13.2.6 - Transform 执行顺序问题                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                13.3 - 3D变换                            </dd>
+                                                        <dd>
+                                                                                                13.3.1 - perspective                            </dd>
+                                                        <dd>
+                                                                                                13.3.2 - perspective-origin                            </dd>
+                                                        <dd>
+                                                                                                13.3.3 - transform-style                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                13.4 - transform新增函数                            </dd>
+                                                        <dd>
+                                                                                                13.4.1 - rotateX()、rotateY()、rotateZ()                            </dd>
+                                                        <dd>
+                                                                                                13.4.2 - translateZ()                            </dd>
+                                                        <dd>
+                                                                                                13.4.3 - scaleZ()                            </dd>
+                                                                                    <dd><i class="dot"></i>本章节案例&练习：</dd>
+                                                                                    <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/eb62b64c269e1b2c5508f82496648ac7" target="_blank">>> 1-3D立方体</a>
+                            </dd>
+                                                        <dd>
+                                <a style="color:rgb(68, 186, 200); text-decoration:underline;" href="/index.php/Course/homeworkDetail/homeworkId/85ede234a9cbf2468e53838de631e45f" target="_blank">>> 2-图片跑马灯</a>
+                            </dd>
+                                                    </dl>
+                    </div>
+                                                            <div class="curriculumRow">
+                        <p class="curriculumNum">
+                            <strong>14</strong>
+                            <span></span>
+                        </p>
+                        <dl>
+                            <dt>第十四章：CSS预处理：LESS</dt>
+                                                        <dd>
+                                                                <i class="sj"></i>
+                                                                                                <i class="dot"></i>
+                                                                14.1 - 什么是css预处理器                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                14.2 - Less的使用和编译方式                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                14.3 - Variables 变量                            </dd>
+                                                        <dd>
+                                                                                                14.3.1 - 属性值中的变量                            </dd>
+                                                        <dd>
+                                                                                                14.3.2 - 属性名中的变量                            </dd>
+                                                        <dd>
+                                                                                                14.3.3 - 选择器中的变量                            </dd>
+                                                        <dd>
+                                                                                                14.3.4 - url中的变量                            </dd>
+                                                        <dd>
+                                                                                                14.3.5 - 变量名中的变量                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                14.4 - Extend                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                14.5 - Mixin 混合                            </dd>
+                                                        <dd>
+                                                                                                14.5.1 - 带参数的 Mixin                            </dd>
+                                                        <dd>
+                                                                                                14.5.2 - 作为函数使用的Mixin                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                14.6 - 嵌套                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                14.7 - 父选择符                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                14.8 - 合并                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                14.9 - Guards                            </dd>
+                                                        <dd>
+                                                                                                14.9.1 - Mixin Guards                            </dd>
+                                                        <dd>
+                                                                                                14.9.2 - CSS Guards                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                14.10 - 循环                            </dd>
+                                                                                                            </dl>
+                    </div>
+                                                            <div class="curriculumRow">
+                        <p class="curriculumNum">
+                            <strong>15</strong>
+                            <span></span>
+                        </p>
+                        <dl>
+                            <dt>第十五章： Bootstrap前端开发框架</dt>
+                                                        <dd>
+                                                                <i class="sj"></i>
+                                                                                                <i class="dot"></i>
+                                                                15.1 - bootstrap页面的基本结构                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                15.2 - 栅格系统                            </dd>
+                                                        <dd>
+                                                                                                15.2.1 - 栅格大小屏控制                            </dd>
+                                                        <dd>
+                                                                                                15.2.2 - 媒体查询参数说明                            </dd>
+                                                        <dd>
+                                                                                                15.2.3 - offset 偏移设置                            </dd>
+                                                        <dd>
+                                                                                                15.2.4 - 栅格中的列嵌套                            </dd>
+                                                        <dd>
+                                                                                                15.2.5 - 栅格中的列排序                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                15.3 - 栅格系统                            </dd>
+                                                        <dd>
+                                                                                                15.3.1 - 栅格大小屏控制                            </dd>
+                                                        <dd>
+                                                                                                15.3.2 - 媒体查询参数说明                            </dd>
+                                                        <dd>
+                                                                                                15.3.3 - offset 偏移设置                            </dd>
+                                                        <dd>
+                                                                                                15.3.4 - 栅格中的列嵌套                            </dd>
+                                                        <dd>
+                                                                                                15.4- 响应式工具                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                15.5 - bootstrap的默认UI设置                            </dd>
+                                                        <dd>
+                                                                                                15.5.1 - 排版                            </dd>
+                                                        <dd>
+                                                                                                15.5.2 - 代码                            </dd>
+                                                        <dd>
+                                                                                                15.5.3 - 表格                            </dd>
+                                                        <dd>
+                                                                                                15.5.4 - 表单                            </dd>
+                                                        <dd>
+                                                                                                15.5.5 - 按钮                            </dd>
+                                                        <dd>
+                                                                                                15.5.6 - 图片                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                15.6 - 辅助样式                            </dd>
+                                                        <dd>
+                                                                                                15.6.1 - 情境文本颜色                            </dd>
+                                                        <dd>
+                                                                                                15.6.2 - 情境背景色                            </dd>
+                                                        <dd>
+                                                                                                15.6.3 - 关闭按钮                            </dd>
+                                                        <dd>
+                                                                                                15.6.4 - 三角符号                            </dd>
+                                                        <dd>
+                                                                                                15.6.5 - 快速浮动                            </dd>
+                                                        <dd>
+                                                                                                15.6.6 - 让内容块居中                            </dd>
+                                                        <dd>
+                                                                                                15.6.7 - 清除浮动                            </dd>
+                                                        <dd>
+                                                                                                15.6.8 - 显示或隐藏内容                            </dd>
+                                                        <dd>
+                                                                                                15.6.9 - 屏幕阅读器和键盘导航                            </dd>
+                                                        <dd>
+                                                                                                15.6.10 - 以图换字                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                15.7 - 字体图标                            </dd>
+                                                        <dd>
+                                                                                                <i class="dot"></i>
+                                                                15.8 - 常用组件                            </dd>
+                                                        <dd>
+                                                                                                15.8.1 - 下拉菜单                            </dd>
+                                                        <dd>
+                                                                                                15.8.2 - 按钮组                            </dd>
+                                                        <dd>
+                                                                                                15.8.3 - 输入框组                            </dd>
+                                                        <dd>
+                                                                                                15.8.4 - 相关导航                            </dd>
+                                                        <dd>
+                                                                                                15.8.5 - 分页/标签/徽章/巨幕/页头/面板                            </dd>
+                                                        <dd>
+                                                                                                15.8.6 - 缩略图                            </dd>
+                                                        <dd>
+                                                                                                15.8.7 - 警告框                            </dd>
+                                                        <dd>
+                                                                                                15.8.8 - 进度条                            </dd>
+                                                        <dd>
+                                                                                                15.8.9 - 媒体对象                            </dd>
+                                                        <dd>
+                                                                                                15.8.10 - 列表组                            </dd>
+                                                        <dd>
+                                                                                                15.8.11 - 具有响应式特性的嵌入内容                            </dd>
+                                                        <dd>
+                                                                                                15.8.12 - Well                            </dd>
+                                                                                                            </dl>
+                    </div>
+                                                        </div>
+                            </div>
+        </div>
+    </div>
+</div>
+<div class="foot">
+    <div class="foot_content">
+        <img class="fl" src="images/miaov_foot.png" alt=""/>
+        <div class="fl foot_text">
+            <ul class="clear">
+                <li><a  href="/">首页</a></li>
+                <li><span>|</span></li>
+                <li><a href="/index.php/Course/courseList">课程</a></li>
+                <li><span>|</span></li>
+                <li><a href="/index.php/example/exampleList">学员作品</a></li>
+                <li><span>|</span></li>
+                <li><a href="/index.php/Video/vipVideoList">视频教程</a></li>
+                <li><span>|</span></li>
+                <li><a href="/index.php/about/index">关于我们</a></li>
+                <li><span>|</span></li>
+                <li><a href="/index.php/Message/index">在线留言</a></li>
+                <li><span>|</span></li>
+                <li><a href="/index.php/Question/index" target="_blank">常见问题</a></li>
+            </ul>
+            <p>京ICP备08102442号 2012.MIAOOV.COM 版权所有</p>
+        </div>
+    </div>
+</div>
+<div class="backTop"></div>
+<div class="nav">
+        <dl>
+        <dt><i class="sj"></i>目录</dt>
+                <dd><i class="dot"></i><span>前端代码初识</span></dd>
+                <dd><i class="dot"></i><span>H5标签与CSS选择器</span></dd>
+                <dd><i class="dot"></i><span>浮动的深度剖析</span></dd>
+                <dd><i class="dot"></i><span>定位进阶</span></dd>
+                <dd><i class="dot"></i><span>表格详解</span></dd>
+                <dd><i class="dot"></i><span>表单及相关属性</span></dd>
+                <dd><i class="dot"></i><span>浏览器兼容性</span></dd>
+                <dd><i class="dot"></i><span>PC端整站开发</span></dd>
+                <dd><i class="dot"></i><span>Html5表单&amp;属性选择器</span></dd>
+                <dd><i class="dot"></i><span>CSS3新增属性</span></dd>
+                <dd><i class="dot"></i><span>移动端开发与适配</span></dd>
+                <dd><i class="dot"></i><span>弹性盒模型&amp;响应式</span></dd>
+                <dd><i class="dot"></i><span>CSS3动画与3D变换</span></dd>
+                <dd><i class="dot"></i><span>CSS预处理：LESS</span></dd>
+                <dd><i class="dot"></i><span>Bootstrap前端开发框架</span></dd>
+            </dl>
+    </div>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/move.js"></script>
+<script>
+    $(function(){var e=$(".curriculum");var n=$(".table_list").find(".curriculumRow");for(var k=0;k<e.length;k++){var f=e.find("dt");for(var g=0;g<f.length;g++){if(g%2){f.eq(g).css("backgroundColor","#f1f4f9");f.get(g).iColor="#f1f4f9"}else{f.eq(g).css("backgroundColor","#f7f9fc");f.get(g).iColor="#f7f9fc"}}}for(var k=0;k<n.length;k++){n.get(k).bOff=true;n.get(k).num=n.eq(k).find("dl").children().length;n.get(k).Index=k;n.eq(k).on("click",function(){var i=this;if(this.bOff){this.bOff=false;$(i).find("dt").css({backgroundImage:"url(images/close.png)",backgroundColor:"#93cfd8",color:"#fff"});$(i).find("p").css({backgroundColor:"#53b5c0",color:"#fff"});move(i,{height:i.num*44},300,"linear")}else{this.bOff=true;move(i,{height:44},300,"linear",function(){$(i).find("dt").css({backgroundImage:"url(images/open.png)",backgroundColor:$(i).find("dt").get(0).iColor,color:"#858d9a"});$(i).find("p").css({backgroundColor:"#e7f0f7",color:"#44bac8"});if($(i).offset().top<$(document).scrollTop()){$(document).scrollTop($(i).offset().top)}})}})}$(".chapter").on("click",function(){if(!$(this).hasClass("active")){$(this).addClass("active");$(".spread").removeClass("active")}for(var j=0;j<n.length;j++){if(!n.get(j).bOff){n.get(j).bOff=true;move(n.get(j),{height:44},300,"linear");n.eq(j).find("dt").css({backgroundImage:"url(images/open.png)",backgroundColor:n.eq(j).find("dt").get(0).iColor,color:"#858d9a"});n.eq(j).find("p").css({backgroundColor:"#e7f0f7",color:"#44bac8"})}}});$(".spread").on("click",function(){if(!$(this).hasClass("active")){$(this).addClass("active");$(".chapter").removeClass("active")}for(var j=0;j<n.length;j++){if(n.get(j).bOff){n.get(j).bOff=false;n.eq(j).find("dt").css({backgroundImage:"url(images/close.png)",backgroundColor:"#93cfd8",color:"#fff"});n.eq(j).find("p").css({backgroundColor:"#53b5c0",color:"#fff"});move(n.get(j),{height:n.get(j).num*44},300,"linear")}}});$("dd").on("click",function(i){i.stopPropagation()});var l=$(".backTop");var d=null;var b=null;var c=$(".nav dd");var h=$(".nav dl");var a=0;$(window).scroll(function(){d=document.body.scrollTop||document.documentElement.scrollTop;if(d>600){l.css("display","block")}else{l.css("display","none")}if(d>400){$(".nav").css("display","block")}else{$(".nav").css("display","none")}var o=m();if(o){$(o).find("dt").css("top",d-o.offsetTop-430);$(o).find(".curriculumNum").css("top",d-o.offsetTop-430);if(o.Index!=b){for(var j=0;j<c.length;j++){c.eq(j).removeClass("active")}b=o.Index;c.eq(b).addClass("active");if(c.eq(b).parent("dl").get(0).Index!=a){move(h.get(a),{height:24},300,"linear");a=c.eq(b).parent("dl").get(0).Index;move(h.get(a),{height:h.get(a).num*24+6},300,"linear")}}for(var j=0;j<n.length;j++){if(j!=o.Index){n.eq(j).find("dt").css("top",0);n.eq(j).find(".curriculumNum").css("top",0)}}}else{for(var j=0;j<n.length;j++){n.eq(j).find("dt").css("top",0);n.eq(j).find(".curriculumNum").css("top",0)}b=null;for(var j=0;j<c.length;j++){c.eq(j).removeClass("active")}}});l.on("click",function(){document.body.scrollTop=0;document.documentElement.scrollTop=0});for(var k=0;k<c.length;k++){c.get(k).Index=k}for(var k=0;k<h.length;k++){h.get(k).num=h.eq(k).children().length;h.get(k).Index=k}h.eq(a).css("height",h.get(a).num*24+6);h.on("click",function(){if(this.Index!=a){move(h.get(a),{height:24},300,"linear");a=this.Index;move(h.get(a),{height:h.get(a).num*24+6},300,"linear")}});$(".nav dd").on("click",function(){if(n.get(this.Index).bOff){n.get(this.Index).bOff=false;n.eq(this.Index).find("dt").css({backgroundImage:"url(images/close.png)",backgroundColor:"#93cfd8",color:"#fff"});n.eq(this.Index).find("p").css({backgroundColor:"#53b5c0",color:"#fff"});move(n.get(this.Index),{height:n.get(this.Index).num*44},200,"linear",function(){$(document).scrollTop(n.get(this.Index).offsetTop+430)})}else{$(document).scrollTop(n.get(this.Index).offsetTop+430)}});function m(){for(var j=0;j<n.length;j++){if(!n.get(j).bOff&&n.get(j).offsetTop+430-d<=0&&n.get(j).offsetTop+430-d+n.get(j).offsetHeight>0){return n.get(j)}}}});
+</script>
+</body>
+</html>

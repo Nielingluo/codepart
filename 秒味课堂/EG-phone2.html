@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模拟手机短信发送</title>
+	<style type="text/css">
+		*{ margin: 0px; padding: 0px; }
+		ul li{ list-style: none; }
+		#wrapper{ width: 289px; height: 594px; margin: 0 auto; background: url(./images/phone_bg.jpg) no-repeat;  position: relative; }
+		#talk_box{ width: 224px; height: 410px; position: relative; left: 33px; top: 93px; }
+		#talk_con{ width: 224px; height: 360px; position: absolute; top: 0px; left: 0px; overflow-y: auto;}
+		#talk_con li{ margin-bottom: 5px; }
+		.left img{ width: 26px; height: 26px; border-radius: 10px; float: left; }
+		.left span{ display: inline-table; font-size: 12px; color: #fff; background: #388a38; padding: 5px 6px; }
+		.right img{ width: 26px; height: 26px; border-radius: 10px; float: right; }
+		.right span{ display: inline-table; font-size: 12px; color: #fff; background: #388a38; padding: 5px 6px; float: right;}
+		.clear{ clear: both; }
+		#sms{ width: 224px; height: 42px;position: absolute; bottom: 6px; left: 0px;}
+		#tx1,#SMS{ position: absolute; bottom: 0px; }
+		#tx1{display: inline-block; width: 30px; height: 30px; border: 1px solid #ded6e7; background: #fff; padding: 2px 2px; border-radius: 10px;}
+		#SMS{ width: 126px; height: 32px; border: 1px solid #ded6e7;border-radius: 10px; outline: none; left: 40px; padding-left: 4px; font-size: 12px; line-height: 20px;}
+		#send{ border: none; outline: none; width: 40px; height: 24px; cursor: pointer; position: absolute; right: 4px; top: 12px;}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="talk_box">
+			<div id="talk_con">
+				<ul id="talk_sms">
+					<!-- <li class="left"><img src="images/tx1.gif" alt=""><span>和鹅鹅鹅</span></li>
+					<li class="right"><img src="images/tx2.gif" alt=""><span>和d鹅鹅鹅</span></li> -->
+				</ul>
+			</div>
+			<div id="sms">
+				<img src="images/tx1.gif" alt="" id="tx1">
+				<input type="text"  id="SMS">
+				<input type="button" value="发送" id="send">
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var Osend = document.getElementById('send');
+		var OSMS = document.getElementById('SMS');
+		var Otx = document.getElementById('tx1');
+		var Osms_con = document.getElementById('talk_sms');
+		var Onoff= true;
+
+		//头像
+		Otx.onclick=function(){
+			if(Onoff){
+				Otx.src='images/tx3.gif';
+				Onoff= false;
+			}else{
+				Otx.src='images/tx1.gif';
+				Onoff= true;
+			}
+		}
+
+		//短信内容
+		Osend.onclick=function(){
+			if(OSMS.value==''){
+				alert('短信内容不能为空！');
+			}else{
+					if(Onoff){
+					Osms_con.innerHTML = '<li class="left clear"><img src="images/tx3.gif" alt=""><span>' + OSMS.value + '</span></li>' + Osms_con.innerHTML;
+					OSMS.value='';
+				}else{
+					Osms_con.innerHTML = '<li class="right clear"><img src="images/tx1.gif" alt=""><span>' + OSMS.value + '</span></li>' + Osms_con.innerHTML;
+					OSMS.value='';
+				}
+			}
+		}
+
+	</script>
+</body>
+</html>

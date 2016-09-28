@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/ls.js"></script>
+	<style type="text/css">
+		*{ margin: 0; padding: 0; }
+		ul li{ list-style: none; }
+		.focus{border: 1px solid #ff0;background: #fcc;}
+		span{ cursor: pointer; }
+		/* input:focus,textarea:focus{
+			border: 1px solid #ff0;
+			background: #fcc;
+		} */
+		#mb{
+			 -webkit-filter: blur(30px);
+			-moz-filter: blur(30px);
+			-ms-filter: blur(30px);
+			filter: blur(30px);
+			filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius=30, MakeShadow=false); /* IE6~IE9 */
+			}
+		#mb_shadow{
+		 -webkit-filter:drop-shadow(5px 5px 5px #ccc);
+		 filter: drop-shadow(5px 5px 5px #f00); 
+		 margin-bottom: 50px;
+		}
+    .head{ width: 60px; height: 20px; background: #ddd;  cursor: pointer;}
+    .contents{ width: 500px; height: 200px; border: 2px solid #ff0000;  display: none;}
+    .hight{ color: blue;}
+	</style>
+</head>
+<body>
+	<form action="/Atodaynews/index.php/Login/do_login" method="post" name="myForm">
+        <div class="form-group">
+          <label for="username">用户名</label>
+          <input type="text" class="form-control" name="username" id="username" placeholder="请填写用户名">
+          <span id="msg_txt"></span>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">密码</label>
+          <input type="password" class="form-control" name="password" placeholder="请填写密码">
+        </div>
+        <div>
+        	<label for="msg">详细信息</label>
+        	<textarea name="msg" id="msg" cols="30" rows="10"></textarea>
+        </div>
+        <button type="submit" class="btn_dl">登陆</button>
+        <a href="/Atodaynews/index.php/Register/register.html"><button type="button" class="btn btn-default">注册</button></a>
+    </form>
+
+   <hr>
+   <hr>
+   <form action="#">
+   		<div class="top">
+   			<span class="bigger">放大</span>
+   			<span class="summer">缩小</span>
+   		</div>
+   		<div>
+   			<textarea name="txt" id="txt" cols="30" rows="10"></textarea>
+   		</div>
+   </form>
+   <hr>
+   <hr>
+   <!-- 鼠标控制滚动条 -->
+   <form action="#">
+   		<div class="top">
+   			<span class="up">向上</span>
+   			<span class="down">向下</span>
+   		</div>
+   		<div>
+   			<textarea name="txt" id="txt" cols="30" rows="10"></textarea>
+   		</div>
+   </form>
+   <hr>
+   <hr>
+   <p>复选框应用</p>
+   <form action="">
+   		<input type="checkbox" name="items" value="足球">足球<br/>
+   		<input type="checkbox" name="items" value="蓝球">蓝球<br/>
+   		<input type="checkbox" name="items" value="羽毛球">羽毛球<br/>
+   		<input type="checkbox" name="items" value="排球">排球<br/>
+   		<input type="button" id="selectAll" value="全选">
+   		<input type="button" id="selectNo" value="全不选">
+   		<input type="button" id="selectrev" value="反选">
+   		<input type="button" id="submit" value="提交">
+   </form>
+    <hr>
+   <hr>
+   <p>你最喜欢的运动?</p>
+   <form action="">
+   		<input type="checkbox" id="select" value="全选/不全选">全选/不全选<br>
+   		<input type="checkbox" name="items" value="足球">足球
+   		<input type="checkbox" name="items" value="蓝球">蓝球
+   		<input type="checkbox" name="items" value="羽毛球">羽毛球
+   		<input type="checkbox" name="items" value="排球">排球<br>
+   		<input type="button" id="submit_fav" value="提交">
+   </form>
+
+ <!-- 
+   <p>毛玻璃特效</p>
+ <div id="mb"><img src="./img/61.jpg" alt=""></div>
+ <p>图片阴影</p>
+ <div id="mb_shadow"><img src="./img/61.jpg" alt=""></div> 
+ -->
+ <h2>div隐藏显示</h2>
+  <div id="panel">
+    <h5 class="head">CKIS</h5>
+    <div class="contents">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum iure eos, perferendis iste totam cupiditate iusto, est laudantium repellendus expedita! Repudiandae ducimus voluptatum explicabo necessitatibus a similique amet earum quae.</div>
+  </div>
+
+   <script type="text/javascript">
+   		/*$(function(){
+   			$(":input").click(function(){
+   				$(this).addClass("focus");
+   			}).blur(function(){
+   				$(this).removeClass("focus");
+   			})
+   		})*/
+   		$(function(){
+
+   			//Login
+   			$(".btn_dl").click(function(){
+   				$username=$("#username").val();
+   				if($username==""){
+   					$("#msg_txt").html("请输入姓名").css("color","#ff0000");  //判断用户名是否为空，为空则提示输入用户名！
+   					return false;
+   				}
+   			})
+
+
+   			//控制滚轮 not success
+   			$(".up").click(function(){
+   				if(!$height.is(":animated")){
+   					$height.animate({ scrollTop : "-=50"},400);  
+   				}
+   			})
+
+   			$(".down").click(function(){
+   				if(!$height.is(":animated")){
+   					$height.animate({ scrollTop : "+=50"},400);
+
+   				}
+   				 
+   			})
+
+   		})
+   </script>
+</body>
+</html>

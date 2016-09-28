@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//document.title=123;
+		//document.body.innerHTML = 'abc';
+		window.onload=function(){
+			var OBtn = document.getElementsByTagName('input');
+			//alert(OBtn.length);   //getElementsByTagName的动态属性演示实例  长度为0
+			document.body.innerHTML =  '<input type="button" value="按钮" /><input type="button" value="按钮" /><input type="button" value="按钮" />';
+			alert(OBtn.length);   //getElementsByTagName的动态属性演示实例 长度为3
+
+			OBtn[0].onclick=function(){
+				alert('按钮一，被点击!');
+			}
+		}
+	</script>
+</body>
+</html>

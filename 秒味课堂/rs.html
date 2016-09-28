@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js热身视频</title>
+	<style type="text/css">
+		*{ padding: 0px; margin: 0px;}
+		ul li{ list-style: none;}
+		/* #list{ position: relative; top: 30px; left: 90px;} */
+		#wb{ display: block; width: 100px; height: 30px; color: #fff; background: #000; text-align: center; border: 1px solid #ccc;line-height: 30px;text-decoration: none;}
+		#list_son{ width: 100px; height: 90px; border: 1px solid #ddd; position: absolute; top: 30px; left: -1px; background: #ccc; text-align: center; display: none; text-decoration: none;}
+		#list_son a:hover{ color: #ff0000;}
+
+		/*下一个案例*/
+		button{display: inline-block; width: 80px; height: 20px; font-size: 18px; line-height: 20px;}
+		.control{ width: 190px; height: 190px; background: #dedede; display: none;}
+	</style>
+</head>
+<body>
+	<ul id="list">
+		<li>
+			<a href="javascript" id="wb">微博</a>
+			<ul id="list_son">
+				<li><a href="javascript:;">新闻</a></li>
+				<li><a href="javascript:;">娱乐</a></li>
+				<li><a href="javascript:;">国际</a></li>
+			</ul>
+		</li>
+	</ul>
+	<br><hr><p>我是华丽的分割线</p><hr><br>
+	<button id="showdiv">显示</button><button id="hiddendiv">隐藏</button><strong id="strong1">我也要控制显示</strong>
+	<div class="control" id="control"></div>
+	<script type="text/javascript">
+	/*window.onload= abc;
+		function abc(){
+			var uli  = document.getElementById('list');
+			var lson = document.getElementById('list_son')
+			var wb   = document.getElementById('wb');
+
+			uli.onmouseover=show;
+			uli.onmouseout = hidden;
+			function show () {
+				lson.style.display='block';
+				wb.style.background='#ff0000';
+				//alert(1);
+			}
+			function hidden (argument) {
+				lson.style.display='none';
+				wb.style.background='#000';
+		}
+	}*/
+	//以上代码使用匿名函数
+	window.onload= function(){
+			var uli  = document.getElementById('list');
+			var lson = document.getElementById('list_son')
+			var wb   = document.getElementById('wb');
+
+			uli.onmouseover=function() {
+				lson.style.display='block';
+				wb.style.background='#ff0000';
+			}
+			uli.onmouseout = function() {
+				lson.style.display='none';
+				wb.style.background='#000';
+			}
+			
+			//案列二js代码 代码复习及匿名函数和命名函数的使用
+			var sdiv = document.getElementById('showdiv');
+			var hdiv = document.getElementById('hiddendiv');
+			var realdiv = document.getElementById('control');
+			var strong1 = document.getElementById('strong1');
+
+			sdiv.onclick= show;
+			strong1 .onclick= show;
+			
+			function show() {
+				realdiv.style.display='block';
+			}
+
+			hdiv.onclick= function() {
+				realdiv.style.display='none';
+			}
+
+
+
+
+				
+	}
+
+	</script>
+</body>
+</html>

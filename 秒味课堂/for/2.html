@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>for应用</title>
+	<style type="text/css">
+		div{ width: 50px; height: 50px; position: absolute;top: 0px; left: 0px; background: #ff0000; color: #fff; font-size: 20px; line-height: 50px; text-align: center;}
+	</style>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		window.onload=function(){
+			var adiv=document.getElementsByTagName('div');
+			for(i=0; i<30;i++){
+				document.body.innerHTML +='<div>' + i +'</div>';
+			}
+
+			for(i=0;i<adiv.length;i++){
+				//adiv[i].style.left= 10 + i*60 + 'px';
+				adiv[i].style.left = i%10*60 + 'px';
+
+				// 每十个换行显示
+				/*if(i>=10){
+					adiv[i].style.left= 10 + (i-10)*60 + 'px';
+					adiv[i].style.top= 70 + 'px';
+				}
+
+				if(i>=20){
+					adiv[i].style.left= 10 + (i-20)*60 + 'px';
+					adiv[i].style.top= 140 + 'px';
+				}*/
+
+
+			}
+			
+
+		}
+				
+	</script>
+</body>
+</html>

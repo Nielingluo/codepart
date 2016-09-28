@@ -1,0 +1,33 @@
+<script type="text/javascript">
+var system ={
+win : false,
+mac : false,
+xll : false
+};
+var p = navigator.platform;
+system.win = p.indexOf("Win") == 0;
+system.mac = p.indexOf("Mac") == 0;
+system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+if(system.win||system.mac||system.xll){
+}else{
+var host = document.domain;
+if(host == 'jn.yestar1992.com'){
+window.location.href="http://m6.yestar1992.com";
+}else if(host == 'jn.yestarksl.com'){
+window.location.href="http://m6.yestarksl.com";
+}else if(host == 'jn.yestarwzx.com'){
+window.location.href="http://wap.yestarwzx.com";
+}else if(host == 'jn.ye1992.com'){
+window.location.href="http://wap3.ye1992.com";
+}else if(host == 'jnyestar.wskyy.net'){
+window.location.href="http://yestarjn.wskyy.net";
+}else if(host == 'jn.yestarhz.com'){
+window.location.href="http://4g.yestarhz.com";
+}else if(host == 'yestar.kowa99.com'){
+window.location.href="http://3gyestar.kowa99.com";
+}else if(host == 'yestar.zxhosp.com'){
+window.location.href="http://4g.zxhosp.com";
+}
+}
+</script>
+<!-- //copy baidu.jnyestar.com 模板文件header.html -->

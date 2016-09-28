@@ -2,75 +2,165 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>鼠标滑过事件</title>
 	<style type="text/css">
-		p{ border-bottom: 3px dashed #ff0000; display: inline-block;}
-		a{text-decoration: none; color: #000;}
-		.wrap{width:300px;height:150px;border:solid #000000 2px;position:relative; margin: 0 auto;}
-		.wrap .title{width:100px;height:25px;position:absolute;top:-12px;left:100px;background-color:#fff;line-height:25px;text-align:center;}
-		.time{ width: 260px; height:150px; text-align: center; display: table-cell; vertical-align: middle; }
+		*{ margin:0; padding: 0; }
+		ul li{ list-style: none; }
+		.part05{width:100%;height:777px;background:url(../images/part05_bg.jpg) no-repeat center top;position:relative;overflow:hidden;}
+		.part05 .part05_con{width:1240px;height:466px;margin:60px auto 0;position:relative;}
+		.part05 .part05_con li{ float: left; margin-left: 36px; }
+		.part05 .part05_con_02{width:1100px;height:650px;position:relative;overflow:hidden;margin:0 auto;}
+		.part05 .part05_con_02 ul{width:1100px;height:650px;position:relative;}
+		.part05 .part05_con_02 ul li{width:202px;height:202px;position:absolute;cursor:pointer;}
+		.part05 .part05_con_02 ul li.li_01{top:100px;left:30px;}
+		.part05 .part05_con_02 ul li.li_05{bottom:100px;left:30px;}
+		.part05 .part05_con_02 ul li.li_02{top:20px;left:300px;}
+		.part05 .part05_con_02 ul li.li_06{bottom:20px;left:300px;}
+		.part05 .part05_con_02 ul li.li_03{top:20px;left:580px;}
+		.part05 .part05_con_02 ul li.li_07{bottom:20px;left:580px;}
+		.part05 .part05_con_02 ul li.li_04{top:100px;right:30px;}
+		.part05 .part05_con_02 ul li.li_08{bottom:100px;right:30px;}
+		.part05 .part05_con_02 ul li p{width:182px;height:182px;position:absolute;background:url(images/part05_25.png) no-repeat;top:10px;left:10px;font-size:16px;color:#fff;text-align:center;padding-top:70px;display:none;}
+		.part05 .part05_con_02 ul li.hover p{display:block;}
+
+		/* 鼠标滑过更换图片  */
+		.chageimg{ width: 960px; height: auto; margin: 0 auto; position: relative;}
+		.chageimg ul li{ float: left; margin-left: 100px; }
+		.pic2{ position: absolute; top: 0px; display: none; }
+		.chageimg ul li.hover img{display:block;}
+
+		/* 鼠标滑过更换图片  */
+		.Tpic{ width: 960px; height: auto; margin: 0 auto; position: relative;}
+		.Tpic ul li{ float: left; margin-left: 100px; }
+		.pic1{ position: absolute; top: 0px; display: none; }
+		.Tpic ul li.hover img{display:block;}
+
+		/* 设置滚动条的样式 */
+		::-webkit-scrollbar { width: 18px;} /* 滚动槽 */
+		::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);    border-radius: 10px;}
+		::-webkit-scrollbar-thumb { border-radius: 10px;    background: #ae7d27;    -webkit-box-shadow: inset 0 0 6px #ae7d27;}
+		::-webkit-scrollbar-thumb:window-inactive { background: rgba(255,0,0,0.4);}
 	</style>
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/1.js"></script>
 </head>
 <body>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime commodi facilis a, cum molestias id iustobr	 quis distinctio, dolorem dolor culpa. Accusantium optio inventore dolores vitae numquam quo delectus cupiditate!</p>
-	<br>
-	<div class="wrap" id="wrap">
-	  <div class="title" id="title"><a href="#" id="clickMe">内容</a></div>
-		   <div class="time">
-			    <span id="t_h">00时</span>
-			    <span id="t_m">00分</span>
-			    <span id="t_s">00秒</span>
- 	 		</div>
+	<h5>鼠标滑过事件:</h5>
+	<p>1,设置要显示的图片或文字并隐藏[display:none;].<br/>2,设置鼠标滑过事件隐藏元素显示[display:block;].<br/>3,jquery控制鼠标滑过添加样式addclass("hover")</p>
+	<!-- 鼠标滑过显示提示文字 -->
+	<h1>鼠标滑过更换文字:</h1>
+	<div class="part05">
+		<div class="part05_con_02">
+			<ul>
+				<li class="li_01 w_oh fadeInDown">
+					<img src="images/part05_17.png"/>
+					<p style="top:11px;">一次治疗<br/>省时省力</p>
+				</li>
+				<li class="li_02 w_oh fadeInDown">
+					<img src="images/part05_18.png"/>
+					<p style="top:11px;">专属探头<br/>奢华尊贵</p>
+				</li>
+				<li class="li_03 w_oh fadeInDown">
+					<img src="images/part05_19.png"/>
+					<p>精准定位<br/>均衡全面</p>
+				</li>
+				<li class="li_04 w_oh fadeInDown">
+					<img src="images/part05_20.png"/>
+					<p>高能高频<br/>效果最大化</p>
+				</li>
+				<li class="li_05 w_oh fadeInUp">
+					<img src="images/part05_21.png"/>
+					<p>无痛无创<br/>绿色安全</p>
+				</li>
+				<li class="li_06 w_oh fadeInUp">
+					<img src="images/part05_22.png"/>
+					<p>冷热交替<br/>双效巩固</p>
+				</li>
+				<li class="li_07 w_oh fadeInUp">
+					<img src="images/part05_23.png"/>
+					<p>长效紧致 效果保<br/>持高达6年之久</p>
+				</li>
+				<li class="li_08 w_oh fadeInUp">
+					<img src="images/part05_24.png"/>
+					<p>随治随走<br/>不影响工作</p>
+				</li>
+			</ul>
+			<h2 class="w_oh zoomInDown">看得见的年轻，看不见的美容痕迹<br/>Yestar第四代星美极超越以往的<span>8</span>大新优势</h2>
+		</div>
+		<script type="text/javascript">
+			$(".part05_con_02 ul li").hover(function(){
+				$(this).addClass("hover").siblings().removeClass("hover"); //鼠标滑过li 该li添加hover样式，并移除同胞元素的hover样式
+			})
+		</script>
 	</div>
-
 	
-
+	<h1>鼠标滑过更换图片:</h1>
+	<div class="chageimg">
+		<ul>
+			<li><img src="images/part05_21.png" alt=""><img src="images/part05_17.png" alt="" class="pic2"></li>
+			<li><img src="images/part05_22.png" alt=""><img src="images/part05_18.png" alt="" class="pic2"></li>
+			<li><img src="images/part05_23.png" alt=""><img src="images/part05_19.png" alt="" class="pic2"></li> 
+		</ul>
+	</div>
+	<div class="clear" style="clear:both;"></div>
 	<script type="text/javascript">
-			var Otitle = document.getElementById('title');
-			var OclickMe = document.getElementById('clickMe');
-			var Ohours = document.getElementById('t_h');
-			var Omin = document.getElementById('t_m');
-			var Oms = document.getElementById('t_s');
+		$(function(){
+			$(".chageimg ul li").hover(function(){
+				$(this).addClass("hover").siblings().removeClass("hover");
+			})
+		})
+	</script>
 
-			function changet(){
-				Otitle.innerHTML = "Display";
-				Otitle.style.background = 'yellow';
-				OclickMe.click();
-				
-			}
-			/*setTimeout("changet()",3000);*/
-			
 
-			function nowtime(){
-				var hd = new Date('2016/9/13 17:43:00');
-				var Otime = new Date();
-				var kqtime = hd.getTime() - Otime.getTime();
-				h = Otime.getHours();
-				m = Otime.getMinutes();
-				s = Otime.getSeconds();
-				m=checkTime(m);
-				s=checkTime(s);
-				Ohours.innerHTML = h + "时";
-				Omin.innerHTML = m + "分";
-				Oms.innerHTML = s + "秒";
+<!-- 	<h1>定时切换图片:</h1>
+<div class="Tpic">
+	<ul>
+		<li><img src="images/part05_21.png" alt=""><img src="images/part05_17.png" alt="" class="pic1"></li>
+		<li><img src="images/part05_22.png" alt=""><img src="images/part05_18.png" alt="" class="pic1"></li>
+		<li><img src="images/part05_23.png" alt=""><img src="images/part05_19.png" alt="" class="pic1"></li> 
+	</ul>
+</div>
+<div class="clear" style="clear:both;"></div>
+<script type="text/javascript">
+	var $cpic = $(".Tpic ul li");
+	for(i=0; i++;i<3){
+		$cpic.index(i).addClass("hover").siblings().removeClass("hover");
+	}
+</script> -->
 
-				/*if(kqtime=0){
-					Otitle.innerHTML = "Display";
-					alert("时间到!");
-				}*/
-				//changet();
 
-				
-			}
-			setInterval("nowtime()",0);
-			function checkTime(i){
-				if(i<10){
-					i = "0" + i;
-				}
-				return i;
-			}
-		
 
-	</script> 
+    <!-- 鼠标滑过更换图片star -->
+    <h1>鼠标滑过更换图片:</h1>
+	<img border="0" src="http://hbimg.b0.upaiyun.com/57576941bed4143eb2643ee9f23c597b7f6b1b69180cc-Ct89Yv_sq320" name="b1" onmouseover="mouseOver()" onmouseout="mouseOut()" />
+    <script type="text/javascript">
+            function mouseOver(){
+                 document.b1.src="http://hbimg.b0.upaiyun.com/a9adb8b7d90c1f0618a67875641d46d9ac761e081c7a8-hbx5Qh_sq320"
+            }
+            function mouseOut(){
+                document.b1.src="http://hbimg.b0.upaiyun.com/57576941bed4143eb2643ee9f23c597b7f6b1b69180cc-Ct89Yv_sq320"
+           }
+    </script>
+    <!-- 鼠标滑过更换图片 end -->
+
+    <br>
+
+
+    <!-- 交替显示图片 star -->
+    <h1>JS交替显示图片：</h1>
+    <img src="http://hbimg.b0.upaiyun.com/57576941bed4143eb2643ee9f23c597b7f6b1b69180cc-Ct89Yv_sq320" id="imgs" />
+    <script language="javascript"> 
+        setInterval(test,2000); 
+        var array=new Array(); 
+        var index=0; 
+        var array= new Array("http://hbimg.b0.upaiyun.com/57576941bed4143eb2643ee9f23c597b7f6b1b69180cc-Ct89Yv_sq320","http://hbimg.b0.upaiyun.com/a9adb8b7d90c1f0618a67875641d46d9ac761e081c7a8-hbx5Qh_sq320"); 
+        function test() 
+        { var myimg=document.getElementById("imgs"); 
+        if(index==array.length-1) 
+        { index=0; }else{ index++; } 
+        myimg.src=array[index]; 
+        } 
+    </script> 
+ <!--  交替显示图片 end -->
 </body>
 </html>

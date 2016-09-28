@@ -1,0 +1,10 @@
+/* body{  font:12px/1.5em Microsoft Yahei,tahoma,Srial,helvetica,sans-serif;} */
+body{  font-family: Microsoft Yahei,tahoma,Srial,helvetica,sans-serif;}
+body,ul,p,h1,h2,dl,dd,form,input,textarea,select { padding:0; margin:0;}
+ul,li{ list-style:none; }
+img { border:none; }
+a { text-decoration:none; }
+a:hover { text-decoration:none; }
+.left{ float: left; }
+.right{ float: right; }
+.clear{ clear: both;}
