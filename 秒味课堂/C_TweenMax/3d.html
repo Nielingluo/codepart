@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3D特效</title>
+    <script type="text/javascript" src="js/TweenMax.min.js"></script>
+    <style>
+        #box{width: 80px; height: 80px; background: orange; }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script type="text/javascript">
+    var t = new TimelineMax();
+    t.set("#box",{transformPerspective:300,transformOrigin:"left"});
+    t.to("#box",2,{
+        rotationY : 45
+    })
+</script>
+</body>
+</html>

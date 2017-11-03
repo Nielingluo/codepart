@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<style>
+li { width:86px; height:107px; float:left; margin-right:30px; background:#f1f1f1; position:relative; list-style:none;}
+div { width:255px; height:185px; background:url(imgIntr.png); position:absolute; top:0; left:95px; display:none; z-index:2;}
+</style>
+<script>
+//层级不太明白怎么设置
+window.onload = function (){
+	var aUl = document.getElementById('list');
+	var aLi  = aUl.getElementsByTagName('li');
+	var aDiv  = document.getElementsByTagName('div');
+	var arrPic = [
+	'img1.png', 
+	'img2.png', 
+	'img3.png', 
+	'img4.png',
+	'img5.png', 
+	'img6.png', 
+	'img7.png', 
+	'img8.png'
+	];
+	var that = null;
+	
+	for(var i=0; i<8; i++){
+		aUl.innerHTML += '<li><div></div></li>';
+		aLi[i].style.background = 'url(' + arrPic[i] + ')';
+	}
+	for( var i=0; i<aLi.length; i++ ){
+		aLi[i].onmouseover = function (){
+			that = this;
+			that.getElementsByTagName('div')[0].style.display = 'block';
+		};
+		aLi[i].onmouseout = function (){
+			that.getElementsByTagName('div')[0].style.display = 'none';
+
+		};
+	}
+};
+</script>
+</head>
+
+<body>
+<ul id="list"></ul>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="js/TweenMax.min.js"></script>
+    <style>
+        div{width: 50px; height: 50px; background: orange; margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <script type="text/javascript">
+        var t = new TimelineMax();
+       /* t.staggerTo("div",2,{
+            x:400
+        })*/
+//        t.staggerFrom("div",2,{
+//            x:400,
+//        },0.5)  //设置每个元素的时间间隔
+
+
+        t.staggerTo("div",2,{
+            x:400,
+            cycle:{
+//                x:[100,200,300]
+                /*x:function () {
+                    return 200;
+                }*/
+
+                x:function (i) {
+//                    return i*10;
+                    if(i<5){
+                        return 200;
+                    }else{
+                        return 300;
+                    }
+                }
+
+            }
+        },0.5)
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<style>
+#box{ width:509px; height:509px; border:1px solid #333333; background:url(pic.jpg); position:relative;}
+#box div{ width:50px; height:50px; background:#CCCCCC; font-size:30px; line-height:50px; text-align:center; position:absolute; border-bottom:1px solid #CCCCCC; border-right:1px solid #CCCCCC;}
+</style>
+<script>
+
+//问题：如何让图片的边框包住div的边框
+
+window.onload = function(){
+	var oBox = document.getElementById('box');
+	var aDiv = oBox.getElementsByTagName('div');
+	
+	for(var i=0; i<10; i++){
+		for( j=0; j<10; j++){
+			//oBox.innerHTML += '<div>' + parseInt(j+i*10+1) + '</div>';
+			oBox.innerHTML += '<div>' + '</div>';
+			aDiv[j+i*10].style.left =  j*51 + 'px';
+			aDiv[j+i*10].style.top =  i*51 + 'px';
+		}
+	}
+	for(var i=0; i<100; i++){
+		aDiv[i].onmouseenter = function(){
+			this.style.background = 'none';
+		};
+	}
+};
+</script>
+</head>
+
+<body>
+<div id="box"></div>
+</body>
+</html>

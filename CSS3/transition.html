@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
 	<title>transition动画可以控制HTML组件的某个属性发生改变时会经历一段时间、以平滑简便的方式发生改变，这就产生了动画效果</title>
 	<style type="text/css">
-		div{ 
+		*{ margin: 0; padding: 0; font-family: "Microsoft Yahei";}
+		.dh{ 
 			width: 400px;
 			height: 50px; 
 			color: #fff;
@@ -15,7 +16,7 @@
 			-o-transition: background 4s linear;
 			transition: background 4s linear;
 		}
-		div:hover{ 
+		.dh:hover{ 
 			background: blue;
 			color: #fff;
 		}
@@ -30,10 +31,81 @@
 			-o-transition: left 5s linear,top 5s linear;
 			transition: left 5s linear,top 5s linear;
 		}
+
+		/*鼠标滑过旋转*/
+		.edge{ width: 80px; height: 80px; border:3px solid #000; color: #ff0000; font-weight: bold; line-height: 80px; text-align: center; -webkit-transition: all 1s ease-in-out; -o-transition: all 1s ease-in-out; transition: all 1s ease-in-out; }
+		.edge:hover{ -webkit-transform: rotate(30deg);
+		-ms-transform: rotate(30deg);
+		-o-transform: rotate(30deg);
+		transform: rotate(30deg); }
+
+		/*右移动*/ /* transform:translate含义：变动，位移；*/
+		.yd{ width: 80px; height: 80px; border:3px solid #000; color: #ff0000; font-weight: bold; line-height: 80px; text-align: center; -webkit-transition: all 1s ease-in-out; -o-transition: all 1s ease-in-out; transition: all 1s ease-in-out; }
+		.yd:hover{ -webkit-transform:translate(3em,4em);  
+		-ms-transform:translate(3em,4em);
+		-o-transform:translate(3em,4em);
+		transform:translate(3em,4em); }
+
+		/*左移动*/
+		.zd{ width: 80px; height: 80px; border:3px solid #000; color: #ff0000; font-weight: bold; line-height: 80px; text-align: center; -webkit-transition: all 1s ease-in-out; -o-transition: all 1s ease-in-out; transition: all 1s ease-in-out; }
+		.zd:hover{ -webkit-transform:translate(-3em,1em);
+		-ms-transform:translate(-3em,1em);
+		-o-transform:translate(-3em,1em);
+		transform:translate(-3em,1em)}
+
+
+		/*鼠标悬停在第一个元素上时会触发第二个元素运动。只能在Webkit(Safari, 谷歌浏览器), 火狐浏览器和Opera浏览器里运行*/
+		#box1,#box2,#box3,#box4{width: 50px; height: 50px; color: #fff; text-align: center; line-height: 50px;}
+		#box{ width: 100%; height: 50px; position: relative;}
+		#box1{background: #ccc; }
+		#box2{background: #333; position: absolute; left: 50px; top: 0px; -webkit-transition: all 3s ease-in-out; -o-transition: all 3s ease-in-out; transition: all 3s ease-in-out;}
+		#box1:hover + #box2 { /*CSS选择符包括> (子元素), + (相邻元素) 和 ~ (普通目标元素) 组合操作符. */
+		  -webkit-transform: rotate(360deg);
+		  -moz-transform: rotate(360deg);
+		  -o-transform: rotate(360deg);
+		  -ms-transform: rotate(360deg);
+		  transform: rotate(360deg);
+		  left: 627px;
+		  background: red;
+		}
+
+		/*两个方块一同运动：*/
+		#box3{background: red;  -webkit-transition: all 3s ease-in-out; -o-transition: all 3s ease-in-out; transition: all 3s ease-in-out;}
+		#box4{background: blue; position: absolute; left: 50px; top: 50px; -webkit-transition: all 3s ease-in-out; -o-transition: all 3s ease-in-out; transition: all 3s ease-in-out;}
+		#box3:hover{ width: 500px; }
+		#box3:hover + #box4{
+			 -webkit-transform: rotate(360deg);
+			  -moz-transform: rotate(360deg);
+			  -o-transform: rotate(360deg);
+			  -ms-transform: rotate(360deg);
+			  transform: rotate(360deg);
+			  left: 500px;
+			  border-radius: 50%;
+			  background: red;
+		}
+		/*速度css */
+		.list{ width: 1200px; height: 420px; border:1px solid #000; padding: 10px; cursor: pointer;margin: 20px 50px;}
+		.case{ width: 100px; height: 70px; background: #FFAA00; margin-bottom: 12px; text-align: center; line-height: 70px; }
+		.list:hover .case{border-radius: 25px; margin-left: 80%; transform: rotate(360deg);}
+		.ease{transition: all 3s ease;}
+		.ease_in{ transition: all 3s ease-in;}
+		.ease_out{ transition: all 3s ease-out;}
+		.ease_in_out{ transition: all 3s ease-in-out;}
+		.linear{ transition: all 3s linear;}
 	</style>
 </head>
 <body>
-	<div>鼠标滑过颜色渐变</div>
+	<div class="box">
+		<div id="box1">不动</div>
+		<div id="box2">动</div>		
+	</div>
+	
+	<div class="boxx">
+		<div id="box3">一起动</div>
+		<div id="box4">一起动</div>
+	</div>
+	<br>
+	<div class="dh">鼠标滑过颜色渐变</div>
 	<img src="http://hbimg.b0.upaiyun.com/8e09a98c127e1e9bfce9c43ac0c4de184c9796295f175-H7GWk6_fw658" alt="" id="target">
 	<script type="text/javascript">
 		var target = document.getElementById("target");
@@ -46,5 +118,23 @@
 			target.style.top  = evt.pageY + "px";
 		}
 	</script>
+	<br>
+	<div class="edge">旋转30</div>
+
+	<br>
+	<div class="yd">右移动</div>
+
+	<br>
+	<div class="zd">左移动</div>
+	<br>
+	
+	<div class="list">
+		<p>ease：越来越慢。ease-in:先慢后快。ease-out:先快后慢。ease-in-out:先慢后快再慢。linear：匀速运动。</p>
+		<div class="case ease">ease</div>
+		<div class="case ease_in">ease_in</div>
+		<div class="case ease_out">ease_out</div>
+		<div class="case ease_in_out">ease_in_out</div>
+		<div class="case linear">linear</div>
+	</div>
 </body>
 </html>

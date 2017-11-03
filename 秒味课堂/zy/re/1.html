@@ -1,0 +1,40 @@
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+div{ width:50px; height:50px; position:absolute; top:10px; background:#F06; border:1px #000000 solid; font-size:24px; text-align:center; line-height:50px;}
+</style>
+
+<script>
+        window.onload = function(){
+                var odiv =document.getElementsByTagName('div');
+                for(var i=0;i<10;i++)
+                {
+                        document.body.innerHTML += '<div>' + i +'</div>';
+                }
+                var len=odiv.length;
+                for(var i=0;i<len;i++)
+                {
+                        odiv[i].style.left =10+60*i+'px';
+                }
+                for(var i=0;i<len/2;i++)
+                {
+                        odiv[i].style.top =60*i+'px';
+                        odiv[len-i-1].style.top =60*i+'px';        
+                }
+
+    
+        }
+</script>
+
+
+
+</head>
+
+<body>
+
+
+</body>
+</html>

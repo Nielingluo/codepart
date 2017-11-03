@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="js/TweenMax.min.js"></script>
+    <style>
+        #box{width: 50px; height: 50px; background: orange;
+            position: absolute;
+            left: 0px;
+            top:  0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script type="text/javascript">
+        var t = new TimelineMax();
+//        规定目标点的运动
+        /* t.to("#box",2,{
+            left:300,
+            top:400,
+            width:60,
+            height:60
+        })*/
+//        规定起始点的运动
+       /* t.from("#box",2,{
+            left:300,
+            top:400,
+            width:60,
+            height:60
+        })*/
+
+//       t.fromTo("#box",2,{
+//           left:300 //起始点
+//       },{
+//           left:600 //目标点
+//       })
+
+        t.to("#box",2,{
+            y:400,
+//          ease : Linear.easeIn
+//          ease : Linear.easeOut
+//          ease : Linear.easeInOut
+
+//         ease : Back.easeIn
+//         ease : Back.easeOut
+//         ease : Back.easeInOut
+
+
+//         ease : Bounce.easeIn
+//         ease : Bounce.easeOut
+//         ease : Bounce.easeInOut
+
+
+//         ease : Circ.easeIn
+//         ease : Circ.easeOut
+//         ease : Circ.easeInOut
+
+//         ease : Cubic.easeIn
+//         ease : Cubic.easeOut
+//         ease : Cubic.easeInOut
+
+//          ease : Expo.easeIn
+//         ease : Circ.easeOut
+//         ease : Circ.easeInOut
+
+
+         ease : Sine.easeIn
+//         ease : Circ.easeOut
+//         ease : Circ.easeInOut
+
+
+
+        })
+
+
+
+
+
+
+    </script>
+</body>
+</html>

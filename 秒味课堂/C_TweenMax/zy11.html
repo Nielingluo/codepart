@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>折纸作业</title>
+    <style>
+        #box{
+            width:400px;
+            height:500px;
+            margin:0 auto;
+            position: relative;
+
+        }
+        #box div{
+            width:400px;
+            height:50px;
+            background:tomato;
+            border:1px solid #000;
+            position:absolute;
+            -webkit-transform-origin:top;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+
+<script src="js/TweenMax.min.js"></script>
+<script>
+    var t = new TimelineMax();
+    var str = '';
+    var oBox = document.getElementById('box');
+    for(var i = 0; i< 10; i++){
+        str+='<div>';
+    }
+    for(var i = 0; i< 10; i++){
+        str+='</div>';
+    }
+    oBox.innerHTML = str;
+    var aDiv = oBox.getElementsByTagName('div');
+    for(var i = 0; i<aDiv.length; i++){
+        aDiv[i].style.left = -i%2 + 'px';
+        aDiv[i].style.top = 40 + 'px';
+    }
+    t.set('#box div',{
+        rotationX:90,
+        transformOrigin:'top',
+        transformPerspective:400
+    });
+    t.staggerTo('#box div',0.8,{
+        rotationX:0
+    },0.2);
+
+</script>
+</body>
+</html>

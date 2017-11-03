@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>front frame</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript"  src="layui/layui.js" ></script>
+    <style>
+        .fo_submit{ width: 20%; margin: 0 auto;}
+    </style>
+</head>
+<body>
+<ul class="layui-nav" lay-filter="">
+    <li class="layui-nav-item"><a href="">最新活动</a></li>
+    <li class="layui-nav-item layui-this"><a href="">产品</a></li>
+    <li class="layui-nav-item"><a href="">大数据</a></li>
+    <li class="layui-nav-item">
+        <a href="javascript:;">解决方案</a>
+        <dl class="layui-nav-child"> <!-- 二级菜单 -->
+            <dd><a href="">移动模块</a></dd>
+            <dd><a href="">后台模版</a></dd>
+            <dd><a href="">电商平台</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item"><a href="">社区</a></li>
+</ul><br>
+<span class="layui-breadcrumb">
+  <a href="">首页</a>
+  <a href="">国际新闻</a>
+  <a href="">亚太地区</a>
+  <a><cite>注册</cite></a>
+</span><br>
+<form action="#" class="layui-form">
+    <fieldset class="layui-elem-field">
+        <legend align="center">注册页面</legend>
+        <div class="layui-field-box">
+            <div class="layui-form-item">
+                <label class="layui-form-label">姓名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">邮箱</label>
+                <div class="layui-input-block">
+                    <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">上传头像</label>
+                <input type="file" name="file（可随便定义）" class="layui-upload-file">
+            </div>
+            <div class="layui-form-item fo_submit">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit lay-filter="*">立即提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</form>
+<!--df-->
+<script>
+    layui.use(['element','form','upload'],function () {
+        var element = layui.element();
+        var form = layui.form();
+        var upload = layui.upload();
+
+        layui.upload({
+            url: 'upload_image'
+            ,before: function(input){
+            layer.msg('文件上传中');
+            }
+            ,success: function(res){
+                console.log(res); //上传成功返回值，必须为json格式
+                alert(res.msg);
+            }
+        });
+    });
+
+
+
+</script>
+</body>
+</html>

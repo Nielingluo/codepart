@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>for应用</title>
+	<style type="text/css">
+		div{ width: 50px; height: 50px; position: absolute;top: 0; left: 0; background: #ff0000; color: #fff; font-size: 20px; line-height: 50px; text-align: center;}
+	</style>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		window.onload=function(){
+			var n =1;
+			var adiv=document.getElementsByTagName('div');
+			for(i=0; i<9;i++){
+				document.body.innerHTML +='<div>' + i +'</div>';
+			}
+
+			//for嵌套for的时候第二个函数要换个名字（j）.如果不是嵌套那么名字相同也无所谓。
+			for(var i=0;i<adiv.length;i++){
+				adiv[i].style.left=10 +  i*50 + 'px';
+				adiv[i].style.top = i*50 + 'px';
+
+				for(var j=4;j<adiv.length;j++){
+					adiv[j].style.background="#000";
+					//adiv[j].style.top = 50*(j-2) + 'px';
+
+					/*if(j>=5){
+						adiv[5].style.top = 150 + 'px';
+					}
+					if(j>=6){
+						adiv[6].style.top = 100 + 'px';
+					}
+					if(j>=7){
+						adiv[7].style.top = 50 + 'px';
+					}
+					if(j>=8){
+						adiv[8].style.top = 0 + 'px';
+					}*/
+				}
+				
+
+
+
+			}
+
+		}
+				
+	</script>
+</body>
+</html>

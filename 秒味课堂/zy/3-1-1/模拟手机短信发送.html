@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+body,ul,p{ margin:0; padding:0;}
+li{ list-style:none;}
+img{ border:none; vertical-align:top; font-family:"微软雅黑";}
+
+.clear{ zoom:1;}
+.clear:after{ content:""; display:block; clear:both;}
+
+.box{ width:615px; height:860px; background:url("images/bg.jpg") no-repeat; margin:0 auto;}
+.talkBg{ width:290px; height:512px; position:relative; left:164px; top:119px;}
+.showTalk{ width:270px; height:452px; position:absolute; left:0; top:0; margin:10px 5px; overflow:auto;}
+#con li{ vertical-align:top;  margin-bottom:5px;}
+
+.fl img{ width:30px; height:30px; border-radius:5px; float:left;}
+.fl span{ font-size:12px; color:#fff; background:#6bd442; line-height:18px; padding:5px; margin-left:5px; border-radius:5px; max-width:174px; float:left; word-break:break-all;}
+
+.fr img{ width:30px; height:30px; background:url(images/icon1.jpg) no-repeat; border-radius:5px; float:right;}
+.fr span{ display:block; font-size:12px; color:#595757; background:#f1f1f1; line-height:18px; padding:5px; margin-right:5px; border-radius:5px; max-width:174px; float:right; word-break:break-all;}
+
+.footer{ width:290px; height:40px; position:absolute; left:0; bottom:0; background:#f1f1f1;}
+#selectImg,#text,#btn{ height:30px; border-radius:5px; position:absolute; bottom:5px;}
+#selectImg{ width:30px; background:url("images/icon1.jpg"); left:5px;}
+#text{ width:175px; left:40px; margin:0; padding:0; background:#fff; border:1px solid #ccc; padding:0 5px;}
+#btn{ width:60px; font-size:16px; line-height:30px; text-align:center; right:0; background:#f1f1f1; margin:0; padding:0;}
+</style>
+
+<script>
+
+window.onload = function(){
+	
+	var selImg = document.getElementById("selectImg");
+	var text = document.getElementById("text");
+	var btn = document.getElementById("btn");
+	var con = document.getElementById("con");
+	
+	var onOff = true;
+	var num = 0;
+	
+	selImg.onclick = function(){
+		if( onOff ){
+			selImg.src = "images/icon2.jpg";
+			onOff = false;
+		}else{
+			selImg.src = "images/icon1.jpg";
+			onOff = true;
+		}			
+	};
+	
+	btn.onclick = function(){
+		if( text.value == "" ){
+			alert("请说点什么吧~~");
+		}else{
+			if( onOff ){
+				con.innerHTML = '<li class="fl clear"><img src="images/icon1.jpg" /><span>'+text.value+'</span></li>' + con.innerHTML;
+			}else{
+				con.innerHTML = '<li class="fr clear"><img src="images/icon2.jpg" /><span>'+text.value+'</span></li>' + con.innerHTML;
+			}
+			text.value = "";
+		}
+		
+				
+	};
+		
+};
+
+</script>
+</head>
+
+<body>
+<div class="box">
+	<div class="talkBg">
+    	<div class="showTalk">
+        	<ul id="con">
+            	             
+            </ul>
+        </div>
+    	<div class="footer">
+        	<img id="selectImg" src="images/icon1.jpg" />
+            <input type="text" id="text"  />
+            <input type="button" id="btn"  value="发送"/>
+        </div>
+    </div>	
+</div>
+</body>
+</html>

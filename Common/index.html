@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>display</title>
+    <link rel="stylesheet" type="text/css" href="style_common.css">
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="../js/weixin.js"></script>
+    <div id="header_memu">
+        <p>上下滑动控制顶部导航的出现与隐藏<span>(适用于手机)</span></p>
+    </div>
+    <!--元素居中-->
+    <div class="center-wrap">
+        <div class="center-ab center_shape">水平居中left_right=0</div>
+        <div class="Absolute-Center center_shape">
+            水平居中top_bottom_left_right=0
+        </div>
+    </div>
+    <!--书写模式-->
+    <div class="writing_eg" id="writing_eg">
+        <div class="ver_rl">
+            <h1 style="font-weight:bold; margin:20px 10px;">长恨歌</h1>
+            <p> 汉皇重色思倾国，<br>御宇多年求不得。<br> 杨家有女初长成，<br>养在深闺人未识。</p>
+        </div>
+        <div class="ver_lr">
+            <h1 style="font-weight:bold; margin:20px 10px;">长恨歌</h1>
+            <p> 汉皇重色思倾国，<br>御宇多年求不得。<br> 杨家有女初长成，<br>养在深闺人未识。</p>
+        </div>
+    </div>
+    <hr>
+    <div class="direction_eg">
+        <div class="dir_ltr">这世界永远比我早一步</div>
+        <div class="dir_rtl">这世界永远比我早一步</div>
+    </div>
+    <div class="text-dec">
+    	<h1>text-decoration值参数：</h1>
+		<p class="dec_underline">text-decoration: underline;下划线</p>
+		<p class="dec_overline">text-decoration: overline;上划线</p>
+		<p class="dec_through">text-decoration:line-through:删除线样式-贯穿线样式</p>
+		<p class="dec_sty dec_solid">text-decoration-style: solid;</p>
+		<p class="dec_sty dec_double">text-decoration-style: double;</p>
+		<p class="dec_sty dec_dotted">text-decoration-style: dotted;</p>
+		<p class="dec_sty dec_dashed">text-decoration-style: dashed;</p>
+        <p class="dec_sty dec_wavy">text-decoration-style: wavy;</p>
+    </div>
+    <div class='border1px'></div>
+    <div class="select_bg">
+        改变鼠标选中我时的背景色。
+    </div>
+    <div class="word_dq">
+        正文文字两端对齐:记得早先少年时 大家诚诚恳恳 说一句 是一句：清早上 火车站 长街黑暗无行人 卖豆浆的小店冒着热气;  从前的日色变得慢 车，马，邮件都慢 一生只够爱一个人;   从前的锁也好看 钥匙精美有样子 你锁了 人家就懂了。
+    </div>
+    <div class="word_jj">
+        改变文字间距：hello world
+    </div>
+    <div class="w_overflow">
+        <h4>text-overflow 属性规定当文本溢出包含元素时发生的事情。默认值：clip</h4>
+        <div class="ell">
+            显示省略符号来代表被修剪的文本显示省略符号来代表被修剪的文本显示省略符号来代表被修剪的文本
+        </div>
+        <div class="ell" style="text-overflow:clip;">
+            修剪文本-修剪文本-修剪文本-修剪文本-修剪文本
+        </div>
+    </div>
+    <div class="hg_example">
+        <div class="hg_bfb">
+            <div class="hg_children">line-height: 150%;行高测试14*1.5=21_line-height的值为百分比 ：子集元素继承父级元素的距离</div>
+        </div>
+        <br/><br/>
+        <div class="hg_nodw">
+            <div class="hg_children">line-height: 1.5;行高测试26*1.5=39_line-height的值为数值 :子元素计算各自的行距离</div>
+        </div>
+    </div>
+    <div class="block_center">
+        <div class="block_1">
+        父级元素高度未知如何居中：<br>
+        section{ //父元素
+         display: -webkit-box;    
+        -webkit-box-align: center;
+        -webkit-box-pack: center;
+         }
+        </div>
+    </div>
+    <!-- form表单 -->
+    <!-- 登录页面参考：http://www.gbtags.com/gb/share/5470.htm -->
+    <div class="form">
+        <form>
+            <fieldset>
+                <legend align="center">基本信息</legend>
+                <input class="user_sr num" placeholder="手机号"/>
+                <input class="user_sr city" placeholder="城市"/>
+                <input type="button" class="user_submit" value="提交">
+            </fieldset>
+        </form>
+    </div>
+    <h2>按钮动画</h2>
+    <button class="ani_button" style="vertical-align:middle"><span>Hover </span></button>
+    <!-- form表单 END-->
+    <div class="travel_word">
+        <div class="w_map">
+             <div class="travel-plane"></div>
+        </div>
+    </div>
+    <div class="Down_arrow"><a href="#mouse"></a></div>
+    <!--鼠标效果 Star-->
+    <div class="mouse" id="mouse">
+        <ul>
+            <li><img src="../images/hyr_01.jpg" alt=""></li>
+            <li><img src="../images/hyr_02.jpg" alt=""></li>
+            <li><img src="../images/hyr_03.jpg" alt=""></li>
+            <li><img src="../images/hyr_04.jpg" alt=""></li>
+            <li><img src="../images/hyr_05.jpg" alt=""></li>
+            <li><img src="../images/hyr_06.jpg" alt=""></li>
+            <li><img src="../images/hyr_07.jpg" alt=""></li>
+            <li><img src="../images/hyr_08.jpg" alt=""></li>
+            <li><img src="../images/hyr_09.jpg" alt=""></li>
+            <li><img src="../images/hyr_10.jpg" alt=""></li>
+        </ul>
+    </div>
+    <div class="img_scal">
+        <img src="../images/img1.jpg" alt="">
+    </div>
+    <div class="Down_arrow"><a href="#img_hover"></a></div>
+    <div class="img_hover" id="img_hover">
+        <ul class="hz_bs">
+            <li class="hz_1"></li>
+            <li class="hz_2"></li>
+            <li class="hz_3"></li>
+            <li class="hz_4"></li>
+        </ul>
+        <div class="hz_intro hz_intro1" style="display: none;" >
+            <h1>萨博</h1>
+        </div>
+        <div class="hz_intro hz_intro2" style="display: none;" >
+            <h1>路飞</h1>
+        </div>
+        <div class="hz_intro hz_intro3" style="display: none;" >
+            <h1>艾斯</h1>
+        </div>
+        <div class="hz_intro hz_intro4" style="display: none;" >
+            <h1>乌索普</h1>
+        </div>
+    </div>
+    <!--小屏时-->
+    <div class="media_shap">
+        当页面'<'960px我会变成蓝色
+    </div>
+    <!--vedio-->
+    <div class="vedio">
+        <video width="100%" controls autobuffer poster="../images/vedio.jpg"  id="videoId">
+            <source src="../images/1118xf.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+        </video>
+    </div>
+    <!--vedio END-->
+    <!--keyframes-->
+    <div class="frame_ys">
+        <div class="frame1"></div>
+        <div class="frame2">
+            <ul>
+                <li class="frame2_1"><img src="../images/sun.png" alt=""></li>
+                <li class="frame2_2"><img src="../images/sun.png" alt=""></li>
+                <li class="frame2_3"><img src="../images/sun.png" alt=""></li>
+                <li class="frame_cirle"><img src="../images/part01_08.png" alt=""></li>
+            </ul>
+        </div>
+        <div class="light lx_1"></div>
+        <div class="light lx_2"></div>
+        <div class="light lx_3"></div>
+    </div>
+   <!-- 多重背景及background-size运用-->
+    <div class="bg_example">
+        <div class="bg_dc"></div>
+        <div class="bg_size">
+            <ul>
+                <li>cover：拉大图片，使其完全填满背景区；保持宽高比。<br>背景图像的某些部分也许无法显示在背景定位区域中。</li>
+                <li></li>
+                <li>contain：缩放图片，使其恰好适合背景区；保持宽高比。<br>把图像图像扩展至最大尺寸，以使其宽度和高度完全适应内容区域。</li>
+            </ul>
+        </div>
+    </div>
+   <!-- 多重背景及background-size运用 END-->
+   <!-- jquery zoom  star-->
+   <div class="box_zoom">
+        <ul>
+            <li>Hello World:缩小20%</li>
+            <li>Hello World:正常大小</li>
+            <li>Hello World:放大20%</li>
+        </ul>
+   </div>
+    <div class="change_class">jQuery动态改变class值;</div>
+   <!-- jquery zoom  END-->
+<!--css实现背景透明文字不透明 star-->
+    <div class="hy_opc">
+        <ul>
+            <li class="hy_opc1"><div class="hy_zs"><h1>火影-鹿丸</h1></div></li>
+            <li class="hy_opc2"><div class="hy_zs"><h1>火影-赤丸</h1></div></li>
+            <li class="hy_opc3"><div class="hy_zs"><h1>火影-油女志乃</h1></div></li>
+            <li class="hy_opc4"><div class="hy_zs"><h1>火影-宁次</h1></div></li>
+            <li class="hy_opc5"><div class="hy_zs"><h1>火影-卡卡西</h1></div></li>
+        </ul>
+    </div>
+<!--css实现背景透明文字不透明 END-->
+<!-- 大块背景切换 Star-->
+    <div class="big_bg">
+        <h2>利用定位进行局部图片替换</h2>
+        <div class="wh_db">
+            <ul>
+                <li class="db_1"></li>
+                <li class="db_2"></li>
+                <li class="db_3"></li>
+                <li class="db_4"></li>
+                <li class="db_5"></li>
+                <li class="db_6"></li>
+                <li class="db_7"></li>
+                <li class="db_8"></li>
+                <li class="db_9"></li>
+                <li class="db_10"></li>
+                <li class="db_11"></li>
+                <li class="db_12"></li>
+            </ul>
+        </div>
+    </div>
+<!-- 大块背景切换 END-->
+
+    <!--js star-->
+    <input type="button" onclick="clearInterval(timer)" value="stop" class="openzz">
+    <script>
+        var i= 1;
+        var timer=setInterval(function () {
+            console.log(2);
+        },1000);
+
+    </script>
+    <!--js END-->
+</body>
+</html>

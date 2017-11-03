@@ -4,33 +4,80 @@
 	<meta charset="UTF-8">
 	<title>jQuery</title>
 	<style type="text/css">
+		p{ width: 200px; height: 300px; border:1px solid #4CAF50;}
 		#op{ width: 500px; height: 300px; background: #ccc; display: none;}
+		.succimg{width: 427px; height: 209px;position: absolute; top: 20%;left: 30%; z-index: 9999; }
 	</style>
-		<script type="text/javascript" src="http://ck.hbckyy.com/assets/js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
 		<script type="text/javascript">
 				$(document).ready(function(){
 					$("button").bind("click",function(){
+						event.stopPropagation(); ////取消事件冒泡
 						$('p').slideToggle();
 					})
+
+					//点击页面其他地方是隐藏p标签内容
+					$(document).click(function (event) {
+						$('p').hide('slow');
+					})
+					//点击目标区域元素不隐藏
+					$('.p1').click(function (event) {
+						event.stopPropagation(); ////取消事件冒泡
+						$(this).show();
+					})
+
+
 					if($('#op').length>0){
 						$('#op').show();
 					}
 
-					var my_element = $("#element_Id" ) 
-					if(my_element.length>0){ 
-					    alert("element is exist.");  
-					}else{  
-					    alert("element not be found");  
-					} 
+					/*
+						var my_element = $("#element_Id" ) 
+						if(my_element.length>0){ 
+						    alert("element is exist.");  
+						}else{  
+						    alert("element not be found");  
+						}
+					*/
+					$(function(){
+						var sun=true;
+						$("#sub2").click(function(){
+							//$(".succ").text("OOOOOOOOOOOO");
+							$(".succ").append("<img src='../images/加载/0 (2).gif' class='succimg'/>").addClass("succimg");
+								// setInterval(show_sun,100);
+						})
 
+					
+					
+						function show_sun(){
+							if(sun){
+								$(".succ img").hide(1000);
+								console.log(111);
+								sun=false;
+							}else{
+								$(".succ img").show();
+								sun=true;
+								console.log(222);
+							}
+						}
+						
+					
+
+					})
+
+
+					
 
 					
 				})
 		</script>
 </head>
 <body>
-	<p>ljdkfjsl</p>
+	<p class="p1">ljdkfjsl</p>
 	<button>click</button>
 	<div id="op">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore asperiores ducimus illo nostrum doloremque nulla recusandae sapiente, sequi incidunt numquam, vitae ipsa ad distinctio dolorum eaque. A quam, quo consequuntur.</div>
+	<br>
+	<button id="sub2">弹~</button><div id="ff">s</div>
+	<div class="succ"></div>
 </body>
 </html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="js/TweenMax.min.js"></script>
+    <style>
+        #box{width: 50px; height: 50px; background: orange;
+            position: absolute;
+            left: 0;
+            top:  0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script type="text/javascript">
+        var t = new TimelineMax();
+         t.to("#box",2,{
+             //opacity:0,
+//             透明度
+             //autoAlpha:0,
+//        位移
+            // x:400,
+            // y:500
+//       缩放
+
+             //scale:0.5,
+             //scaleX:0.5,
+             //scaleY:0.5,
+
+//       旋转
+             //rotate
+            //rotation:45,
+             //rotationX:45,
+            // rotationY:45,
+            // rotationZ:45,
+
+//       斜切
+//             skewX:80，
+            skewY:80,
+
+
+
+        })
+
+    </script>
+</body>
+</html>

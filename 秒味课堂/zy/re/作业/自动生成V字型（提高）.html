@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<style>
+#list{ position:relative;}
+li{ height:100px; width:100px; display:inline-block; list-style:none; line-height:100px; text-align:center; font-size:50px; position:absolute;}
+</style>
+<script>
+window.onload = function(){
+	var oBtn=document.getElementById("btn");
+	var oUl=document.getElementById("list");
+	var aLi=oUl.getElementsByTagName("li");
+	var aBcolor = ["red","green","blue"];
+	var onOff = true;
+
+	oBtn.onclick = function(){
+		if(onOff){
+			oUl.innerHTML = '';
+			for(var i=0; i<9; i++){
+				oUl.innerHTML += '<li>' + i + '</li>';	
+	
+				aLi[i].style.left = parseInt(110*i+10) + 'px'; 
+				aLi[i].style.background = aBcolor[i % 3];
+/*				if(i<5){
+					aLi[i].style.top = 0;
+				}*/		
+			}
+			for(var i=0; i<aLi.length; i++){
+				if(i<aLi.length/2){
+					aLi[i].style.top = (aLi.length/2-i)*110 + 'px';
+				}else{
+					aLi[i].style.top = (i-aLi.length/2+1)*110 + 'px';
+				};
+			}
+			onOff = false;
+		}else{
+			oUl.innerHTML = '';
+			for(var i=0; i<9; i++){
+				oUl.innerHTML += '<li>' + i + '</li>';	
+	
+				aLi[i].style.top = i*110 + 'px'; 
+				aLi[i].style.background = aBcolor[i % 3];
+			}
+			for(var i=0; i<aLi.length; i++){
+				if(i<aLi.length/2){
+					aLi[i].style.left = (aLi.length/2-i)*110 + 'px';
+				}else{
+					aLi[i].style.left = (i-aLi.length/2+1)*110 + 'px';
+				};
+			}
+			onOff = true;
+		}
+	};
+};
+</script>
+</head>
+
+<body>
+<button type="button" id="btn">自动生成一个v字形</button>
+<ul id="list">
+</ul>
+</body>
+</html>

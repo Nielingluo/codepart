@@ -1,4 +1,70 @@
 #jquery学习
+###理解 !function(){}()  
+
+	// 匿名函数立即执行（当一个匿名函数被括起来，然后再在后面加一个括号，这个匿名函数就能立即运行起来！）
+	(function() {
+	    console.log(0);
+	})();
+	
+	//这种写法大家应该很熟悉但有时候也会遇到下面这种写法
+	
+	! function() {
+	    console.log(0);
+	}();
+	//这是什么意思呢 其实效果跟上面一样 也是立即执行一个匿名函数
+	//！的目的是告诉解释器它后面是个表达式
+	//前面也可以是+，—,~ 
+	(function() {})() == ! function() {}();
+参考：http://www.cnblogs.com/leinov/p/usefulHtmlCssJavascriptCode.html
+https://zhidao.baidu.com/question/455686498933294885.html
+http://www.cnblogs.com/chenxianbin89/archive/2010/01/28/1658392.html
+搜索：匿名函数.jpg
+
+
+------------------------------
+
+##jQuery判断元素是否存在方法总结:
+
+传统javascript方法:
+
+	if(document.getElementById('div')) {    } else {          }
+
+jquery方法：使用jQuery则比较简单，只需判断此元素的长度是否为0，如果为0则此元素不存在。
+
+	if ($("#div").length > 0){     // 找到对应id=div的元素，然后执行此块代码 }
+
+####在传统的Javascript里，当我们对某个页面元素进行某种操作前，最好先判断这个元素是否存在。原因是对一个不存在的元素进行操作是不允许的。
+
+	//如果ID为"someID"的元素不存在，我们将得到Javascript运行错误：document.getElementById("someID") is null
+	obj = document.getElementById("someID");
+	if (obj){
+	  obj.innerText("hi");
+	}
+
+####判断某个页面元素存在与否在jQuery实际上是没有必要的，jQuery本身会忽略对一个不存在的元素进行操作，并且不会报错。
+
+	if ( $("#someID").length > 0 ) {
+		$("#someID").text("hi");
+	}
+
+参考：http://www.cnblogs.com/Capricornus/archive/2010/02/10/1667091.html
+
+
+
+------------------------------
+
+###Javascript CSS控制网页内容缩放
+	$("#content").css("zoom","120%"); //将ID为content的DIV里的内容放大20%
+	$("body").css("zoom","80%");  //将整个网页内容缩小20%
+参考：https://cunji.wordpress.com/2011/09/23/javascript-css%E6%8E%A7%E5%88%B6%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9%E7%BC%A9%E6%94%BE/
+
+实例参考：http://4g.hzyestar.com/zt/slzx/|| http://4g.hzyestar.com/zt/hmslz/
+
+------------------------------
+
+##jquery内部不能再写function 方法名，因为这是javascript写法
+参考：https://zhidao.baidu.com/question/528017134.html
+
 
 ##$(function(){})和$(document).ready(function(){})区别
 没什么区别。一个是简写，一个是完整写法。
@@ -29,7 +95,8 @@ $(":eq(index)")[index必需。规定元素的 index 值。]==>>$("p:eq(1)")
 	</script>
 
 ##jQuery 事件 - toggle() 方法
->用于绑定两个或多个事件处理器函数，以响应被选元素的轮流的 click 事件。
+>用于绑定两个或多个事件处理器函数，以响应被选元素的轮流的 
+> 事件。
 
 >如果元素是可见的，切换为隐藏的；如果元素是隐藏的，切换为可见的。
 
@@ -352,3 +419,4 @@ http://www.zuidaima.com/share/kjquery%E5%AE%9E%E4%BE%8B-p2-s1.htm
 
 
 ####超链接图片文字提示 特效p97   轮播图p153
+Uncaught TypeError: $(...).live is not a functionjQuery版本不同引起。

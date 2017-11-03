@@ -1,0 +1,2 @@
+#sections .hover_move{transition: all 0.5s linear; -webkit-transition: all 0.5s linear; -moz-transition: all 0.5s linear; -ms-transition: all 0.5s linear;}
+#sections .hover_move:hover{transform: translateY(-10px);-webkit-transform:translateY(-10px) ; -moz-transform: translateY(-10px) ; -ms-transform: translateY(-10px) ;}

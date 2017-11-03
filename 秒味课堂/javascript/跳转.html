@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>20170302</title>
+    <style>
+        *{ margin: 0; padding: 0px;}
+        .txt{ width: 100%;
+            height:1000px; border: 1px solid #000000; margin-top: 50px;}
+    </style>
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="txt">
+        <h1 onclick="location.href='http://www.baidu.com'">HEL</h1>
+        <h2>dsf</h2>
+        <h3 onclick="opne();">京东</h3>
+        <h4 onclick="Tzlink()">测试</h4>
+    </div>
+
+    <!--http://www.cnblogs.com/jimchxi/archive/2009/03/11/1408483.html-->
+<!--按钮式：<INPUT name="pclog" type="button" value="/GO" onClick="location.href='连接地址'">-->
+<!--链接式：<a href="javascript:history.go(-1)">返回上一页</a>-->
+<!--<a href="<%=Request.ServerVariables("HTTP_REFERER")%>">返回上一页</a>-->
+<!--直接跳转式：-->
+<!--<script>window.location.href='连接地址';</script>-->
+<!--开新窗口：-->
+<!--<a href="/javascript:" onClick="window.open('连接地址','','height=500,width=611,scrollbars=yes,status =yes')">123</a>-->
+<!--window.history.back(-1);返回上一页-->
+
+<script type="text/javascript">
+    
+    function opne(){
+        window.location.href='http://www.jd.com';
+    }
+    
+    // document.title="Yestar艺星整形美容医院-做最好的整形医院【中国官方网站】";
+    // function CloseWindow(){
+    //     document.getElementById('centerwindow').style.display = "none";
+    // }
+
+</script>
+</body>
+</html>

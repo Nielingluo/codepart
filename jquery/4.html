@@ -3,15 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
 	<style type="text/css">
 		*{ margin: 0; padding: 0; }
 		ul li{ list-style: none; }
 	</style>
 </head>
 <body>
-	<p><a href="javascript:;"  class="tip" title="XX我是提示">j提示111111</a></p>
-	<p><a href="javascript:;" class="tip" title="XX我是提示">j提示22222222221</a></p>
+	<p><a href="javascript:;"  class="tip" title="提示111111我是提示">提示111111</a></p>
+	<p><a href="javascript:;" class="tip" title="提示222222我是提示">提示22222222221</a></p>
 	<p><a href="javascript:;" title="我是提示">提示33333333</a></p>
 	<p><a href="javascript:;" title="我是提示">提示444444</a></p>
 	<script type="text/javascript">
@@ -32,6 +32,13 @@
 			});
 
 		})
+
+		/*$(function () {
+			$("a.tip").click(function () {
+				var tip = "<div id='tip'>"+this.title+"</div>";
+				alert(tip);
+			})
+		})*/
 
 
 		//冒泡排序

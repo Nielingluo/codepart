@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="js/TweenMax.min.js"></script>
+    <style>
+        #box {
+            width: 400px;
+            height: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #box div {
+            width: 400px;
+            height: 40px;
+            margin: 0 auto;
+            border: 1px solid #000000;
+            background: #e15671;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script type="text/javascript">
+    var t = new TimelineMax();
+    var ODiv = document.getElementById('box');
+    /* for (var i = 0; i < 10; i++) {
+     ODiv.innerHTML = "<div><div><div><div><div><div><div><div><div><div>";
+     }*/
+    var str = "";
+    for (var i = 0; i < 10; i++) {
+        str += "<div>";
+    }
+    for (var i = 0; i < 10; i++) {
+        str += "</div>";
+    }
+    ODiv.innerHTML = str;
+    console.log(str);
+
+    var ONdiv = ODiv.getElementsByTagName('div');
+    for (var i = 0; i < ONdiv.length; i++) {
+        ONdiv[i].style.left = -i % 2 + 'px';
+        ONdiv[i].style.top = 40 + "px";
+    }
+
+    t.set("#box div", {rotationX: 90, transformPerspective: 400, transformOrigin: "center top"});
+
+    t.staggerTo('#box div', 0.8, {
+        rotationX: 0
+    }, 0.2);
+
+
+    /*     var OBox = document.getElementById('box');
+     var ODiv = document.createElement("div");
+     var OText = document.createTextNode("111");
+     ODiv.appendChild(OText);
+     document.body.appendChild(ODiv);*/
+
+
+</script>
+</body>
+</html>
