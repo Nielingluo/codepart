@@ -1,3 +1,45 @@
+##方法
+**indexOf()**方法可返回某个指定的字符串值在字符串中首次出现的位置。
+说明：
+indexOf方法返回一个整数值,stringObject中的字符位置是从0开始的。如果没有找到子字符串，则返回-1。（所以只要判断不是-1，也就是>=0就是存在）
+用处：判断域名中包含某个字符串那么在该网页下引入js或是css
+代码：
+
+
+            var Ostr = "Hello 世界!";
+            if(Ostr.indexOf("Hello")!=-1){  //不是-1存在
+                alert("包含Hello");
+            }else{
+                alert("不包含Hello");
+            }
+
+            var Odoamin = window.location.pathname;
+                var str = 'baidu';
+                if(Odoamin.indexOf(str)>=0){  //>=0就是存在
+                    console.log("包含！");
+
+                }else {
+                    console.log("不包含");
+            }
+
+            //用处案例：如果放html页面测试，要给</script>加转义字符。
+            var this_url = window.location.href;
+            if (this_url.indexOf('/zt/') >= 0) {
+                document.write('<script src="/static/js/iscroll.js" type="text/javascript"></script>');
+                document.write('<script src="/static/js/diseaseMenuScroll.js" type="text/javascript"></script>');
+            }
+
+
+
+**substring()**方法用于提取字符串中介于两个指定下标之间的字符。
+
+            var OK = "nijingmei";
+			document.write(OK.substring(3,7));
+
+##Tips
+innerHTML在JS是双向功能：获取对象的内容  或  向对象插入内容；
+
+
 ###js定义函数
 JavaScript中，定义函数一般有两种方式：一种是函数声明，另一种是函数表达式。
 
@@ -72,21 +114,29 @@ JavaScript中，定义函数一般有两种方式：一种是函数声明，另�
 
 如果指定的选择器不合法，则抛出 SYNTAX_ERR 异常。
 
+##Location对象：
 
-
+        var Ohref = window.location.href; //返回完整url
+        var Ohost = window.location.host;  //返回带端口号的服务器名称（域名）
+        var Ohostname = window.location.hostname; //返回不带端口号的服务器名称（域名）
+        var Opath = window.location.pathname;  //返回url中的目录或是文件名
+        console.log(Ohref);
+        console.log(Ohost);
+        console.log(Ohostname);
+        console.log(Opath);
 
 #window.location
 示例地址:http://www.home.com:8080/windows/location/page.html?ver=1.0&id=timlq#love
-###1，window.location.pathname:返回URL的路径部分(就是文件地址)
 
-返回值：/windows/location/page.html
-
-###2，window.location.href：整个URl字符串(在浏览器中就是完整的地址栏)
+###1，window.location.href：整个URl字符串(在浏览器中就是完整的地址栏)
 返回值：http://www.home.com:8080/windows/location/page.html?ver=1.0&id=timlq#love
 
-
-###3，window.location.host：URL 的主机部分，
+###2，window.location.host：URL 的主机部分，
 返回值：www.home.com
+
+###3，window.location.pathname:返回URL的路径部分(就是文件地址)
+
+返回值：/windows/location/page.html
 
 ###4，window.location.search
 查询(参数)部分。除了给动态语言赋值以外，我们同样可以给静态页面,并使用javascript来获得相信应的参数值
