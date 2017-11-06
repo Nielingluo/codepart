@@ -4,11 +4,11 @@ $(function(){
 		$(this).addClass("focus");
 	}).blur(function(){
 		$(this).removeClass("focus");
-	})
+	});
 
 
 	//文本框放大缩小
-	var $height = $("#txt")
+	var $height = $("#txt");
 	$(".bigger").click(function(){
 		if(!$height.is(":animated")){
 			if($height.height()<500){
@@ -16,7 +16,7 @@ $(function(){
 			$height.animate({ height:'+=50px'},400);  
 		}
 		}
-	})
+	});
 
 	$(".summer").click(function(){
 		if(!$height.is(":animated")){
@@ -25,17 +25,17 @@ $(function(){
 			$height.animate({height:"-=50px"},400);
 		}
 		}
-	})
+	});
 
 
 
 	//复选框
 	$("#selectAll").click(function(){
 		$('[name=items]:checkbox').attr('checked',true);  //全选
-	})
+	});
 	$("#selectNo").click(function(){
 		$('[name=items]:checkbox').attr('checked',false);  //不全选
-	})
+	});
 	/*$("#selectrev").click(function(){
 		$('[name=items]:checkbox').each(function(){
 			$(this).attr("checked",!$(this).attr("checked"));  //反选 each循环
@@ -45,14 +45,14 @@ $(function(){
 		$('[name=items]:checkbox').each(function(){
 			this.checked=!this.checked;          //反选 js方式实现
 		})
-	})
+	});
 	$("#submit").click(function(){
 		var str="你选择的是:\r\n";
 		$('[name=items]:checkbox:checked').each(function(){
 			str += $(this).val() + "\r\n";
-		})
+		});
 		alert(str);
-	})
+	});
 
 
 	/*//全选/不全选1
@@ -67,7 +67,7 @@ $(function(){
 	//全选/不全选2
 	$("#select").click(function(){
 		$("[name=items]:checkbox").attr("checked",this.checked); //P150
-	})
+	});
 
 /*==================================================================================================================================================*/
 
@@ -117,31 +117,8 @@ $(function(){
 
 
 
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-})
 
 
 
