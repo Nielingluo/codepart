@@ -40,12 +40,14 @@ indexOf方法返回一个整数值,stringObject中的字符位置是从0开始�
 innerHTML在JS是双向功能：获取对象的内容  或  向对象插入内容；
 
 
+##生成随机数
+	<script type="text/javascript">
+		document.write(Math.floor(10+Math.random()*20));
+	</script>
+
 ##document.write() 和document.writeln()区别
 
 document.write()和document.writeln都是JavaScript向客户端写入的方法。唯一不同是，WriteIn 会增加一个换行。一般情况下用两种方法输出的效果在页面上是没有区别的，两种方法仅当在查看源代码时才看得出区别，
-
-
-
 
 
 ###js定义函数
