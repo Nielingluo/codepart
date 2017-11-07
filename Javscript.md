@@ -41,6 +41,7 @@ innerHTML在JS是双向功能：获取对象的内容  或  向对象插入内�
 
 
 ##生成随机数
+
 	<script type="text/javascript">
 		document.write(Math.floor(10+Math.random()*20));
 	</script>
