@@ -54,11 +54,13 @@ document.write()和document.writeln都是JavaScript向客户端写入的方法�
 ###js定义函数
 JavaScript中，定义函数一般有两种方式：一种是函数声明，另一种是函数表达式。
 
+
 函数声明的一般语法为：
 
 	function functionName(arg0,arg1,arg2){
 	    //函数体
 	}
+
 
 函数表达式有很多种语法形式，下面是最常见的一种形式：
 
@@ -68,6 +70,23 @@ JavaScript中，定义函数一般有两种方式：一种是函数声明，另�
 
 参考：[JS中定义函数的两种方式](http://blog.csdn.net/qlzx_syzx/article/details/51940638)
 
+
+###传递给函数的数据称为参数（argument）:比如a,b就是传递给函数的参数
+
+	 function numadd(a, b) {
+                sum = a + b;
+                console.log(sum);
+            }
+
+            numadd(9, 90);
+
+####如何命名变量和函数。
+
+1，变量用下划线来分割各个单词。
+
+2，函数采用驼峰命名。
+
+这样就可以一眼看出哪些是变量，哪些是函数。
 
 ###js选择器 DOM拓展了querySelectorAll()、querySelector()和matchesSelector()
 
@@ -288,6 +307,22 @@ window.location参考：https://baike.baidu.com/item/window.location/501956?fr=a
 		}
 		document.body.innerHTML =str;
 		*/
+
+##数组
+声明数组有两种方式：
+
+        var group = Array("张三","赵四","susans");  /*方式1：声明数组的同时对它进行填充*/
+
+        var group2 = ["ni","ko","djjd"]; /*方式2：我们甚至不用明确表明我们是在创建数组。只需要用一对方括号把各个元素的初始值括起来就可以了。*/
+
+        function mgroup() {
+            for( var i = 0; i<group.length;i++){
+                console.log(group[i]);
+            }
+        }
+
+        mgroup();
+
 
 ##for循环遍历二维数组
 		arr=[[1,2,3], [4,5,6], [7,8,9] ]; 
