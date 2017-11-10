@@ -20,8 +20,61 @@ https://zhidao.baidu.com/question/455686498933294885.html
 http://www.cnblogs.com/chenxianbin89/archive/2010/01/28/1658392.html
 搜索：匿名函数.jpg
 
+##为什么在function括号写个event?括号中的event可以省略吗？
 
-------------------------------
+   	$(function (event) {
+        //code
+    })
+>**考虑到IE, firefox的兼容性。window.event，在IE下确实没问题。但在Firefox下没有window.event这个对象，event只会通过参数传递进来。**
+
+>
+>event代表事件的状态，例如触发event对象的元素、鼠标的位置及状态、按下的键等等。
+>
+>event对象只在事件发生的过程中才有效。至于event这个参数传不传，是为了兼容浏览器。
+>
+>**在IE下，window.event是有效的，所以可以不用传event参数，Firefox下没有window.event这个对象，event只会通过参数传递进来。**
+
+
+##jquery下如何理解 $.each(data, function (index, value) {}
+
+- 遍历处理data，可以是数组、DOM、json等，取决于直接给定或者ajax返回的类型。
+- function (index, value)中index是当前元素的位置，value是值。
+
+实例1：
+
+		  // each处理一维数组
+		  var arr1 = [ "aaa", "bbb", "ccc" ];  
+		  $.each(arr1, function(i,val){  
+		  alert(i);   
+		  alert(val);
+		  });
+
+		  // 处理json数据，例如ajax的返回值 
+		  var obj = { one:1, two:2, three:3};  
+		　$.each(obj, function(key, val) {  
+		  alert(key); 
+		  alert(val); 
+		  });
+
+
+实例2：
+
+		$.each([2,3,4],function(index,value){alert('第'+ index+ '数是'+value);});
+		$.each({a:3,b:'g'},function(index,value){alert('属性'+ index+ '的值是'+value);});
+		//each就是遍历一个对象
+
+实例3,类似应用[实例见：hzkh]：
+
+	//html：
+    <p>p1</p>
+    <p>p2</p>
+    <p>p3</p>
+
+	//js:
+    $("p").each(function(i){ //循环每一个jquery选择到的对象。这样写它就是循环三次，其中function中的i就是指索引
+        var a = $(this).text();
+        alert(a);
+    })
 
 ##jQuery判断元素是否存在方法总结:
 

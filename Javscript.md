@@ -37,7 +37,15 @@ indexOf方法返回一个整数值,stringObject中的字符位置是从0开始�
 			document.write(OK.substring(3,7));
 
 ##Tips
-innerHTML在JS是双向功能：获取对象的内容  或  向对象插入内容；
+innerHTML在JS是双向功能：**获取对象的内容**或**向对象插入内容**；
+
+Jquery没有innerHTML这个属性，应该这样写$("#div")[0].innerHTML=msg就可以获得这个Dom对象使用innerHTML[实例见：hzkh]。
+
+$("#tabs").innerHTML是无意义的，innerHTML是DOM元素的属性。
+
+document.getElementById("#tabs").innerHTML;这样是可以获得html代码的。
+
+
 
 
 ##生成随机数
@@ -74,11 +82,11 @@ JavaScript中，定义函数一般有两种方式：一种是函数声明，另�
 ###传递给函数的数据称为参数（argument）:比如a,b就是传递给函数的参数
 
 	 function numadd(a, b) {
-                sum = a + b;
-                console.log(sum);
-            }
+          sum = a + b;
+           console.log(sum);
+     }
 
-            numadd(9, 90);
+     numadd(9, 90);
 
 ####如何命名变量和函数。
 

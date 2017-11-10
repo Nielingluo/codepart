@@ -1,14 +1,9 @@
 ####sublime设置插件px-rem转换文件：搜索文件cssrem.sublime-settings
 
-##带 BOM 的 UTF-8 就是赤裸裸的流氓！！
+##Tips
+html5的video标签如何拉伸视频，使其变形并且适配div宽高比例？案例参考：bskgtlb3。 [资料网址参考](https://zhidao.baidu.com/question/1702971320292670140.html)
 
-它产生的BUG包含但不仅限于：
-
- HTML空白行
-
- div之间莫明的间隔
-
- 乱码！
+**带 BOM 的 UTF-8 就是赤裸裸的流氓！！**它产生的BUG包含但不仅限于：HTML空白行、div之间莫明的间隔、乱码！
 
 
 ##[移动端尺寸基础知识](https://colachan.com/post/3435)
@@ -247,17 +242,6 @@ ps:楼上有另一种实现rem，没试过，可以去尝试下。
 ###设置：body{font-size: 62.5%;}和body{font-size: 625%;}区别：
 当设置为62.5%时，1rem应该等于10px，然而在chrome下1rem=12px(Chrome的最小字体是12px)
 当设置为625%时, 1rem=100px;即可以避免上述情况。参考：https://my.oschina.net/mayxu/blog/856367
-
-
-
-
-
-
-
-
-
-
-
 
 
 

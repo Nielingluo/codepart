@@ -200,51 +200,17 @@ $(function() {
     /*$(".closeBtn_swt").on("click",function(){
     		closeSwt();
     	})*/
-})
-/*回电电话引入*/
-document.writeln('<script type="text/javascript"  data-lxb-uid="10067762" data-lxb-gid="163462" src="http://lxbjs.baidu.com/api/asset/api.js?t=' + new Date().getTime() + '" charset="utf-8"><\/script>');
-document.writeln('<script>');
-document.writeln('document.getElementById("callbF_sub").onclick=function(){');
-document.writeln('lxb.call(document.getElementById("callbF_text"));};');
-document.writeln('<\/script>');
-! function() {
-    function a(a) { for (var b, a = a.split("?")[1] || "", c = [], d = a.split("&"), e = 0; e < d.length; e++) b = d[e].split("="), c[b[0]] = b[1]; return c }
+});
 
-    function b() { for (var a = location.hash.substring(1), b = a.split("?"), c = "", d = 0; d < b.length; d++)
-            if (b[d].indexOf("k=") > -1) { c = b[d]; break }
-        return c }
+// 20171101
+var url = window.location.pathname;
+var swt_center = "swt.jpg";
+if(url=="/zt/sh_ztlb/" || url=="/zt/lbxf/"){
+    swt_center = "swt_b.jpg";
+   // alert("b");
+    $(".swtCenter").css("background-image","url(/static/js/image/swt_b.jpg)");
+}else if(url=="/pfmr/shuigzs/#" || url=="/pfmr/quban/#"){
+    swt_center = "swt_skin.jpg";
+    //alert("p");
+}
 
-    function c(a) { for (var b, c = a.split("&"), d = {}, e = 0; e < c.length; e++) c[e].indexOf("=") > -1 && (b = c[e].split("="), d[b[0]] = b[1]); return d.rf_kwd || f() && (d.rf_kwd = f()), d }
-
-    function d(a, b) { var c = []; if (b.length) { a.rf_kwd && (b = b.concat("rf_kwd")); for (var d = 0; d < b.length; d++) c.push(b[d] + "=" + a[b[d]]) } else
-            for (var e in a) a.hasOwnProperty(e) && c.push(e + "=" + a[e]); return c.join("&") }
-
-    function e(a) { for (var b = document.getElementsByTagName("a"), c = 0; c < b.length; c++) b[c].href.indexOf("/") > -1 && (b[c].href += "#" + a) }
-
-    function f() { var b, c = a(document.referrer); return /^https?:\/\/\w*.baidu.com/.test(document.referrer) ? b = c.wd : /^https?:\/\/\w*.haosou.com/.test(document.referrer) ? b = c.q : /^https?:\/\/\w*.sogou.com/.test(document.referrer) ? b = c.query : /^https?:\/\/wap.sogou.com/.test(document.referrer) ? b = c.keyword : /^https?:\/\/m.sm.cn/.test(document.referrer) && (b = c.q), b }
-
-    function g(a) { var f = c(b()),
-            g = d(f, a);
-        e(g) } var h = [];
-    g(h) }();
-// 百度统计代码
-document.writeln("<script>");
-document.writeln("var _hmt = _hmt || [];");
-document.writeln("(function() {");
-document.writeln("  var hm = document.createElement(\'script\');");
-document.writeln("  hm.src = \'//hm.baidu.com/hm.js?d1e292ada6f786355bdccef08f4b6b98\';");
-document.writeln("  var s = document.getElementsByTagName(\'script\')[0]; ");
-document.writeln("  s.parentNode.insertBefore(hm, s);");
-document.writeln("})();");
-document.writeln("</script>");
-// 2016/10/18
-document.writeln("<script>");
-document.writeln("var _hmt = _hmt || [];");
-document.writeln("(function() {");
-document.writeln("  var hm = document.createElement(\'script\');");
-document.writeln("  hm.src = \'//hm.baidu.com/hm.js?6e7a4fce256afa4e9c8e06ce23f31d1e\';");
-document.writeln("  var s = document.getElementsByTagName(\'script\')[0]; ");
-document.writeln("  s.parentNode.insertBefore(hm, s);");
-document.writeln("})();");
-document.writeln("</script>");
-document.writeln("");
