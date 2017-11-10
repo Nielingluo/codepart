@@ -1,12 +1,12 @@
-##Webstorm快捷键
+# Webstorm快捷键 #
 
-webstorm 格式化代码的快键键：
+##webstorm 格式化代码的快键键： 
 
-* Windows：Ctrl+Alt+l
-* Mac ：Option+Command+l
+- Windows：Ctrl+Alt+l
+- Mac ：Option+Command+l
 
 
-##Windows下Sublime Text快捷键
+# Windows下Sublime Text快捷键 #
 
 **自动补齐图片尺寸:**
 
@@ -27,7 +27,17 @@ webstorm 格式化代码的快键键：
 - Ctrl+G定位到行
 - Ctrl+R定位函数
 
-**折叠代码**
+**键盘换行：**
+
+- Ctrl + Enter在当前行下面新增一行然后跳至该行；
+- Ctrl + Shift + Enter在当前行上面增加一行并跳至该行
+
+**合并、打散：**
+
+- Ctrl + Shift + L 将当前选中区域打散，然后进行同时编辑：
+- Ctrl + J         把当前选中区域合并为一行：
+
+**折叠代码：**
 
 - Ctrl+Shift+[  折叠代码
 - Ctrl+Shift+]  展开代码
@@ -44,4 +54,4 @@ webstorm 格式化代码的快键键：
 - Alt+Shift+8 垂直分屏-2屏
 - Alt+Shift+9 垂直分屏-3屏
 
-
+参考资料:[资料1](http://www.cocoachina.com/programmer/20150715/12550.html)
