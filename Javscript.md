@@ -1,3 +1,14 @@
+##数值转换 Number() 、parseInt()、parseFloat()
+由于Number()函数在转换字符串时比较复杂而且不够合理，因此在处理整数的时候更常用的是parseInt()函数。
+
+        //除第一个小数点有效外，parseInt()和parseFloat()的第二个区别在于它始终会忽略前导的零。
+           var Oint = parseInt("009",10); //第二个参数10 表示按十进制解析
+           var Oflot = parseFloat("099"); //parseFloat()只解析十进制，因此它没有用第二个参数指定基数的用法。
+           console.log(Oint); //9
+           console.log(Oflot); //99
+
+
+
 ##方法
 **indexOf()**方法可返回某个指定的字符串值在字符串中首次出现的位置。
 说明：
