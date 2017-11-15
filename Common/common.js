@@ -66,8 +66,39 @@ $(function(){
     });
     // <!--css实现背景透明文字不透明 star END-->
 
-
 });
 
 
 
+// JavaScript代码 star============
+//时间
+// 方式1：
+setInterval("document.getElementById('now_time').innerHTML='完整日期显示：' + new Date().toLocaleString()",1000);
+
+// 方式2：
+function local_time(){
+    var time = new Date();
+    // var t=time.getHours()+ ":"+ time.getMinutes() + ":" +time.getSeconds();
+    var h = time.getHours();
+    var m = time.getMinutes();
+    var s = time.getSeconds();
+
+    // h=checkTime(h);
+    // m=checkTime(m);
+    // s=checkTime(s);
+    // function checkTime(i){
+    //     if(i<10){
+    //         i = "0" + i;
+    //     }
+    //     return i;
+    // }
+    // document.getElementById('time').innerHTML= '当前时间显示：' + h + ':' + m + ':' +s;
+
+    function getDateWeek(obj) {if (obj < 10) return "0" + obj; else return obj;}
+    document.getElementById('time').innerHTML= '当前时间显示：' + getDateWeek(h) + ':' + getDateWeek(m) + ':' + getDateWeek(s);
+}
+setInterval(local_time,1000);
+
+
+
+// 一会来看下三目运算
