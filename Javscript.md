@@ -166,7 +166,7 @@ JavaScript中，定义函数一般有两种方式：一种是函数声明，另�
 ##Location对象：
 
         var Ohref = window.location.href; //返回完整url
-        var Ohost = window.location.host;  //返回带端口号的服务器名称（域名）
+        var Ohost = window.location.host;  //返回带端口号的服务器名称（域名）console.log(document.domain); 都是返回域名 www.baidu.com
         var Ohostname = window.location.hostname; //返回不带端口号的服务器名称（域名）
         var Opath = window.location.pathname;  //返回url中的目录或是文件名
         console.log(Ohref);
@@ -360,14 +360,4 @@ window.location参考：https://baike.baidu.com/item/window.location/501956?fr=a
 
 
 
-
-
-
-
-
-
-
- Ctrl+Shift+L
- Ctrl+Shift+J---选中一段
- Ctrl+J----多行合并
 

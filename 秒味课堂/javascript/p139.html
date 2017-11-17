@@ -5,50 +5,46 @@
     <title>Javascript高级程序设计（第三版） 第六章 面向对象的程序设计 P139页</title>
 </head>
 <body>
-hello～
-        <script>
-//            var person = new Object();
-//            person.age = 34;
-//            person.name = "lily";
-//            person.work = "php";
-//            person.sayName = function () {
-//                alert(this.name);
-//            };
+GG
+<script>
+    //            var person = new Object();
+    //            person.age = 34;
+    //            person.name = "lily";
+    //            person.work = "php";
+    //            person.sayName = function () {
+    //                alert(this.name);
+    //            };
 
 
-//           var Obh = Number("90hell");
-//           var Obj = parseInt("89.90097");
+    //           var Obh = Number("90hell");
+    //           var Obj = parseInt("89.90097");
 
 
-//{
-//    "name" : "lilu";
-//    "age": 87,
-//    "school":"unit"
-//}
+    //{
+    //    "name" : "lilu";
+    //    "age": 87,
+    //    "school":"unit"
+    //}
+    //
+        var  book = {
+            title : "professional javascript",
+            authors:[
+                "nic C ziad"
+            ],
+            edition :3,
+            year:2011
+        };
 
-    var  book = {
-        title : "professional javascript",
-        authors:[
-            "nic C ziad"
-        ],
-        edition :3,
-        year:2011
-    };
+        //var jsonText = JSON.stringify(book);
+        var jsonText = JSON.stringify(book,null,4);
+        console.log(jsonText);
 
-    //var jsonText = JSON.stringify(book);
-    var jsonText = JSON.stringify(book,null,4);
-    console.log(jsonText);
-
-    var bookcopy = JSON.parse(jsonText);
-    console.log(bookcopy);
-
-
-
+        var bookcopy = JSON.parse(jsonText);
+        console.log(bookcopy);
 
 
 
-
-        </script>
+</script>
 </body>
 </html>
 

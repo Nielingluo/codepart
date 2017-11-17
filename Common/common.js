@@ -73,8 +73,7 @@ $(function(){
 // JavaScript代码 star============
 //时间
 // 方式1：
-setInterval("document.getElementById('now_time').innerHTML='完整日期显示：' + new Date().toLocaleString()",1000);
-
+setInterval("document.getElementById('now_time').innerHTML='完整日期显示：' + new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
 // 方式2：
 function local_time(){
     var time = new Date();
@@ -99,6 +98,9 @@ function local_time(){
 }
 setInterval(local_time,1000);
 
+// Date对象
+setInterval("document.getElementById('date1').innerHTML='toLocaleDateString() 方法可根据本地时间把 Date 对象的日期部分转换为字符串，并返回结果：' + new Date().toLocaleDateString()",1000);
 
+setInterval("document.getElementById('date2').innerHTML='toLocaleTimeString() 方法可根据本地时间把 Date 对象的时间部分转换为字符串，并返回结果：' + new Date().toLocaleTimeString()",1000);
 
-// 一会来看下三目运算
+setInterval("document.getElementById('date3').innerHTML='toLocaleString() 方法可根据本地时间把 Date 对象转换为字符串，并返回结果：' + new Date().toLocaleString()",1000);
