@@ -1,3 +1,18 @@
+##理解参数——《Javascript高级程序设计（第三版）P64
+* 小结1：ECMAscript中没有函数签名的概念，因为其函数参数是以一个包含零或多个值的数组的形式传递的。
+* 小结2：可以向ECMAscript函数传递任意数量的参数，并且可以通过arguments对象来访问这些参数。
+* 小结3：由于不存在函数签名的特性，ECMAscript函数不能重载。（也就是说不能定义两个名字相同的函数，，否则该名字只属于后定义的函数。就像css样式后者会覆盖前者一个意思。）
+
+> ECMAscript函数不介意传递进来多少个参数，也不在乎传进来参数是什么数据类型。也就是说即便你定义的函数只接收两个参数，在调用这个函数时也未必一定要传递两个参数。可以传递一个、三个甚至不传参数，而解析器永远不会有什么怨言。原因：ECMAscript中的参数在内部是用一个数组来表示的。在函数体内可以通过argument对象来访问这个参数数组，从而获取传递给函数的每一个参数。第一个元素arguments[0]，第二个元素arguments[2]，以此类推。使用length属性来确定传递进来多少个参数。
+
+    function sayHi(name, wh, eat) {
+        console.log("hi~" + name + ',' + wh + eat + arguments[3]);
+        console.log(arguments.length);
+    }
+
+    sayHi('lily', 'how are you today', ',have you lunch?', 'Nice to meet you~');
+
+
 ##数值转换 Number() 、parseInt()、parseFloat()
 由于Number()函数在转换字符串时比较复杂而且不够合理，因此在处理整数的时候更常用的是parseInt()函数。
 
@@ -333,6 +348,9 @@ window.location参考：https://baike.baidu.com/item/window.location/501956?fr=a
         var group = Array("张三","赵四","susans");  /*方式1：声明数组的同时对它进行填充*/
 
         var group2 = ["ni","ko","djjd"]; /*方式2：我们甚至不用明确表明我们是在创建数组。只需要用一对方括号把各个元素的初始值括起来就可以了。*/
+
+        var group = [{name: "lily", age: 18}, {name: "sam", age: 20}]        /*创建包含两个对象的数组。*/
+
 
         function mgroup() {
             for( var i = 0; i<group.length;i++){

@@ -6,6 +6,18 @@
 </head>
 <body>
 GG
+<div id="time_js">
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <div id="d3"></div>
+    <div id="d4"></div>
+    <div id="d5"></div>
+
+    <div id="d6"></div>
+    <div id="d7"></div>
+    <div id="d8"></div>
+    <div id="d9"></div>
+</div>
 <script>
     //            var person = new Object();
     //            person.age = 34;
@@ -20,27 +32,42 @@ GG
     //           var Obj = parseInt("89.90097");
 
 
-    //{
-    //    "name" : "lilu";
-    //    "age": 87,
-    //    "school":"unit"
-    //}
-    //
-        var  book = {
-            title : "professional javascript",
-            authors:[
-                "nic C ziad"
-            ],
-            edition :3,
-            year:2011
-        };
+    var book = {
+        title: "professional javascript",
+        authors: [
+            "nic C ziad"
+        ],
+        edition: 3,
+        year: 2011
+    };
 
-        //var jsonText = JSON.stringify(book);
-        var jsonText = JSON.stringify(book,null,4);
-        console.log(jsonText);
+    //var jsonText = JSON.stringify(book);
+    var jsonText = JSON.stringify(book, null, 4);
+    console.log(jsonText);
 
-        var bookcopy = JSON.parse(jsonText);
-        console.log(bookcopy);
+    var bookcopy = JSON.parse(jsonText);
+    console.log(bookcopy);
+
+
+    function callSomeFunction(someFunction, someargument) {
+        return someFunction(someargument);
+    }
+
+    function Anum(i) {
+        return i + 10;
+    }
+
+    var result = callSomeFunction(Anum, 10);
+    console.log(result);
+
+    function Greet(name) {
+        return "hello" + name;
+    }
+
+    var He = callSomeFunction(Greet, 'njm');
+    console.log(He);
+
+
 
 
 

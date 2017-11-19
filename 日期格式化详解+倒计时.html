@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>简单易用的倒计时js代码 北京专题：sjtq</title>
+<style>
+*{ margin:0; padding:0; list-style:none;}
+body{ font-size:18px; text-align:center;}
+.time{ height:30px; padding:60px;border: 1px salmon solid;}
+#time_js{ padding: 60px; border: 1px sandybrown solid; margin-top: 60px;}
+</style>
+</head>
+<body>
+  <div class="time">
+    <span id="t_d">00天</span>
+    <span id="t_h">00时</span>
+    <span id="t_m">00分</span>
+    <span id="t_s">00秒</span>
+  </div>
+<!--日期格式化方法:HTML。 详情见《javascript高级程序设计（第三版）》：时间Date类型P98   Star-->
+  <div id="time_js">
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <div id="d3"></div>
+    <div id="d4"></div>
+    <div id="d5"></div>
+    <div id="d6"></div>
+    <div id="d7"></div>
+    <div id="d8"></div>
+    <div id="d9"></div>
+  </div>
+<!--日期格式化方法。 详情见《javascript高级程序设计（第三版）》：时间Date类型P98   END-->
+<script>
+  function GetRTime(){
+    var EndTime= new Date('2017/12/31 00:00:00');
+    var NowTime = new Date();
+    var t =EndTime.getTime() - NowTime.getTime();
+    var d=0;
+    var h=0;
+    var m=0;
+    var s=0;
+    if(t>=0){
+      d=Math.floor(t/1000/60/60/24);
+      h=Math.floor(t/1000/60/60%24);
+      m=Math.floor(t/1000/60%60);
+      s=Math.floor(t/1000%60);
+    }
+
+    d=checkTime(d);
+    h=checkTime(h);
+    m=checkTime(m);
+    s=checkTime(s);
+    function checkTime(i){
+          if(i<10){
+            i = "0" + i;
+          }
+          return i;
+    }
+
+    document.getElementById("t_d").innerHTML = d + "天";
+    document.getElementById("t_h").innerHTML = h + "时";
+    document.getElementById("t_m").innerHTML = m + "分";
+    document.getElementById("t_s").innerHTML = s + "秒";
+  }
+  setInterval(GetRTime,0);
+
+// 日期格式化方法:JS。 详情见《javascript高级程序设计（第三版）》：时间Date类型P98  Star
+  function DateAbout() {
+      var a = new Date();
+//    年月日星期几
+      var Y = a.getFullYear();
+      var M = a.getMonth() + 1;
+      var D = a.getDate();
+      var W = a.getDay();
+//    时分秒
+      var H = a.getHours();
+      var Min = a.getMinutes();
+      var S = a.getSeconds();
+
+      var Oday = document.getElementById("d1");
+      var Oday2 = document.getElementById("d2");
+      var Oday3 = document.getElementById("d3");
+      var Oday4 = document.getElementById("d4");
+      var Oday5 = document.getElementById("d5");
+      var Oday6 = document.getElementById("d6");
+      var Oday7 = document.getElementById("d7");
+      var Oday8 = document.getElementById("d8");
+      var Oday9 = document.getElementById("d9");
+
+      var Wz1 = a.toDateString();         //星期几、年月日 【Sun Nov 19 2017】
+      var Wz2 = a.toLocaleDateString();   //地区格式显示时期：星期几、年月日【2017/11/19】————————————————常用
+      var Wz3 = a.toTimeString();         //时分秒时区【 12:35:57 GMT+0800 (CST)】
+      var Wz4 = a.toLocaleTimeString();   //地区格式显示时间：时分秒【 下午12:35:57】————————————————常用
+      var Wz5 = a.toLocaleString();       //完整显示:星期几年月日 + 时分秒【2017/11/19 下午12:35:57】——————————常用
+      var Wz6 = a.toUTCString();          //完整的UTC日期【Sun, 19 Nov 2017 04:36:47 GMT】
+      var Wz7 = Date.now();               //返回表示调用这个方法时的日期和时间的毫秒数
+
+//    倒计时 Star
+//    var t = EndTime.getTime() - a.getTime();    getTime()和Date.now()均返回表示日期和时间的毫秒数
+      var NowTime = Date.now();
+      var EndTime = new Date('2017/12/31 00:00:00');
+      var t = EndTime.getTime() - NowTime;
+      var d = 0;
+      var h = 0;
+      var m = 0;
+      var s = 0;
+      if (t >= 0) {
+          d = Math.floor(t / 1000 / 60 / 60 / 24);
+          h = Math.floor(t / 1000 / 60 / 60 % 24);
+          m = Math.floor(t / 1000 / 60 % 60);
+          s = Math.floor(t / 1000 % 60);
+      }
+
+      function gDate(i) {
+          if (i < 10) {
+              return "0" + i;
+          } else {
+              return i;
+          }
+      }
+
+      Oday9.innerHTML = "距离2017年结束还有：" + d + "天" + gDate(h) + "小时" + gDate(m) + "分钟" + gDate(s) + "秒";
+
+//    倒计时 END
+
+      Oday2.innerHTML = Wz1;
+      Oday3.innerHTML = "地区日期格式：" + Wz2;
+      Oday4.innerHTML = Wz3;
+      Oday5.innerHTML = "地区时间格式：" + Wz4;
+      Oday6.innerHTML = "完整地区日期、时间格式：" + Wz5;
+      Oday7.innerHTML = Wz6;
+      Oday8.innerHTML = Wz7;
+
+
+      Oday.innerHTML = "今天是：" + Y + "/" + M + "/" + D + "，星期" + '日一二三四五六'.charAt(W) + "，" + gDate(H) + ":" + gDate(Min) + ":" + gDate(S);
+  }
+
+  setInterval(DateAbout, 1000);
+
+//日期格式化方法。 详情见《javascript高级程序设计（第三版）》：时间Date类型P98   END
+</script>
+
+</body>
+</html> 
