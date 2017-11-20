@@ -1,3 +1,46 @@
+##js定义函数
+
+JavaScript中，定义函数一般有两种方式：一种是函数声明，另一种是函数表达式。
+
+**1, 函数声明的一般语法为：**
+
+	function functionName(arg0,arg1,arg2){
+	    //函数体
+	}
+
+>用这种方式定义的函数，我们既可以在声明前调用函数，也可以在声明后调用该函数。由于在代码执行之前，解释器会先读取函数的声明，所以声明前调用函数并不会产生语法错误，这个特征叫做*函数声明提升*。
+
+
+	AlertString();          //声明前调用  
+	function AlertString(){ //声明函数  
+	 alert("HelloWorld");  
+	}  
+	 AlertString();         //声明后调用  
+
+**2, 函数表达式有很多种语法形式，下面是最常见的一种形式：**
+
+	var functionName=function(arg0,agr1,agr2){
+	    //函数体
+	};
+
+>我们可以把函数表达式理解成其他表达式一样，就是把创建的函数赋值给一个变量，这种情况创建的函数称为匿名函数。
+在使用匿名函数之前，必须先进行赋值操作，否则将会引起错误。
+
+	Alert(); //失效,应该先赋值在使用  
+	var Alert=function(){  
+	  alert("Hello world");    
+	};  
+
+
+##传递给函数的数据称为参数（argument）:比如a,b就是传递给函数的参数
+
+	 function numadd(a, b) {
+          sum = a + b;
+           console.log(sum);
+     }
+
+     numadd(9, 90);
+
 ##理解参数——《Javascript高级程序设计（第三版）P64
 * 小结1：ECMAscript中没有函数签名的概念，因为其函数参数是以一个包含零或多个值的数组的形式传递的。
 * 小结2：可以向ECMAscript函数传递任意数量的参数，并且可以通过arguments对象来访问这些参数。
@@ -83,36 +126,6 @@ document.getElementById("#tabs").innerHTML;这样是可以获得html代码的。
 ##document.write() 和document.writeln()区别
 
 document.write()和document.writeln都是JavaScript向客户端写入的方法。唯一不同是，WriteIn 会增加一个换行。一般情况下用两种方法输出的效果在页面上是没有区别的，两种方法仅当在查看源代码时才看得出区别，
-
-
-###js定义函数
-JavaScript中，定义函数一般有两种方式：一种是函数声明，另一种是函数表达式。
-
-
-函数声明的一般语法为：
-
-	function functionName(arg0,arg1,arg2){
-	    //函数体
-	}
-
-
-函数表达式有很多种语法形式，下面是最常见的一种形式：
-
-	var functionName=function(arg0,agr1,agr2){
-	    //函数体
-	};
-
-参考：[JS中定义函数的两种方式](http://blog.csdn.net/qlzx_syzx/article/details/51940638)
-
-
-###传递给函数的数据称为参数（argument）:比如a,b就是传递给函数的参数
-
-	 function numadd(a, b) {
-          sum = a + b;
-           console.log(sum);
-     }
-
-     numadd(9, 90);
 
 ####如何命名变量和函数。
 
@@ -272,13 +285,15 @@ window.location参考：https://baike.baidu.com/item/window.location/501956?fr=a
 
 
 
-###js逻辑操作符
-与运算（&&）——两个条件都为true时，表达式才是true。
-或运算（||）——两个条件只要有一个为true，表达式便是true，否则为false。
-非运算（！）——就是简单的将true变为false，或者将false变为true。
+##js逻辑操作符
 
-###函数返回值-return详解
-####return返回值
+- 与运算（&&）——两个条件都为true时，表达式才是true。
+
+- 或运算（||）——两个条件只要有一个为true，表达式便是true，否则为false。
+
+- 非运算（！）——就是简单的将true变为false，或者将false变为true。
+
+##函数返回值-return详解(return返回值)
 
 //数字 字符串 布尔 函数 对象(元素\[]\{}\null) 未定义
 
