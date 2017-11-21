@@ -115,8 +115,6 @@ $("#tabs").innerHTML是无意义的，innerHTML是DOM元素的属性。
 document.getElementById("#tabs").innerHTML;这样是可以获得html代码的。
 
 
-
-
 ##生成随机数
 
 	<script type="text/javascript">
@@ -202,27 +200,27 @@ document.write()和document.writeln都是JavaScript向客户端写入的方法�
         console.log(Ohostname);
         console.log(Opath);
 
-#window.location
-示例地址:http://www.home.com:8080/windows/location/page.html?ver=1.0&id=timlq#love
-
-###1，window.location.href：整个URl字符串(在浏览器中就是完整的地址栏)
-返回值：http://www.home.com:8080/windows/location/page.html?ver=1.0&id=timlq#love
-
-###2，window.location.host：URL 的主机部分，
-返回值：www.home.com
-
-###3，window.location.pathname:返回URL的路径部分(就是文件地址)
-
-返回值：/windows/location/page.html
-
-###4，window.location.search
-查询(参数)部分。除了给动态语言赋值以外，我们同样可以给静态页面,并使用javascript来获得相信应的参数值
-返回值：?ver=1.0&id=timlq
-
-###5，window.location.hash：锚点
-返回值：#love
-
-window.location参考：https://baike.baidu.com/item/window.location/501956?fr=aladdin
+		#window.location
+		示例地址:http://www.home.com:8080/windows/location/page.html?ver=1.0&id=timlq#love
+		
+		###1，window.location.href：整个URl字符串(在浏览器中就是完整的地址栏)
+		返回值：http://www.home.com:8080/windows/location/page.html?ver=1.0&id=timlq#love
+		
+		###2，window.location.host：URL 的主机部分，
+		返回值：www.home.com
+		
+		###3，window.location.pathname:返回URL的路径部分(就是文件地址)
+		
+		返回值：/windows/location/page.html
+		
+		###4，window.location.search
+		查询(参数)部分。除了给动态语言赋值以外，我们同样可以给静态页面,并使用javascript来获得相信应的参数值
+		返回值：?ver=1.0&id=timlq
+		
+		###5，window.location.hash：锚点
+		返回值：#love
+		
+		window.location参考：https://baike.baidu.com/item/window.location/501956?fr=aladdin
 
 
 ##[JavaScript获取浏览器高度和宽度值](http://www.cnblogs.com/lvdabao/articles/3651779.html)

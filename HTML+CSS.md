@@ -3,6 +3,16 @@
 ##Tips
 html5的video标签如何拉伸视频，使其变形并且适配div宽高比例？案例参考：bskgtlb3。 [资料网址参考](https://zhidao.baidu.com/question/1702971320292670140.html)
 
+## text-transform 属性控制文本的大小写
+
+	值	         描述
+	none	      默认。定义带有小写字母和大写字母的标准的文本。
+	capitalize	  文本中的每个单词以大写字母开头。
+	uppercase	  定义仅有大写字母。
+	lowercase	  定义无大写字母，仅有小写字母。
+	inherit	      规定应该从父元素继承 text-transform 属性的值。
+
+
 **带 BOM 的 UTF-8 就是赤裸裸的流氓！！**它产生的BUG包含但不仅限于：HTML空白行、div之间莫明的间隔、乱码！
 
 
