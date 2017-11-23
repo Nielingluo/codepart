@@ -369,10 +369,49 @@ box-shadow: h-shadow v-shadow blur spread color inset;
 
 **2，父元素高度确定的多行文本 ：**
 
-   1， 方法一：使用插入 table  (包括tbody、tr、td)标签，同时设置 vertical-align：middle。css 中有一个用于竖直居中的属性 vertical-align，在父元素设置此样式时，会对inline-block类型的子元素都有用
-eg：http://www.imooc.com/code/6370
+   1， 方法一：使用插入 table  (包括tbody、tr、td)标签，同时设置 vertical-align：middle。css 中有一个用于竖直居中的属性 **vertical-align**，在**父元素设置此样式**时，**会对inline-block类型的子元素都有用**
+
+	.op{ height: 600px; background: #dedede; }   /*插入 table  (包括tbody、tr、td)标签，同时设置 vertical-align：middle。因为 td 标签默认情况下就默认设置了 vertical-align 为 middle，所以我们不需要显式地设置了。*/
+	<table>
+		<tbody>
+			<tr>
+				<td class="op">
+					<div><img src="images/img/3.png" alt=""></div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+[eg:](http://www.imooc.com/code/6370)：
 
   2，在 chrome、firefox 及 IE8 以上的浏览器下可以设置块级元素的 display 为 table-cell（设置为表格单元显示），激活 vertical-align 属性，但注意 IE6、7 并不支持这个样式, 兼容性比较差。 
+
+>与其他一些display属性类似，table-cell同样会被其他一些CSS属性破坏，例如float, position:absolute，所以，在使用display:table-cell与float:left或是position:absolute属性尽量不用同用。**设置了display:table-cell的元素对宽度高度敏感，对margin值无反应，响应padding属性**，基本上就是活脱脱的一个td标签元素了。
+
+
+	//文字居中css样式
+	.oop{ height: 500px; background: #eee; display: table-cell; vertical-align: middle;}
+	//html star
+	<div class="oop">
+	    <p>让我居中 让我居中</p>
+	    <p>让我居中 让我居中</p>
+	    <p>让我居中 让我居中</p>
+	    <p>让我居中 让我居中</p>
+	    <p>让我居中 让我居中</p>
+	    <p>让我居中 让我居中</p>
+	</div>
+
+
+	//图片居中css样式
+	.pic li{width: 500px; height: 400px; display: table-cell; vertical-align: middle; border: 3px solid #ff0000; text-align: center;}
+    .pic li img{vertical-align: middle; }
+	//html star
+	<div class="pic">
+	    <ul>
+	        <li><img src="../images/img/1.png" alt=""></li>
+	        <li><img src="../images/img/2.png" alt=""></li>
+	        <li>fkjdhsfkjdeskf</li>
+	    </ul>
+	</div>
 
 #transform: translateY属性 
 让元素居中http://www.webhek.com/translatey-vertical-align
@@ -382,8 +421,6 @@ eg：http://www.imooc.com/code/6370
 		  top: 50%;
 		  transform: translateY(-50%);
 		}
-
-
 
 
 		.v_align p{position: relative; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%);}
@@ -407,11 +444,6 @@ http://www.imooc.com/code/6365
 5.此时，container的中间与页面的中间重合，即container水平居中，由于ul与container本来就是一样的，ul也就水平居中了。
 
 然而ul始终是一个列表，即使水平居中了，1 2 3 也是垂直排列的（当然它们整体是水平居中的），另外加入一些css让它们成水平排列，依然不影响ul这个整体的水平居中。
-
-
-##li中插入img图片间有空隙（http://www.jb51.net/article/50190.htm）
-- 直接加样式img{vertical-align:bottom; display:block}
-- 设置容器font-size:0
 
 ##JS判断移动设备最佳方法 并实现跳转至手机版网页
 	<script type=”text/javascript”>
@@ -490,17 +522,45 @@ https://github.com/flashlizi/cssrem
 
 >通过new一张图片，监听一张图片的onload事件，结束后回调执行音频播放audio.play()即可，原理估计是动了dom结构，相当于执行了一次交互。（有人也用过createEvent模拟，原理也是动了dom。）
 
-#给文字加上下划线
-http://www.tuicool.com/articles/BJ3Ivm7
 
-#CSS 面包屑导航栏
-http://www.jianshu.com/p/030a375934bf#
+##li中插入img图片间有空隙
+- 解决1：直接加样式img{vertical-align:bottom; display:block}
+- 解决2：设置容器font-size:0
 
-文字溢出相关处理。
-http://jingyan.baidu.com/article/e75aca855b1500142edac6d0.html
+##其他：
+
+[给文字加上下划线](http://www.tuicool.com/articles/BJ3Ivm7)
+
+[CSS 面包屑导航栏](http://www.jianshu.com/p/030a375934bf#)
 
 
-兼容性：
+##文字溢出相关处理。
+
+1、word-wrap:break-word;
+
+	内容将在边界内换行，仅用于块对象，内联对象要用的话，必须要设定height、width或display:block或position:absolute。
+
+2、word-break:break-all;
+
+	用于处理单词折断。(注意与第一个属性的对比)
+
+3、white-space:nowrap;
+
+	用于处理元素内的空白，只在一行内显示。
+
+4、overflow:hidden;
+
+	超出边界的部分隐藏。
+
+5、text-overflow:ellipsis;
+
+	超出部分显示省略号。
+
+[参考地址](http://jingyan.baidu.com/article/e75aca855b1500142edac6d0.html)
+
+
+##兼容性：
+
 		<!-- IE6不支持除超链接元素之外的：hover伪类选择符，此时可以用jQuery来弥补IE6对css支持的不足。 -->
 		.focus{border: 1px solid #ff0;background: #fcc;}
         /* input:focus,textarea:focus{
@@ -516,3 +576,4 @@ http://jingyan.baidu.com/article/e75aca855b1500142edac6d0.html
 		            })
 		        })
 		   </script>
+
