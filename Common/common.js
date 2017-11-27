@@ -14,9 +14,9 @@ $(function () {
     });
 
     //vedio视频播放
-    var video = document.getElementById('videoId');
-    /* video.onclick=function(){
-         this.play();
+    /*var video = document.getElementById('videoId');
+     video.onclick=function(){
+     this.play();
      }*/
 
     var video = document.getElementById('videoId');
@@ -35,12 +35,12 @@ $(function () {
         var scrolls = $(this).scrollTop();//获取当前可视区域距离页面顶端的距离
         if (scrolls >= windowTop) {//当B>A时，表示页面在向下滑动
             //console.log("向下滑动");
-            $("#header_memu").css("position", "fixed");
+            $("#header_menu").css("position", "fixed");
             windowTop = scrolls;
         } else {
             //console.log("向上滑动");
-            $("#header_memu").css("position", "relative");
-            $("#header_memu").css("position", "static");
+            $("#header_menu").css("position", "relative");
+            $("#header_menu").css("position", "static");
             windowTop = scrolls;
         }
     });
@@ -56,7 +56,6 @@ $(function () {
     $(".change_class").attr("class", "cg_aft_class");     //改变class值
     // jquery zoom  END
 
-
     //选择h1下个元素添加红色并在前面追加TTT $("h1").nextUntil("p").css("color","red").prepend("<p>TTT</p>");
 
     // <!--css实现背景透明文字不透明 star-->
@@ -64,6 +63,13 @@ $(function () {
         $(this).stop(true).animate({width: "651px"}, 500).addClass("zs_on").siblings().stop(true).animate({width: "300px"}, 500).removeClass("zs_on");
     });
     // <!--css实现背景透明文字不透明 star END-->
+
+    //each:循环每一个jquery选择到的对象
+    $(".text-dec p").each(function (i) { //这样写它就是循环三次，其中function中的i就是指索引
+        var a = $(this).text();
+        console.log("第" + i + "个" + "p值：" + a);
+    });
+
 
 });
 
@@ -132,8 +138,11 @@ function GetRTime() {
         }
     }
 
-    document.getElementById("date4").innerHTML = "距离2017年结束还有：" + d + "天" + gDate(h) + "小时" + gDate(m) + "分钟" + gDate(s) + "秒";
+    document.getElementById("date4").innerHTML = "当前时间：" + new Date().toLocaleString() + "=======" + "距离2017年结束还有：" + d + "天" + gDate(h) + "小时" + gDate(m) + "分钟" + gDate(s) + "秒";
 
 }
-setInterval(GetRTime,1000);
+setInterval(GetRTime, 1000);
 // 倒计时 End
+
+
+
