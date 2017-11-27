@@ -52,30 +52,24 @@
     console.log(bookcopy);
 
 
-    function callSomeFunction(someFunction, someargument) {
-        return someFunction(someargument);
-    }
+    //    var Bj = Math.floor(Math.random()*20+10);
+    var Bj = Math.floor(Math.random() * 10 + 1);
 
-    function Anum(i) {
-        return i + 10;
-    }
-
-    var result = callSomeFunction(Anum, 10);
-    console.log(result);
-
-    function Greet(name) {
-        return "hello" + name;
-    }
-
-    var He = callSomeFunction(Greet, 'njm');
-    console.log(He);
-
-    var Bj = Math.floor(Math.random()*20+10);
     console.log(Bj);
 
-    var Pin = parseInt(90.2,10);
-    console.log(Pin);
+//    随机值函数
+    function selectFrom(lowerValue, upperValue) {
+        var choices = upperValue - lowerValue + 1;
+        return Math.floor(Math.random() * choices + lowerValue);
+    }
 
+    var num = selectFrom(2, 10);
+    console.log(num); //返回介于2-10之间的随机数值
+
+    var colorGroup = ["red","yellow","blue","black","pink","green"];
+    var scolor = colorGroup[selectFrom(0,colorGroup.length-1)];
+    console.log(scolor); //随机显示颜色值或者名人名言
+    //    随机值函数end
 
 </script>
 </body>
