@@ -224,6 +224,8 @@ document.write()和document.writeln都是JavaScript向客户端写入的方法�
 
 
 ##[JavaScript获取浏览器高度和宽度值](http://www.cnblogs.com/lvdabao/articles/3651779.html)
+
+>html,body的高度样式如果设置为100%，$(window).scroll方法将检测不到正确的滚出高度（0），导致滚动监听事件失效，设置html,body{height:auto}可以解决。这个问题坑了我一下午....
 	
 	网页可见区域宽： document.body.clientWidth
 	网页可见区域高： document.body.clientHeight

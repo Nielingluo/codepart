@@ -5,32 +5,109 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>贝塞尔曲线</title>
+    <title>运动集合</title>
     <script type="text/javascript" src="js/TweenMax.min.js"></script>
     <style>
-        div{ position: absolute; top:0px; left: 0px;}
-        #box1{width: 200px; height: 200px; background: forestgreen;
+        * {
+            margin: 0;
+            padding: 0;
         }
-        #con{width: 20px; height: 20px; background: orange; }
+        div{
+            font-size: 12px;
+            color: #fff;
+            text-align: center;
+            line-height: 60px;
+        }
+        #box1 {
+            width: 100%;
+            height: 200px;
+            background: black;
+            position: relative
+        }
+
+        #con {
+            width: 20px;
+            height: 20px;
+            background: orange;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #box_3d {
+            width: 200px;
+            height: 200px;
+            background: orange;
+        }
+
+        #ls_yd1, #ls_yd2 {
+            width: 60px;
+            height: 60px;
+            background: blue;
+            margin-top: 10px;
+        }
+        #hd_fun{
+            width: 60px;
+            height: 60px;
+            margin-top: 10px;
+            background: firebrick;
+        }
     </style>
 </head>
 <body>
-    <div id="box1"></div>
+<div id="box1">
+    贝塞尔曲线
     <div id="con"></div>
-    <script type="text/javascript">
-        var t = new TimelineMax();
-        t.staggerTo("#con",2,{
-            cycle:{
-                bezier: function () {
-                    return[
-                        {x:0,y:0},
-                        {x:200,y:200},
-                        {x:400,y:0},
-                        {x:600,y:200},
-                    ]
-                }
+</div>
+<!--3D特效-->
+<div id="box_3d">3D特效</div>
+<!--链式运动-->
+<div id="ls_yd1">链式运动</div>
+<div id="ls_yd2">链式运动</div>
+<!--回调函数-->
+<div id="hd_fun">回调函数</div>
+
+
+<script type="text/javascript">
+    //贝塞尔曲线
+    var t = new TimelineMax();
+    t.staggerTo("#con", 2, {
+        cycle: {
+            bezier: function () {
+                return [
+                    {x: 0, y: 0},
+                    {x: 200, y: 200},
+                    {x: 400, y: 0},
+                    {x: 600, y: 200}
+                ]
             }
-        })
-    </script>
+        }
+    });
+
+    //3D特效
+    t.set("#box_3d", {transformPerspective: 300, transformOrigin: "left"});
+    t.to("#box_3d", 2, {
+        rotationY: 45
+    });
+    //链式运动
+    t.to("#ls_yd1", 2, {
+        x: 400
+    }).to("#ls_yd2", 2, {
+        x: 400
+    }, "-=1");
+    //回调函数
+    t.to("#hd_fun", 2, {
+        x: 300,
+        onStart: function () {
+            console.log("onStart");
+        },
+        onUpdate: function () {
+            console.log("onUpdate");
+        },
+        onComplete: function () {
+            console.log("onComplete");
+        }
+    })
+</script>
 </body>
 </html>

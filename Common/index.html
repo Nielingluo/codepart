@@ -250,6 +250,24 @@
             console.log(2);
         },1000);
 
+
+        $(window).scroll(function(){
+           console.log(0);
+            var stop = $(document).scrollTop();
+            if(stop >= 100){
+                $('.big_bg').css({'right':'0px'});
+                console.log("DDDDDDDDD"+stop);
+            }else{
+                $('.big_bg').css({'right':'-40px'});
+                console.log(stop);
+            }
+        });
+
+
+
+
+
+
     </script>
     <!--js END-->
 </body>
