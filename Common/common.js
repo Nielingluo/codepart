@@ -150,7 +150,7 @@ setInterval(GetRTime, 1000);
         var choices = upperValue - lowerValue + 1;
         return Math.floor(Math.random() * choices + lowerValue);
     }
-    
+
     var num = selectFrom(2, 10);
     console.log("随机值：" + num); //返回介于2-10之间的随机数值
 
