@@ -3,9 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Javascript高级程序设计（第三版） 第六章 面向对象的程序设计 P139页</title>
-    <!--<script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>-->
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+    <style>
+        /*.s4_list{ width: 90%;*/
+            /*position: absolute;*/
+            /*top:0;*/
+            /*left:0;}*/
+        .s4_list li{ width: 50px; height: 50px; background: #f44336; float: left; margin-top: 6px; margin-left: 5px;}
+        .hover{-webkit-animation:hover 2s linear infinite; animation:hover 2s linear infinite;}
+        @-webkit-keyframes hover {
+            0%,100% {
+                -webkit-transform: translateY(0);
+            }
+            20%,70% {
+                -webkit-transform: translateY(-5px);
+            }
+            40%,60% {
+                -webkit-transform: translateY(0);
+            }
+        }
+        @keyframes hover {
+            0%,100% {
+                transform: translateY(0);
+            }
+            20%,70% {
+                transform: translateY(-5px);
+            }
+            40%,80% {
+                transform: translateY(0);
+            }
+        }
+
+    </style>
 </head>
 <body>
+<div class="s4_list">
+    <ul>
+        <li class="o1"></li>
+        <li class="o2"></li>
+        <li class="o3"></li>
+        <li class="o4"></li>
+        <li class="o5"></li>
+        <li class="o6"></li>
+    </ul>
+</div>
 <div id="time_js">
     <div id="d1">
         <div class="d_n"></div>
@@ -55,13 +96,19 @@
     //    var Bj = Math.floor(Math.random()*20+10);
     var Bj = Math.floor(Math.random() * 10 + 1);
 
-    console.log(Bj);
+    console.log("随机值：" + Bj);
+
+    document.write("<p style='color: #f44336'>Lorem    Joe</p>")
 
 
-
-
-
-
+//    http://m.shmylike.com/subject/activity/?_index_ibanner1
+//    http://wap.jsyestar.cn/zt/sdjnh/
+    var k = 1;
+    setInterval(function () {
+        $(".s4_list li").removeClass('hover');
+        $(".o" + k).addClass('hover');
+        k == 9 ? k = 1 : k++;
+    }, 2000)
 
 
 
