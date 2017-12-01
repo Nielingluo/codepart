@@ -6,6 +6,8 @@
 - Mac ：Option+Command+l
 
 ##选中下一个相同的字符串（和sublime的Ctrl+D的作用一样。）
+
+- Windows：Alt+J
 - Mac ：Ctrl+G  [add selection for next occurrence]
 
 ##Mac下强制退出某个程序

@@ -141,23 +141,30 @@ function GetRTime() {
     document.getElementById("date4").innerHTML = "当前时间：" + new Date().toLocaleString() + "=======" + "距离2017年结束还有：" + d + "天" + gDate(h) + "小时" + gDate(m) + "分钟" + gDate(s) + "秒";
 
 }
-
 setInterval(GetRTime, 1000);
 // 倒计时 End
 
 //    随机值函数
-    function selectFrom(lowerValue, upperValue) {
-        var choices = upperValue - lowerValue + 1;
-        return Math.floor(Math.random() * choices + lowerValue);
-    }
+function selectFrom(lowerValue, upperValue) {
+    var choices = upperValue - lowerValue + 1;
+    return Math.floor(Math.random() * choices + lowerValue);
+}
 
-    var num = selectFrom(2, 10);
-    console.log("随机值：" + num); //返回介于2-10之间的随机数值
+var num = selectFrom(2, 10);
+//console.log("随机值：" + num); //返回介于2-10之间的随机数值
 
-    var colorGroup = ["red", "yellow", "blue", "black", "pink", "green"];
-    var scolor = colorGroup[selectFrom(0, colorGroup.length - 1)];
-    console.log("随机颜色值：" + scolor); //随机显示颜色值或者名人名言
-//    随机值函数end
+var colorGroup = ["red", "yellow", "blue", "black", "pink", "green"];
+var scolor = colorGroup[selectFrom(0, colorGroup.length - 1)];
+//console.log("随机颜色值：" + scolor); //随机显示颜色值或者名人名言
+
+
+/*不停歇向上移动小方块特效*/
+var k = 1;
+setInterval(function () {
+    $(".fk_block li").removeClass('ns_up');
+    $(".o" + k).addClass('ns_up');
+    k == 6 ? k = 1 : k++;
+}, 2000);
 
 
 
