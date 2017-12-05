@@ -141,6 +141,7 @@ function GetRTime() {
     document.getElementById("date4").innerHTML = "当前时间：" + new Date().toLocaleString() + "=======" + "距离2017年结束还有：" + d + "天" + gDate(h) + "小时" + gDate(m) + "分钟" + gDate(s) + "秒";
 
 }
+
 setInterval(GetRTime, 1000);
 // 倒计时 End
 
@@ -167,4 +168,33 @@ setInterval(function () {
 }, 2000);
 
 
+//将控制台调试消息记录到当前页面
+function log(message) {
+    var console = document.getElementById("debuginfo");
+    if (console === null) { //检测元素是否存在，没有则新创建一个div元素,并为该元素应用一些样式
+        console = document.createElement("div");
+        console.id = "debuginfo";
+        console.style.background = "#dedede";
+        console.style.border = "#1px solid silver";
+        console.style.padding = "5px";
+        console.style.width = "400px";
+        console.style.position = "absolute";
+        console.style.right = "0px";
+        console.style.top = "0px";
+        document.body.appendChild(console);
+    }
+    console.innerHTML += "<p>" + message + "</p>";  //使用innerHTML将调试消息写入到这个div元素中
+}
 
+//log(a(3, 8));
+
+
+function sumAdd(num1, num2) {
+    if (typeof num1 != "number" || typeof num2 != "number") { //检测参数是否为数值
+        throw new Error("sumAdd():Both arguments must be numbers");
+    }
+    return  num1 + num2;
+}
+
+var auu = sumAdd(3, 9);
+console.log('sumAdd的值：' + auu);
