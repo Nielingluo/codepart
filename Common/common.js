@@ -144,7 +144,8 @@ function GetRTime() {
 setInterval(GetRTime, 1000);
 // 倒计时 End
 
-//    随机值函数
+
+// ---------------- 随机值函数----------------
 function selectFrom(lowerValue, upperValue) {
     var choices = upperValue - lowerValue + 1;
     return Math.floor(Math.random() * choices + lowerValue);
@@ -158,13 +159,34 @@ var scolor = colorGroup[selectFrom(0, colorGroup.length - 1)];
 //console.log("随机颜色值：" + scolor); //随机显示颜色值或者名人名言
 
 
-/*不停歇向上移动小方块特效*/
+// ----------------不停歇向上移动小方块特效----------------
 var k = 1;
-setInterval(function () {
+// setInterval(function () {
+//     $(".fk_block li").removeClass('ns_up');
+//     $(".o" + k).addClass('ns_up');
+//     k == 6 ? k = 1 : k++;
+// }, 2000);
+
+function move_up() {
     $(".fk_block li").removeClass('ns_up');
     $(".o" + k).addClass('ns_up');
     k == 6 ? k = 1 : k++;
-}, 2000);
+}
+var Omove = setInterval(move_up, 2000);
+
+$(function () {
+    $(".fk_block li").hover(function () {  //鼠标移动上去的时候清除定时器
+        clearInterval(b);
+        $(".fk_block li").removeClass('ns_up');
+    }, function () {  //鼠标移开运行定时器
+        Omove = setInterval(move_up, 2000);
+    });
+
+});
+
+
+
+
 
 
 

@@ -116,6 +116,19 @@ $(function(){
 	})
 
 
+	//jquery 判断单个 checkbox 是否选中以及获取选中值的方法如下：
+	if($("#id").is(":checked")){//选中  
+	    alert($("#id").val());//打印选中的值  
+	}  
+
+
+	 if($('input[type=checkbox]:checked').val()==undefined){
+        alert("请至少选择一项");
+        return false; 
+    }else{
+         var Bao = $('input[type=checkbox]:checked').val();
+    }
+
 
 });
 
