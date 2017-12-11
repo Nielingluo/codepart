@@ -28,6 +28,16 @@ $(function () {
         }
     };
 
+    // 鼠标滑过效果jquery.easing.1.3.min.js
+    $(".mouse_shake li").each(function(index, element) {
+        $(this).hover(
+            function(e) {
+                $(this).find("img").eq(1).stop().animate({top:0,opacity:1},{ duration:1000,easing:"easeOutBounce"});
+            },function(){
+                $(this).find("img").eq(1).stop().animate({top:"-150px",opacity:0},{ duration:1000,easing:"easeOutExpo"});
+            }
+        );
+    });
 
     //star 20170409 根据上下滑动控制顶部导航的出现与隐藏
     var windowTop = 0;//初始话可视区域距离页面顶端的距离
@@ -71,7 +81,9 @@ $(function () {
     });
 
 
+
 });
+
 
 
 // JavaScript代码 star============
@@ -184,9 +196,6 @@ $(function () {
     });
 
 });
-
-
-
 
 
 
