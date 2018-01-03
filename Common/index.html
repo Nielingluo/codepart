@@ -7,7 +7,6 @@
     <title>display</title>
     <link rel="stylesheet" type="text/css" href="style_common.css">
     <script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript" src="common.js"></script>
     <script src="../js/jquery.easing.1.3.min.js"></script>
 </head>
 <body>
@@ -256,33 +255,15 @@
     </div>
     <!--时间END-->
 
-    <!--js star-->
-    <input type="button" onclick="clearInterval(timer)" value="stop" class="openzz">
-    <script>
-        var i= 1;
-        var timer=setInterval(function () {
-            console.log(2);
-        },1000);
+<!--打印机效果-->
+    <div id="aab"></div>
+    <div id="aac">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cumque explicabo harum illum numquam</div>
+    <div id="aab2"></div>
+
+<!--雪花特效-->
+    <div id="snowMask"></div>
 
 
-        $(window).scroll(function(){
-           console.log(0);
-            var stop = $(document).scrollTop();
-            if(stop >= 100){
-                $('.big_bg').css({'right':'0px'});
-                console.log("DDDDDDDDD"+stop);
-            }else{
-                $('.big_bg').css({'right':'-40px'});
-                console.log(stop);
-            }
-        });
-
-
-
-
-
-
-    </script>
-    <!--js END-->
+<script type="text/javascript" src="common.js"></script>
 </body>
 </html>

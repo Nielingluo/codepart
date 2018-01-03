@@ -287,6 +287,15 @@ document.write()和document.writeln都是JavaScript向客户端写入的方法�
 		$('#s1_time').onePageNav();
 	});
 
+##清除定时器
+
+    <input type="button" onclick="clearInterval(timer)" value="stop" class="openzz">
+    <script>
+        var timer=setInterval(function () {
+            console.log(2);
+        },1000);
+    </script>
+
 
 
 ##js逻辑操作符

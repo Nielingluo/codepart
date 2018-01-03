@@ -38,6 +38,24 @@ html5的video标签如何拉伸视频，使其变形并且适配div宽高比例�
 
 相关介绍截图：倍率与逻辑像素.png
 
+##纯css实现打字效果
+
+	.print{
+	    width:250px;
+	    white-space:nowrap;
+	    overflow:hidden;
+	    -webkit-animation: dy 3s steps(60, end) infinite;
+	    animation: dy 3s steps(50, end) infinite;
+	}
+	@-webkit-keyframes dy{
+	    from { width: 0;}
+	}
+	@keyframes dy{
+	    from { width: 0;}
+	}
+	
+	<p class="print">纯css实现打字效果</p>
+
 
 ##固定背景：background－attachment
 

@@ -157,6 +157,45 @@ function GetRTime() {
 setInterval(GetRTime, 1000);
 // 倒计时 End
 
+// 打印机效果1
+var index1 = 0;
+var A1 = document.getElementById("aab");
+var A2 = document.getElementById("aac").innerHTML;
+
+function printA2() {
+    if(index1>A2.length){
+        index1=0;
+        A1.innerText="";
+    }else{
+        A1.innerText= A2.substring(0,index1++);
+    }
+}
+
+setInterval(printA2,100);
+
+// 打印机效果2:http://www.cnblogs.com/dolphinX/p/4087817.html
+var s = 'Hello World! Hello World! Hello World!';
+var con = $('#aab2');
+var index = 0;
+var length = s.length;
+var tId = null;
+
+function start(){
+    con.text('');
+
+    tId=setInterval(function(){
+        con.append(s.charAt(index));
+        if(index++ === length){
+            clearInterval(tId);
+            index = 0;
+            start()
+        }
+    },100);
+}
+
+start();
+
+
 
 // ---------------- 随机值函数----------------
 function selectFrom(lowerValue, upperValue) {
@@ -198,7 +237,6 @@ $(function () {
 });
 
 
-
 //将控制台调试消息记录到当前页面
 function log(message) {
     var console = document.getElementById("debuginfo");
@@ -220,6 +258,7 @@ function log(message) {
 //log(a(3, 8));
 
 
+//检测参数是否为数值
 function sumAdd(num1, num2) {
     if (typeof num1 != "number" || typeof num2 != "number") { //检测参数是否为数值
         throw new Error("sumAdd():Both arguments must be numbers");
@@ -227,5 +266,5 @@ function sumAdd(num1, num2) {
     return  num1 + num2;
 }
 
-var auu = sumAdd(3, 9);
-console.log('sumAdd的值：' + auu);
+//var auu = sumAdd(3, 9);
+//console.log('sumAdd的值：' + auu);
