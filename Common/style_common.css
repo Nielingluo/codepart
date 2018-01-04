@@ -525,6 +525,30 @@ background-position: 0px 0px,264px 0px,590px 0px,840px 0px;
 	animation: snow 15s linear infinite;
 }
 
+/*布局float margin f(x)*/
+.layout_par{
+	width: 100%;
+	border: 1px dashed #ff0000;
+	color: #fff;
+	font-size: 18px;
+}
+.lay_left{
+	float: left;
+	width: 100px;
+	position: relative;
+	background: red;
+}
+.right-fix{
+	float: right;
+	width: 100%;
+	margin-left: -100px;
+	border: 2px solid #1E9FFF;
+	box-sizing: border-box;
+}
+.lay_right{
+	margin-left: 120px;
+	background: #ff6600;
+}
 
 
 
