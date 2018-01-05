@@ -11,8 +11,6 @@ angular.js
 angularjs2，react，vue
 
 
-
-
 Web前端开发最佳实践.pdf
 https://segmentfault.com/a/1190000003999308
 
@@ -57,3 +55,5 @@ font简写属性： 可设置的属性是（按顺序）： "font-style font-var
 	<body>
 	<a href="http://www.w3school.com.cn">W3School</a>
 	</body>
+
+>2018/1/5：《JavaScript高级程序设计》:实体书 || 《ECMAScript 6 入门》：[在线观看地址](http://es6.ruanyifeng.com/#README)
