@@ -1,6 +1,9 @@
 ####sublime设置插件px-rem转换文件：搜索文件cssrem.sublime-settings
 
 ##Tips
+
+1,text-align: center、verticle-align: center这两个属性只能用于行内元素，对于块级元素的布局是无效的。
+
 html5的video标签如何拉伸视频，使其变形并且适配div宽高比例？案例参考：bskgtlb3。 [资料网址参考](https://zhidao.baidu.com/question/1702971320292670140.html)
 
 ## text-transform 属性控制文本的大小写
