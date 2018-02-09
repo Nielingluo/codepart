@@ -9,55 +9,6 @@
 
 <script>
 
-    class hell {
-        name(val) {
-            console.log(val);
-            return val;
-        }
-
-        skill(val) {
-            console.log(this.name("lily_") + "skill:" + val)   //函数传参 this return
-        }
-
-        //类的传参
-        constructor(a, b) {
-            this.a = a;
-            this.b = b;
-        }
-        add() {
-            return this.a + this.b;
-        }
-
-    }
-
-    //类的继承
-    class htmler extends hell {
-
-    }
-
-
-    let zh = new hell();
-    //zh.name("njm");
-    zh.skill("tmomo");
-
-    let mm = new htmler();
-    mm.name("倪敬美");
-
-    let classcd = new hell(1, 9);
-    console.log(classcd.add());
-
-    var a = typeof hell;
-    console.log(a)
-
-
-    class bar {
-        tip() {
-            console.log("nihaoa nim")
-        }
-    }
-
-    var b = new bar();
-    b.tip()
 
 
     //            var person = new Object();
