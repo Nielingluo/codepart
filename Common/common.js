@@ -129,7 +129,7 @@ setInterval("document.getElementById('date3').innerHTML='toLocaleString() 方法
 // 倒计时 Star
 function GetRTime() {
     var NowTime = Date.now();
-    var EndTime = new Date('2017/12/31 00:00:00');
+    var EndTime = new Date('2018/12/31 23:59:59');
     var t = EndTime.getTime() - NowTime;
     var d = 0;
     var h = 0;

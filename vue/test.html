@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+<script src="vue.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        {{ msg }}
+        <span v-bind:title="tips">鼠标悬停</span>
+    </div>
+    <div id="app3">
+        <p v-if="seen">seen</p>
+    </div>
+    <div id="app4">
+        <ol>
+            <li v-for="todo in todos">
+                {{todo.text}}
+            </li>
+        </ol>
+    </div>
+
+    <div id="app5">
+        <p>{{ msg}}</p>
+        <button v-on:click="reverseMessage">逆转消息</button>
+    </div>
+
+    <div id="app6">
+        <p>{{msg}}</p>
+        <input type="text" v-model="msg">
+    </div>
+
+    <div id="app7">
+        <ol>
+            <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+        </ol>
+    </div>
+
+
+    <script>
+//        var app = new Vue({
+//            el:"#app",
+//            data:{
+//                msg:'hello world!',
+//                tips:"页面加载于" + new Date().toLocaleString()
+//            }
+//        }),
+//        var app3 = new Vue({
+//            el:"#app3",
+//            data:{
+//                seen:false
+//            }
+//        }),
+//        var app4 = new Vue({
+//            el: '#app4',
+//            data: {
+//                todos: [
+//                    { text: '学习 JavaScript' },
+//                    { text: '学习 Vue' },
+//                    { text: '整个牛项目' }
+//                ]
+//            }
+//        })
+//        app4.todos.push({text:'dxx'});
+//
+//        var app5 = new Vue({
+//            el:"#app5",
+//            data:{
+//                msg:'Hello Vue.js'
+//            },
+//            methods:{
+//                reverseMessage:function () {
+//                    this.msg = this.msg.split('').reverse().join('')
+//                }
+//            }
+//        })
+//    var app6 = new Vue({
+//        el:'#app6',
+//        data:{
+//            msg:"hello Vue"
+//        }
+//    })
+
+
+
+
+
+Vue.component('todo-item',{
+    props:['todo'],
+    template:'<li>{{todo.text}}</li>'
+})
+
+var app7 = new Vue({
+    el:'#app7',
+    data:{
+        groceryList:[
+            {id:0,text:"蔬菜"},
+            {id:1,text:"奶酪"},
+            {id:2,text:"随便什么"}
+        ]
+    }
+})
+
+
+//app4.todos.push({ text: '新项目' })
+    </script>
+</body>
+</html>
