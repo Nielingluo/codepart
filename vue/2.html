@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <transition>
+            <son content="dell">
+                <div class="header" slot="header">header</div>
+                <div class="footer" slot="footer">footer</div>
+            </son>
+        </transition>
+        <!--<son content="apple"></son>-->
+    </div>
+
+    <script>
+        Vue.prototype.bus=new Vue()
+        Vue.component('son',{
+            data:function(){
+                return {
+                    selfContent:this.content
+                }
+            },
+            props:{
+                content:{
+                    type:String,
+                }
+
+            },
+            template:"<div><slot name='header'></slot><div @click='hanldClick'>{{selfContent}}</div><slot name='footer'></slot></div>",
+            methods:{
+                hanldClick:function () {
+                    // alert(this.content)
+                    this.bus.$emit('change',this.selfContent)
+                },
+            },
+            mounted:function () {
+                var this_ = this;
+                this.bus.$on('change',function (msg) {
+                    this_.selfContent = msg
+                })
+            }
+        })
+        var app = new Vue({
+            el:"#root",
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="inputvalue">
+        <button v-on:click="handleClick" ref="lop">提交</button>
+        <ul>
+            <!--<li v-for="item in list">{{item}}</li>-->
+            <todo-item v-for="item in list" :content="item"></todo-item>
+        </ul>
+        <div class="obj">
+            <ul v-for="(item,key,index) of obj">
+                <li :style="color">{{key}}:{{item}}-序号：{{index}}</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+
+        var todoitem = {
+            props:['content'],
+            template:'<li>{{content}}</li>'
+        }
+
+
+        var app = new Vue({
+            el:"#app",
+            data:{
+                inputvalue:'',
+                list:[],
+                obj:{
+                    Num1: 'one',
+                    Num2: 'two',
+                    Num3: 'three'
+                },
+                color: {
+                    color :'red'
+                }
+            },
+            methods:{
+                handleClick:function () {
+                     this.list.push(this.inputvalue);
+                    this.inputvalue = '';
+                    console.log(this.$refs.lop);
+                }
+            },
+        })
+
+    
+
+    </script>
+</body>
+</html>

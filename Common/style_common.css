@@ -189,6 +189,7 @@ img {display:block}
 .Up_x:hover{-webkit-transform:translate(0px,-5px);-moz-transform:translate(0px,-5px);-o-transform:translate(0px,-5px);transform:translate(0px,-5px);}
 
 /*效果演示：https://mburakerman.github.io/prognroll/*/
+.downarrow{-webkit-animation: downarrow 1s linear infinite; -moz-animation: downarrow 1s linear infinite; -o-animation: downarrow 1s linear infinite; animation: downarrow 1s linear infinite;}
 @keyframes downarrow{
 50%{-webkit-transform:translateY(10px);-moz-transform:translateY(10px);-o-transform:translateY(10px);-ms-transform:translateY(10px);transform:translateY(10px);}
 }

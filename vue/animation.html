@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="animate.css">
+	<script src="vue.js"></script>
+	<script type="text/javascript" src="velocity.min.js"></script>
+	<style type="text/css">
+		.v-enter,.v-leave-to{
+			opacity: 0;
+		}
+		.v-enter-active,.v-leave-active{
+			transition: opacity 1s
+		}
+		.actived{
+			color: #ff0000;
+		}
+	</style>
+</head>
+<body>
+	<div id="root">
+		<div id="oop" :class="[actived]" @click="handleClick">hello world</div>
+		<button>切换</button>
+		<div :style="[styleObj,{fontSize:'50px'}]" @click="handleClickChnage">change color</div>
+	</div> 
+
+	<script type="text/javascript">
+		
+		var vm= new Vue({ 
+			el: '#root',
+			data:{
+				actived:'',
+				styleObj:{
+					color:'red'
+				}
+			},
+			methods:{
+				handleClick:function(){	
+					// this.actived = 'actived'
+					// this.isActived = !this.isActived
+					this.actived = this.actived==='actived'? '' : 'actived'
+				},
+				handleClickChnage:function(){
+					this.styleObj.color = this.styleObj.color === 'red' ? 'black' : 'red'
+				}
+			}
+		})
+	</script>
+</body>
+</html>
