@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="mc" style="width: 400px; height: 280px; border: 1px solid #000"></canvas>
+
+<script>
+    function createRoundRect(context,x1,y1,width,height,radius) {
+        ctx.moveTo(x1+radius,y1);
+        ctx.lineTo(x1+width-radius,y1);
+        ctx.arcTo(x1+width,y1,x1+width)
+    }
+
+
+    var canvas = document.getElementById('mc');
+    var ctx = canvas.getContext('2d');
+
+    // for (var i = 0; i < 10; i++) {
+    //     ctx.beginPath();
+    //     ctx.arc(i * 25, i * 25, (i + 1) * 8, 0, Math.PI * 2, true);
+    //     ctx.closePath();
+    //     ctx.fillStyle = "rgba(255,0,255,0.2)";
+    //     ctx.fill();
+    // }
+</script>
+</body>
+</html>

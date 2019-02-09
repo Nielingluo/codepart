@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <canvas id="mc" style="width: 900px; height: 800px; margin: 0 auto; border:1px solid #000;"></canvas>
+    <script>
+        var canvas = document.getElementById('mc');
+        var ctx = canvas.getContext('2d');
+        ctx.shadowBlur=5.6;
+        ctx.shadowColor='#00f';
+        ctx.shadowOffsetX=10;
+        ctx.shadowOffsetY=-6;
+
+        ctx.fillStyle='00f';
+        ctx.font='italic 50px 隶书';
+        ctx.textBaseline='top';
+        ctx.fillText('hello world',0,0);
+
+        ctx.strokeStyle='#f0f';
+        ctx.font='bold 45px 宋体';
+        ctx.strokeText('wecome to ',0, 50);
+    </script>
+</body>
+</html>

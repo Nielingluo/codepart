@@ -16,7 +16,7 @@
 	(function() {})() == ! function() {}();
 
 	//让解释器去知道我们希望进行匿名函数的直接调用以下方法都是可行的
-	a = function(){}()
+	a = function(){}()css
 	~function(){}()//个人喜好的方式
 	!function(){}()
 	+function(){}()

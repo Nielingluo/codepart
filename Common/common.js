@@ -195,6 +195,15 @@ function start(){
 
 start();
 
+<!--flex布局-->
+function myFunction() {
+    x = document.getElementById("myDiv");
+    y = x.getElementsByTagName("div");
+    console.log(y);
+    for (i = 0; i < y.length; i++) {
+        y[i].style.flex = "1";
+    }
+}
 
 
 // ---------------- 随机值函数----------------

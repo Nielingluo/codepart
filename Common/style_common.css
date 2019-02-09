@@ -630,7 +630,14 @@ background-position: 0px 0px,264px 0px,590px 0px,840px 0px;
 	background: #ff6600;
 }
 
-
+/*<!--flex布局-->*/
+#myDiv {
+	width: 500px;
+	height: 400px;
+	border: 1px solid #eee;
+	display: flex;
+	color: #fff;
+}
 
 
 /*box-shadow: h-shadow v-shadow blur spread color inset;

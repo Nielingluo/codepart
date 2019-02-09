@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas绘制几何图形</title>
+</head>
+<body>
+    <canvas id="mc" style="width: 900px;height: 800px; margin: 0 auto; border: 1px solid #ff6600;"></canvas>
+    <script>
+        var canvas = document.getElementById('mc');
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#f00';
+        ctx.fillRect(30,40,60,30);
+
+        ctx.fillStyle='#f00';
+        ctx.fillRect(100,60,60,30);
+
+        ctx.strokeStyle='#00f';
+        ctx.lineWidth=10;
+        ctx.strokeRect(20,110,60,30);
+
+        ctx.strokeStyle='#0ff';
+        ctx.lineJoin="round";
+        ctx.strokeRect(100,110,60,30);
+
+        ctx.strokeStyle='#f0f';
+        ctx.lineJoin="bevel";
+        ctx.strokeRect(190,110,60,30)
+
+    </script>
+</body>
+</html>
+
+  _loadWxCode: function (callback) {
+    console.log(this.data.id);
+    detail.getWxCode(this.data.id, (res) => {
+      this.data.wxCode = res;
+      callback && callback(res);
+    })
+  },
